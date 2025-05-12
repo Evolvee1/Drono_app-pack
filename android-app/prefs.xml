@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="use_webview_mode" value="true" />
+    <string name="device_id">6a1f204d-c467-4dd5-ad57-a499801cc12c</string>
+    <string name="current_session_id">20250511_062257</string>
+    <string name="target_url">https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA</string>
+    <int name="delay_max" value="5" />
+    <boolean name="is_first_run" value="false" />
+    <int name="airplane_mode_delay" value="3000" />
+    <int name="iterations" value="900" />
+    <boolean name="is_running" value="false" />
+    <boolean name="config_expanded" value="true" />
+    <int name="min_interval" value="1" />
+    <int name="delay_min" value="1" />
+    <int name="max_interval" value="2" />
+    <boolean name="rotate_ip" value="true" />
+    <boolean name="use_random_device_profile" value="true" />
+    <boolean name="new_webview_per_request" value="true" />
+</map>

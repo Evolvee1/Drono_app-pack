@@ -1,0 +1,21 @@
+{
+    "url": "https://veewoy.com/ip-test",
+    "iterations": 100,
+    "min_interval": 1,
+    "max_interval": 3,
+    "delay": 2000,
+    "use_webview_mode": true,
+    "rotate_ip": true,
+    "use_random_device_profile": true,
+    "new_webview_per_request": true
+} 
+    "url": "https://veewoy.com/ip-test",
+    "iterations": 100,
+    "min_interval": 1,
+    "max_interval": 3,
+    "delay": 2000,
+    "use_webview_mode": true,
+    "rotate_ip": true,
+    "use_random_device_profile": true,
+    "new_webview_per_request": true
+} 

@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<map><int name="iterations" value="100" /><int name="min_interval" value="3" /><int name="max_interval" value="5" /><int name="airplane_mode_delay" value="3000" /><int name="delay_min" value="1" /><int name="delay_max" value="5" /><boolean name="is_running" value="false" /><boolean name="is_first_run" value="false" /></map>

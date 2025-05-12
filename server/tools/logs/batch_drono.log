@@ -1,0 +1,1533 @@
+2025-05-11 06:02:38,028 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:02:38,029 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 airplane_mode_delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:02:38,029 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:02:38,029 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:02:38,029 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 airplane_mode_delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:02:40,004 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] Command completed with return code: 1
+2025-05-11 06:02:40,004 - robust_batch_drono - INFO - Batch execution completed in 1.97 seconds
+2025-05-11 06:02:40,004 - robust_batch_drono - INFO - Device R9WR310F4GJ: FAILED (return code: 1)
+2025-05-11 06:02:40,004 - robust_batch_drono - INFO - Summary: 0/1 devices successfully processed
+2025-05-11 06:02:46,339 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:02:46,340 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 toggle webview_mode true toggle rotate_ip true toggle random_devices true airplane_mode_delay 3000 start
+2025-05-11 06:02:46,340 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:02:46,340 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:02:46,340 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 toggle webview_mode true toggle rotate_ip true toggle random_devices true airplane_mode_delay 3000 start
+2025-05-11 06:02:48,904 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] Command completed with return code: 1
+2025-05-11 06:02:48,904 - robust_batch_drono - INFO - Batch execution completed in 2.56 seconds
+2025-05-11 06:02:48,904 - robust_batch_drono - INFO - Device R9WR310F4GJ: FAILED (return code: 1)
+2025-05-11 06:02:48,904 - robust_batch_drono - INFO - Summary: 0/1 devices successfully processed
+2025-05-11 06:02:57,844 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:02:57,844 - robust_batch_drono - INFO - Command arguments: url https://example.com iterations 900 min_interval 1 max_interval 2 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:02:57,844 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:02:57,844 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:02:57,844 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh url https://example.com iterations 900 min_interval 1 max_interval 2 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:03:03,974 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:03:03,974 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:03:03,974 - robust_batch_drono - INFO - Batch execution completed in 6.13 seconds
+2025-05-11 06:03:03,974 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:03:03,974 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:03:03,974 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:03:47,558 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:03:47,558 - robust_batch_drono - INFO - Command arguments: -settings url https://example.com iterations 900 min_interval 1 max_interval 2 airplane_mode_delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:03:47,558 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:03:47,558 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:03:47,559 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://example.com iterations 900 min_interval 1 max_interval 2 airplane_mode_delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:03:49,529 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] Command completed with return code: 1
+2025-05-11 06:03:49,529 - robust_batch_drono - INFO - Batch execution completed in 1.97 seconds
+2025-05-11 06:03:49,529 - robust_batch_drono - INFO - Device R9WR310F4GJ: FAILED (return code: 1)
+2025-05-11 06:03:49,529 - robust_batch_drono - INFO - Summary: 0/1 devices successfully processed
+2025-05-11 06:04:09,908 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:04:09,909 - robust_batch_drono - INFO - Command arguments: url https://example.com iterations 900 min_interval 1 max_interval 2 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:04:09,909 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:04:09,909 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:04:09,909 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh url https://example.com iterations 900 min_interval 1 max_interval 2 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:04:16,167 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:04:16,167 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: Setting target URL to: https://example.com
+✅ Can access file with root. Using su method.
+Updating target_url to https://example.com...
+⚠️ Warning: target_url appears to be set to https://example.com instead of https://example.com
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+✅ Verified: rotate_ip is now set to true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+✅ Verified: use_random_device_profile is now set to true
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+  Still waiting... (1 seconds)
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+2025-05-11 06:04:16,167 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:04:16,167 - robust_batch_drono - INFO - Batch execution completed in 6.26 seconds
+2025-05-11 06:04:16,167 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:04:16,167 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:04:16,167 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:04:21,555 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:04:21,556 - robust_batch_drono - INFO - Command arguments: -settings url https://example.com iterations 900 min_interval 1 max_interval 2 airplane_mode_delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:04:21,556 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:04:21,556 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:04:21,556 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://example.com iterations 900 min_interval 1 max_interval 2 airplane_mode_delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:04:23,494 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] Command completed with return code: 1
+2025-05-11 06:04:23,494 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://example.com
+✅ Can access file with root. Using su method.
+Updating target_url to https://example.com...
+⚠️ Warning: target_url appears to be set to https://example.com instead of https://example.com
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Unknown command: airplane_mode_delay
+Use './drono_control.sh help' for usage information
+
+2025-05-11 06:04:23,494 - robust_batch_drono - INFO - Batch execution completed in 1.94 seconds
+2025-05-11 06:04:23,494 - robust_batch_drono - INFO - Device R9WR310F4GJ: FAILED (return code: 1)
+2025-05-11 06:04:23,494 - robust_batch_drono - INFO - Summary: 0/1 devices successfully processed
+2025-05-11 06:04:46,554 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:04:46,555 - robust_batch_drono - INFO - Command arguments: -settings url https://example.com iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:04:46,555 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:04:46,555 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:04:46,555 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://example.com iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:04:53,941 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:04:53,942 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://example.com
+✅ Can access file with root. Using su method.
+Updating target_url to https://example.com...
+⚠️ Warning: target_url appears to be set to https://example.com instead of https://example.com
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+✅ Verified: rotate_ip is now set to true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+✅ Verified: use_random_device_profile is now set to true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:04:53,942 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:04:53,942 - robust_batch_drono - INFO - Batch execution completed in 7.39 seconds
+2025-05-11 06:04:53,942 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:04:53,942 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:04:53,942 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:04:58,828 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:04:58,829 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA\&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:04:58,829 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:04:58,829 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:04:58,829 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA\&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:05:06,279 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:05:06,280 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA\&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+✅ Can access file with root. Using su method.
+Updating target_url to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA\&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA...
+⚠️ Warning: target_url appears to be set to https://example.com</string>e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA instead of https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA\&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+✅ Verified: rotate_ip is now set to true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+✅ Verified: use_random_device_profile is now set to true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+⚠️ Warning: is_running appears to be set to  instead of true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:05:06,280 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:05:06,280 - robust_batch_drono - INFO - Batch execution completed in 7.45 seconds
+2025-05-11 06:05:06,280 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:05:06,280 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:05:06,280 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:05:12,105 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 06:05:12,105 - robust_batch_drono - INFO - Will target 2 devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 06:05:12,105 - robust_batch_drono - INFO - Command arguments: -settings url https://example.com iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:05:12,105 - robust_batch_drono - INFO - Executing commands in parallel
+2025-05-11 06:05:12,106 - robust_batch_drono - INFO - [Device R38N9014KDM] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://example.com iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:05:12,106 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://example.com iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:05:19,441 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:05:19,442 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://example.com
+✅ Can access file with root. Using su method.
+Updating target_url to https://example.com...
+⚠️ Warning: target_url appears to be set to https://example.com instead of https://example.com
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:05:19,442 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:05:26,579 - robust_batch_drono - INFO - [Device R38N9014KDM] Command completed with return code: 0
+2025-05-11 06:05:26,579 - robust_batch_drono - INFO - [Device R38N9014KDM] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://example.com
+✅ Can access file with root. Using su method.
+Updating target_url to https://example.com...
+⚠️ Warning: target_url appears to be set to https://example.com instead of https://example.com
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+  Still waiting... (1 seconds)
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:05:26,579 - robust_batch_drono - ERROR - [Device R38N9014KDM] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:05:26,580 - robust_batch_drono - INFO - Batch execution completed in 14.47 seconds
+2025-05-11 06:05:26,580 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:05:26,580 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:05:26,580 - robust_batch_drono - INFO - Device R38N9014KDM: SUCCESS (return code: 0)
+2025-05-11 06:05:26,580 - robust_batch_drono - INFO - Device R38N9014KDM: Simulation started successfully
+2025-05-11 06:05:26,580 - robust_batch_drono - INFO - Summary: 2/2 devices successfully processed
+2025-05-11 06:06:06,446 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 06:06:06,447 - server_integration - INFO - Found 2 devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 06:06:06,447 - server_integration - INFO - Starting batch command for 2 devices with settings: {'url': 'https://example.com', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'airplane_mode_delay': 3000, 'webview_mode': True, 'rotate_ip': True, 'random_devices': True}
+2025-05-11 06:06:06,448 - robust_batch_drono - INFO - [Device R38N9014KDM] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://example.com iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:06:06,449 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://example.com iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true start
+2025-05-11 06:06:13,786 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:06:13,787 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://example.com
+✅ Can access file with root. Using su method.
+Updating target_url to https://example.com...
+⚠️ Warning: target_url appears to be set to https://example.com instead of https://example.com
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:06:13,787 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:06:14,967 - robust_batch_drono - INFO - [Device R38N9014KDM] Command completed with return code: 0
+2025-05-11 06:06:14,968 - robust_batch_drono - INFO - [Device R38N9014KDM] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://example.com
+✅ Can access file with root. Using su method.
+Updating target_url to https://example.com...
+⚠️ Warning: target_url appears to be set to https://example.com instead of https://example.com
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+⚠️ WARNING: Simulation may not have started properly. Current is_running value: false
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:06:14,968 - robust_batch_drono - ERROR - [Device R38N9014KDM] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:06:14,968 - server_integration - INFO - Batch command completed. Success rate: 100.0%
+2025-05-11 06:10:22,658 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:10:22,659 - robust_batch_drono - INFO - Command arguments: -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:10:22,659 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:10:22,659 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:10:22,659 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:10:30,483 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:10:30,483 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://veewoy.com/ip-text
+✅ Can access file with root. Using su method.
+Updating target_url to https://veewoy.com/ip-text...
+⚠️ Warning: target_url appears to be set to https://veewoy.com/ip-text instead of https://veewoy.com/ip-text
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+⚠️ Warning: new_webview_per_request appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:10:30,483 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:10:30,484 - robust_batch_drono - INFO - Batch execution completed in 7.82 seconds
+2025-05-11 06:10:30,484 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:10:30,484 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:10:30,484 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:10:37,882 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:10:37,883 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:10:37,883 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:10:37,883 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:10:37,883 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:10:45,530 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:10:45,531 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+✅ Can access file with root. Using su method.
+Updating target_url to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA...
+⚠️ Warning: target_url appears to be set to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA instead of https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+⚠️ Warning: new_webview_per_request appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+⚠️ Warning: is_running appears to be set to  instead of true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:10:45,531 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:10:45,531 - robust_batch_drono - INFO - Batch execution completed in 7.65 seconds
+2025-05-11 06:10:45,532 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:10:45,532 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:10:45,532 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:10:51,720 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 06:10:51,720 - robust_batch_drono - INFO - Will target 2 devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 06:10:51,721 - robust_batch_drono - INFO - Command arguments: -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:10:51,721 - robust_batch_drono - INFO - Executing commands in parallel
+2025-05-11 06:10:51,721 - robust_batch_drono - INFO - [Device R38N9014KDM] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:10:51,722 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:10:59,322 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:10:59,322 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://veewoy.com/ip-text
+✅ Can access file with root. Using su method.
+Updating target_url to https://veewoy.com/ip-text...
+⚠️ Warning: target_url appears to be set to https://veewoy.com/ip-text instead of https://veewoy.com/ip-text
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+⚠️ Warning: new_webview_per_request appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:10:59,322 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:11:00,494 - robust_batch_drono - INFO - [Device R38N9014KDM] Command completed with return code: 0
+2025-05-11 06:11:00,495 - robust_batch_drono - INFO - [Device R38N9014KDM] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://veewoy.com/ip-text
+✅ Can access file with root. Using su method.
+Updating target_url to https://veewoy.com/ip-text...
+⚠️ Warning: target_url appears to be set to https://veewoy.com/ip-text instead of https://veewoy.com/ip-text
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+✅ Verified: new_webview_per_request is now set to true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:11:00,495 - robust_batch_drono - ERROR - [Device R38N9014KDM] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:11:00,495 - robust_batch_drono - INFO - Batch execution completed in 8.77 seconds
+2025-05-11 06:11:00,495 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:11:00,495 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:11:00,495 - robust_batch_drono - INFO - Device R38N9014KDM: SUCCESS (return code: 0)
+2025-05-11 06:11:00,495 - robust_batch_drono - INFO - Device R38N9014KDM: Simulation started successfully
+2025-05-11 06:11:00,495 - robust_batch_drono - INFO - Summary: 2/2 devices successfully processed
+2025-05-11 06:11:06,193 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 06:11:06,194 - server_integration - INFO - Found 2 devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 06:11:06,194 - server_integration - INFO - Starting batch command for 2 devices with settings: {'url': 'https://veewoy.com/ip-text', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'airplane_mode_delay': 3000, 'webview_mode': True, 'rotate_ip': True, 'random_devices': True, 'new_webview_per_request': True}
+2025-05-11 06:11:06,196 - robust_batch_drono - INFO - [Device R38N9014KDM] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:11:06,196 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:11:13,810 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:11:13,810 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://veewoy.com/ip-text
+✅ Can access file with root. Using su method.
+Updating target_url to https://veewoy.com/ip-text...
+⚠️ Warning: target_url appears to be set to https://veewoy.com/ip-text instead of https://veewoy.com/ip-text
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+⚠️ Warning: new_webview_per_request appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:11:13,810 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:11:14,981 - robust_batch_drono - INFO - [Device R38N9014KDM] Command completed with return code: 0
+2025-05-11 06:11:14,981 - robust_batch_drono - INFO - [Device R38N9014KDM] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://veewoy.com/ip-text
+✅ Can access file with root. Using su method.
+Updating target_url to https://veewoy.com/ip-text...
+⚠️ Warning: target_url appears to be set to https://veewoy.com/ip-text instead of https://veewoy.com/ip-text
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+✅ Verified: new_webview_per_request is now set to true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+⚠️ WARNING: Simulation may not have started properly. Current is_running value: false
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:11:14,981 - robust_batch_drono - ERROR - [Device R38N9014KDM] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:11:14,981 - server_integration - INFO - Batch command completed. Success rate: 100.0%
+2025-05-11 06:12:25,256 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:12:25,256 - robust_batch_drono - INFO - Command arguments: -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:12:25,256 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:12:25,256 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:12:25,256 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url https://veewoy.com/ip-text iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:12:32,947 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:12:32,947 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://veewoy.com/ip-text
+✅ Can access file with root. Using su method.
+Updating target_url to https://veewoy.com/ip-text...
+⚠️ Warning: target_url appears to be set to https://veewoy.com/ip-text instead of https://veewoy.com/ip-text
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+⚠️ Warning: new_webview_per_request appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+✅ Verified: is_running is now set to true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:12:32,948 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:12:32,948 - robust_batch_drono - INFO - Batch execution completed in 7.69 seconds
+2025-05-11 06:12:32,948 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:12:32,948 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:12:32,948 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:12:51,229 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:12:51,230 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:12:51,230 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:12:51,230 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:12:51,230 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:12:58,898 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:12:58,899 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+✅ Can access file with root. Using su method.
+Updating target_url to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA...
+⚠️ Warning: target_url appears to be set to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA instead of https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+⚠️ Warning: new_webview_per_request appears to be set to  instead of true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+⚠️ Warning: is_running appears to be set to  instead of true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:12:58,899 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:12:58,899 - robust_batch_drono - INFO - Batch execution completed in 7.67 seconds
+2025-05-11 06:12:58,899 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:12:58,899 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:12:58,899 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:15:49,152 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:15:49,152 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:15:49,152 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:15:49,152 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:15:49,152 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:15:56,773 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:15:56,774 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+✅ Can access file with root. Using su method.
+Updating target_url to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA...
+⚠️ Warning: target_url appears to be set to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA instead of https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+✅ Verified: new_webview_per_request is now set to true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+⚠️ Warning: is_running appears to be set to  instead of true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:15:56,774 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:15:56,774 - robust_batch_drono - INFO - Batch execution completed in 7.62 seconds
+2025-05-11 06:15:56,774 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:15:56,774 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:15:56,774 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:18:25,817 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:18:25,818 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:18:25,818 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:18:25,818 - robust_batch_drono - INFO - Processing device R9WR310F4GJ...
+2025-05-11 06:18:25,818 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Running: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/android-app/drono_control.sh -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true start
+2025-05-11 06:18:34,080 - robust_batch_drono - INFO - [Device R9WR310F4GJ] Command completed with return code: 0
+2025-05-11 06:18:34,081 - robust_batch_drono - INFO - [Device R9WR310F4GJ] STDOUT: 🔄 Settings mode: Force stopping app to ensure clean settings application...
+Force stopping app...
+Setting target URL to: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+✅ Can access file with root. Using su method.
+Updating target_url to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA...
+⚠️ Warning: target_url appears to be set to https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA instead of https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+Setting iterations to: 900
+✅ Can access file with root. Using su method.
+Updating iterations to 900...
+✅ Verified: iterations is now set to 900
+Setting minimum interval to: 1 seconds
+✅ Can access file with root. Using su method.
+Updating min_interval to 1...
+✅ Verified: min_interval is now set to 1
+Setting maximum interval to: 2 seconds
+✅ Can access file with root. Using su method.
+Updating max_interval to 2...
+✅ Verified: max_interval is now set to 2
+Setting airplane mode delay to: 3000 ms
+✅ Can access file with root. Using su method.
+Updating airplane_mode_delay to 3000...
+✅ Verified: airplane_mode_delay is now set to 3000
+Setting webview_mode to: true
+✅ Can access file with root. Using su method.
+Updating use_webview_mode to true...
+✅ Verified: use_webview_mode is now set to true
+Setting rotate_ip to: true
+✅ Can access file with root. Using su method.
+Updating rotate_ip to true...
+⚠️ Warning: rotate_ip appears to be set to  instead of true
+Setting random_devices to: true
+✅ Can access file with root. Using su method.
+Updating use_random_device_profile to true...
+⚠️ Warning: use_random_device_profile appears to be set to  instead of true
+Setting new_webview_per_request to: true
+✅ Can access file with root. Using su method.
+Updating new_webview_per_request to true...
+✅ Verified: new_webview_per_request is now set to true
+
+============================================================
+✅ SETTINGS: All settings have been successfully applied
+============================================================
+
+============================================================
+🚀 STARTING SIMULATION: Launching app and starting simulation
+============================================================
+Starting simulation...
+App is not running, launching app...
+Starting app...
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+Waiting for app to start...
+✅ App is running and activity is responsive
+✅ Can access file with root. Using su method.
+Setting is_running preference to true...
+Updating is_running to true...
+⚠️ Warning: is_running appears to be set to  instead of true
+Sending start command to app...
+Starting: Intent { act=com.example.imtbf.REMOTE_COMMAND cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+✅ SUCCESS: Simulation started successfully
+Simulation start sequence completed
+
+============================================================
+🏁 OPERATION COMPLETE
+============================================================
+
+2025-05-11 06:18:34,081 - robust_batch_drono - ERROR - [Device R9WR310F4GJ] STDERR: Failed to write while dumping service activity: Broken pipe
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+2025-05-11 06:18:34,081 - robust_batch_drono - INFO - Batch execution completed in 8.26 seconds
+2025-05-11 06:18:34,081 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:18:34,081 - robust_batch_drono - INFO - Device R9WR310F4GJ: Simulation started successfully
+2025-05-11 06:18:34,081 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:32:06,049 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:32:06,050 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true
+2025-05-11 06:32:06,050 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:32:06,050 - robust_batch_drono - INFO - Processing device: R9WR310F4GJ
+2025-05-11 06:32:06,051 - robust_batch_drono - INFO - Stopping app on device R9WR310F4GJ
+2025-05-11 06:32:06,189 - robust_batch_drono - INFO - Applying settings on device R9WR310F4GJ
+2025-05-11 06:32:09,287 - robust_batch_drono - INFO - Starting app on device R9WR310F4GJ
+2025-05-11 06:32:11,381 - robust_batch_drono - INFO - Starting simulation on device R9WR310F4GJ
+2025-05-11 06:32:11,491 - robust_batch_drono - INFO - Batch execution completed in 5.44 seconds
+2025-05-11 06:32:11,492 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:32:11,492 - robust_batch_drono - WARNING - Device R9WR310F4GJ: Command completed but simulation status unclear
+2025-05-11 06:32:11,492 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 06:33:12,326 - robust_batch_drono - INFO - Will target 1 devices: R9WR310F4GJ
+2025-05-11 06:33:12,327 - robust_batch_drono - INFO - Command arguments: -settings url 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA' iterations 900 min_interval 1 max_interval 2 delay 3000 toggle webview_mode true toggle rotate_ip true toggle random_devices true toggle new_webview_per_request true
+2025-05-11 06:33:12,327 - robust_batch_drono - INFO - Executing commands sequentially
+2025-05-11 06:33:12,327 - robust_batch_drono - INFO - Processing device: R9WR310F4GJ
+2025-05-11 06:33:12,327 - robust_batch_drono - INFO - Parsed settings for device R9WR310F4GJ: {'target_url': 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'airplane_mode_delay': 3000, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 06:33:12,327 - robust_batch_drono - INFO - Stopping app on device R9WR310F4GJ
+2025-05-11 06:33:12,472 - robust_batch_drono - INFO - Creating preferences file for device R9WR310F4GJ
+2025-05-11 06:33:12,590 - robust_batch_drono - INFO - Starting app on device R9WR310F4GJ
+2025-05-11 06:33:14,652 - robust_batch_drono - INFO - Starting simulation on device R9WR310F4GJ
+2025-05-11 06:33:14,818 - robust_batch_drono - INFO - Verifying settings on device R9WR310F4GJ
+2025-05-11 06:33:14,873 - robust_batch_drono - INFO - Batch execution completed in 2.55 seconds
+2025-05-11 06:33:14,873 - robust_batch_drono - INFO - Device R9WR310F4GJ: SUCCESS (return code: 0)
+2025-05-11 06:33:14,873 - robust_batch_drono - WARNING - Device R9WR310F4GJ: Command completed but simulation status unclear
+2025-05-11 06:33:14,874 - robust_batch_drono - INFO - Summary: 1/1 devices successfully processed
+2025-05-11 09:32:36,528 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:32:40,565 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:32:40,567 - settings_api - INFO - Applying settings to 2 devices: {'url': 'https://example.com', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'webview_mode': True, 'rotate_ip': True, 'random_devices': True, 'new_webview_per_request': True}
+2025-05-11 09:32:40,568 - robust_batch_drono - INFO - Processing device: R38N9014KDM
+2025-05-11 09:32:40,568 - robust_batch_drono - INFO - Processing device: R9WR310F4GJ
+2025-05-11 09:32:40,574 - robust_batch_drono - INFO - Parsed settings for device R38N9014KDM: {'target_url': 'https://example.com', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 09:32:40,575 - robust_batch_drono - INFO - Parsed settings for device R9WR310F4GJ: {'target_url': 'https://example.com', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 09:32:40,576 - robust_batch_drono - INFO - Stopping app on device R9WR310F4GJ
+2025-05-11 09:32:40,576 - robust_batch_drono - INFO - Stopping app on device R38N9014KDM
+2025-05-11 09:32:40,704 - robust_batch_drono - INFO - Creating preferences file for device R9WR310F4GJ
+2025-05-11 09:32:40,771 - robust_batch_drono - INFO - Creating preferences file for device R38N9014KDM
+2025-05-11 09:32:40,958 - robust_batch_drono - INFO - Starting app on device R38N9014KDM
+2025-05-11 09:32:40,967 - robust_batch_drono - INFO - Starting app on device R9WR310F4GJ
+2025-05-11 09:32:43,068 - robust_batch_drono - INFO - Starting simulation on device R38N9014KDM
+2025-05-11 09:32:43,078 - robust_batch_drono - INFO - Starting simulation on device R9WR310F4GJ
+2025-05-11 09:32:43,670 - robust_batch_drono - INFO - Verifying settings on device R9WR310F4GJ
+2025-05-11 09:32:43,855 - robust_batch_drono - INFO - Verifying settings on device R38N9014KDM
+2025-05-11 09:32:48,260 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:32:48,261 - settings_api - INFO - Saved Instagram URL to /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/instagram_url.txt
+2025-05-11 09:32:48,261 - settings_api - INFO - Running Instagram settings command: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/run_instagram.sh --all-devices
+2025-05-11 09:33:03,684 - settings_api - ERROR - Instagram settings failed: 2025-05-11 09:32:48,314 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+2025-05-11 09:32:48,326 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:32:48,326 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 09:32:48,326 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 09:32:48,326 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 09:32:56,048 - batch_instagram - ERROR - Failed to start Instagram simulation on device R38N9014KDM: url_config.xml: 1 file pushed, 0 skipped. 3.3 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 5.3 MB/s (720 bytes in 0.000s)
+
+2025-05-11 09:32:56,048 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 09:33:03,678 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 2.0 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 5.5 MB/s (720 bytes in 0.000s)
+
+2025-05-11 09:33:03,678 - batch_instagram - INFO - Completed in 15.35 seconds
+2025-05-11 09:33:03,678 - batch_instagram - INFO - Results: 0/2 successful
+2025-05-11 09:33:03,678 - batch_instagram - INFO - R38N9014KDM: FAILED
+2025-05-11 09:33:03,678 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+
+2025-05-11 09:33:13,640 - settings_api - INFO - Applying settings to 1 devices: {'url': 'https://veewoy.com/test', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'webview_mode': True, 'rotate_ip': True, 'random_devices': True, 'new_webview_per_request': True}
+2025-05-11 09:33:13,641 - robust_batch_drono - INFO - Processing device: R9WR310F4GJ
+2025-05-11 09:33:13,641 - robust_batch_drono - INFO - Parsed settings for device R9WR310F4GJ: {'target_url': 'https://veewoy.com/test', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 09:33:13,641 - robust_batch_drono - INFO - Stopping app on device R9WR310F4GJ
+2025-05-11 09:33:13,818 - robust_batch_drono - INFO - Creating preferences file for device R9WR310F4GJ
+2025-05-11 09:33:14,002 - robust_batch_drono - INFO - Starting app on device R9WR310F4GJ
+2025-05-11 09:33:16,087 - robust_batch_drono - INFO - Starting simulation on device R9WR310F4GJ
+2025-05-11 09:33:16,283 - robust_batch_drono - INFO - Verifying settings on device R9WR310F4GJ
+2025-05-11 09:47:06,296 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:47:29,699 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:47:38,376 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:47:48,779 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:47:53,501 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:47:56,971 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:47:56,971 - settings_api - INFO - Applying settings to 2 devices: {'url': 'https://veewoy.com/test', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'webview_mode': True, 'rotate_ip': True, 'random_devices': True, 'new_webview_per_request': True}
+2025-05-11 09:47:56,972 - robust_batch_drono - INFO - Processing device: R38N9014KDM
+2025-05-11 09:47:56,972 - robust_batch_drono - INFO - Processing device: R9WR310F4GJ
+2025-05-11 09:47:56,972 - robust_batch_drono - INFO - Parsed settings for device R38N9014KDM: {'target_url': 'https://veewoy.com/test', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 09:47:56,972 - robust_batch_drono - INFO - Parsed settings for device R9WR310F4GJ: {'target_url': 'https://veewoy.com/test', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 09:47:56,972 - robust_batch_drono - INFO - Stopping app on device R38N9014KDM
+2025-05-11 09:47:56,972 - robust_batch_drono - INFO - Stopping app on device R9WR310F4GJ
+2025-05-11 09:47:57,134 - robust_batch_drono - INFO - Creating preferences file for device R9WR310F4GJ
+2025-05-11 09:47:57,166 - robust_batch_drono - INFO - Creating preferences file for device R38N9014KDM
+2025-05-11 09:47:57,335 - robust_batch_drono - INFO - Starting app on device R38N9014KDM
+2025-05-11 09:47:57,336 - robust_batch_drono - INFO - Starting app on device R9WR310F4GJ
+2025-05-11 09:47:59,425 - robust_batch_drono - INFO - Starting simulation on device R9WR310F4GJ
+2025-05-11 09:47:59,433 - robust_batch_drono - INFO - Starting simulation on device R38N9014KDM
+2025-05-11 09:47:59,632 - robust_batch_drono - INFO - Verifying settings on device R9WR310F4GJ
+2025-05-11 09:48:00,062 - robust_batch_drono - INFO - Verifying settings on device R38N9014KDM
+2025-05-11 09:48:19,669 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:48:19,670 - settings_api - INFO - Applying settings to 2 devices: {'url': 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'webview_mode': True, 'rotate_ip': True, 'random_devices': True, 'new_webview_per_request': True}
+2025-05-11 09:48:19,671 - robust_batch_drono - INFO - Processing device: R38N9014KDM
+2025-05-11 09:48:19,671 - robust_batch_drono - INFO - Parsed settings for device R38N9014KDM: {'target_url': 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 09:48:19,671 - robust_batch_drono - INFO - Processing device: R9WR310F4GJ
+2025-05-11 09:48:19,672 - robust_batch_drono - INFO - Stopping app on device R38N9014KDM
+2025-05-11 09:48:19,672 - robust_batch_drono - INFO - Parsed settings for device R9WR310F4GJ: {'target_url': 'https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA', 'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 09:48:19,673 - robust_batch_drono - INFO - Stopping app on device R9WR310F4GJ
+2025-05-11 09:48:19,812 - robust_batch_drono - INFO - Creating preferences file for device R9WR310F4GJ
+2025-05-11 09:48:19,828 - robust_batch_drono - INFO - Creating preferences file for device R38N9014KDM
+2025-05-11 09:48:20,001 - robust_batch_drono - INFO - Starting app on device R38N9014KDM
+2025-05-11 09:48:20,026 - robust_batch_drono - INFO - Starting app on device R9WR310F4GJ
+2025-05-11 09:48:22,112 - robust_batch_drono - INFO - Starting simulation on device R38N9014KDM
+2025-05-11 09:48:22,117 - robust_batch_drono - INFO - Starting simulation on device R9WR310F4GJ
+2025-05-11 09:48:22,315 - robust_batch_drono - INFO - Verifying settings on device R9WR310F4GJ
+2025-05-11 09:48:22,763 - robust_batch_drono - INFO - Verifying settings on device R38N9014KDM
+2025-05-11 09:48:38,549 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:48:38,551 - settings_api - INFO - Saved Instagram URL to /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/instagram_url.txt
+2025-05-11 09:48:38,551 - settings_api - INFO - Running Instagram settings command: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/run_instagram.sh --all-devices --parallel
+2025-05-11 09:48:46,287 - settings_api - ERROR - Instagram settings failed: 2025-05-11 09:48:38,617 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+2025-05-11 09:48:38,629 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:48:38,629 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 09:48:38,629 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 09:48:38,631 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 09:48:38,631 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 09:48:46,064 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 4.4 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 12.6 MB/s (720 bytes in 0.000s)
+
+2025-05-11 09:48:46,279 - batch_instagram - ERROR - Failed to start Instagram simulation on device R38N9014KDM: url_config.xml: 1 file pushed, 0 skipped. 2.9 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 11.4 MB/s (720 bytes in 0.000s)
+
+2025-05-11 09:48:46,280 - batch_instagram - INFO - Completed in 7.65 seconds
+2025-05-11 09:48:46,280 - batch_instagram - INFO - Results: 0/2 successful
+2025-05-11 09:48:46,280 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+2025-05-11 09:48:46,280 - batch_instagram - INFO - R38N9014KDM: FAILED
+
+2025-05-11 09:51:41,872 - settings_api - INFO - Saved Instagram URL to /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/instagram_url.txt
+2025-05-11 09:51:41,872 - settings_api - INFO - Running enhanced script for device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+2025-05-11 09:51:45,104 - settings_api - ERROR - Failed to set Instagram URL on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 2.8 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 8.7 MB/s (1090 bytes in 0.000s)
+default_url.xml: 1 file pushed, 0 skipped. 2.1 MB/s (257 bytes in 0.000s)
+
+2025-05-11 09:54:27,983 - settings_api - INFO - Saved Instagram URL to /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/instagram_url.txt
+2025-05-11 09:54:27,983 - settings_api - INFO - Running direct URL setter for device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+2025-05-11 09:54:52,761 - settings_api - WARNING - Possibly set Instagram URL on device R9WR310F4GJ (cannot verify): [2025-05-11 09:54:28] Starting direct URL setter for device: R9WR310F4GJ
+[2025-05-11 09:54:28] Target URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+[2025-05-11 09:54:28] Step 1: Verifying device connection
+[2025-05-11 09:54:28] Device is connected and authorized
+[2025-05-11 09:54:28] Step 2: Stopping any running instances of the app
+[2025-05-11 09:54:30] Method 1: Direct file creation and push
+[2025-05-11 09:54:30] Pushing settings file to device
+[2025-05-11 09:54:30] Copying settings to application locations
+[2025-05-11 09:54:31] Method 2: Using broadcast intents to set URL
+[2025-05-11 09:54:31] Running broadcast: am broadcast -a com.example.imtbf.debug.COMMAND --es command set_url --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:32] Running broadcast: am broadcast -a com.example.imtbf.debug.COMMAND --es command reload_url --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:33] Running broadcast: am broadcast -a com.example.imtbf.debug.SET_URL --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+Broadcasting: Intent { act=com.example.imtbf.debug.SET_URL flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:34] Running broadcast: am broadcast -a com.example.imtbf.debug.LOAD_URL --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+Broadcasting: Intent { act=com.example.imtbf.debug.LOAD_URL flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:35] Method 3: Starting app with deep link containing URL
+[2025-05-11 09:54:35] Starting with deep link: traffic-sim://load_url?url=https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123&force=true
+Starting: Intent { act=android.intent.action.VIEW dat=traffic-sim://load_url?url=https://l.instagram.com/?u=https://example.com/test?param=value&another=123&force=true cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+[2025-05-11 09:54:37] Starting with deep link: traffic-sim://set_url?url=https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+Starting: Intent { act=android.intent.action.VIEW dat=traffic-sim://set_url?url=https://l.instagram.com/?u=https://example.com/test?param=value&another=123 cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+[2025-05-11 09:54:39] Starting with deep link: traffic-sim://instagram?url=https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+Starting: Intent { act=android.intent.action.VIEW dat=traffic-sim://instagram?url=https://l.instagram.com/?u=https://example.com/test?param=value&another=123 cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+[2025-05-11 09:54:41] Method 4: Starting app normally and sending broadcast
+Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity }
+[2025-05-11 09:54:45] Running broadcast again: am broadcast -a com.example.imtbf.debug.COMMAND --es command set_url --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:47] Running broadcast again: am broadcast -a com.example.imtbf.debug.COMMAND --es command reload_url --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:48] Running broadcast again: am broadcast -a com.example.imtbf.debug.SET_URL --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+Broadcasting: Intent { act=com.example.imtbf.debug.SET_URL flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:49] Running broadcast again: am broadcast -a com.example.imtbf.debug.LOAD_URL --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+Broadcasting: Intent { act=com.example.imtbf.debug.LOAD_URL flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:50] Method 5: Starting simulation
+Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+[2025-05-11 09:54:52] Verification: Checking if URL was set correctly
+[2025-05-11 09:54:52] Current preferences file content:
+[2025-05-11 09:54:52] <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="use_webview_mode" value="false" />
+    <string name="device_id">c418e5e8-abbb-4d63-847d-5d4a02f07bd7</string>
+    <string name="current_session_id">20250511_095434</string>
+    <string name="target_url">https://example.com</string>
+    <int name="delay_max" value="5" />
+    <boolean name="is_first_run" value="false" />
+    <int name="airplane_mode_delay" value="3000" />
+    <int name="iterations" value="1000" />
+    <boolean name="is_running" value="true" />
+    <boolean name="config_expanded" value="true" />
+    <int name="min_interval" value="1" />
+    <int name="delay_min" value="1" />
+    <int name="max_interval" value="2" />
+</map>
+[2025-05-11 09:54:52] WARNING: Could not verify URL was set correctly, but actions were taken
+[2025-05-11 09:54:52] App should be running with the URL, but verification was not possible
+⚠️ WARNING: URL may be set on device R9WR310F4GJ, but verification not possible
+
+2025-05-11 09:56:38,268 - settings_api - INFO - Running direct URL command for device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+2025-05-11 09:56:45,378 - settings_api - INFO - Successfully set URL on device R9WR310F4GJ
+2025-05-11 13:15:33,328 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 13:15:33,328 - settings_api - INFO - Running direct URL command for device R38N9014KDM with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 13:15:33,330 - settings_api - INFO - Running direct URL command for device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 13:15:43,253 - settings_api - INFO - Successfully set URL on device R9WR310F4GJ
+2025-05-11 13:15:43,327 - settings_api - INFO - Successfully set URL on device R38N9014KDM
+2025-05-11 13:16:18,448 - settings_api - INFO - Running direct URL command for device R9WR310F4GJ with URL: https://example.com/test
+2025-05-11 13:16:28,344 - settings_api - INFO - Successfully set URL on device R9WR310F4GJ
+2025-05-11 13:17:42,979 - robust_batch_drono - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 13:17:42,979 - settings_api - INFO - Running direct URL command for device R38N9014KDM with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 13:17:42,981 - settings_api - INFO - Running direct URL command for device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 13:17:52,813 - settings_api - INFO - Successfully set URL on device R9WR310F4GJ
+2025-05-11 13:17:52,910 - settings_api - INFO - Successfully set URL on device R38N9014KDM

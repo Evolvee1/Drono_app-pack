@@ -1,0 +1,75 @@
+[Unit]
+Description=Drono Control Server
+After=network.target postgresql.service redis.service
+Requires=postgresql.service redis.service
+Wants=usb.service
+
+[Service]
+Type=simple
+User=drono
+Group=drono
+WorkingDirectory=/opt/drono-control
+Environment=PYTHONPATH=/opt/drono-control
+Environment=SECRET_KEY=your-secret-key-here
+Environment=DATABASE_URL=postgresql://drono:drono@localhost/drono
+Environment=REDIS_URL=redis://localhost:6379
+Environment=DEBUG=False
+
+ExecStart=/opt/drono-control/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+# Security
+NoNewPrivileges=yes
+ProtectSystem=full
+ProtectHome=yes
+PrivateTmp=yes
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+# Resource limits
+LimitNOFILE=65535
+LimitNPROC=4096
+
+# Restart policy
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 
+Description=Drono Control Server
+After=network.target postgresql.service redis.service
+Requires=postgresql.service redis.service
+Wants=usb.service
+
+[Service]
+Type=simple
+User=drono
+Group=drono
+WorkingDirectory=/opt/drono-control
+Environment=PYTHONPATH=/opt/drono-control
+Environment=SECRET_KEY=your-secret-key-here
+Environment=DATABASE_URL=postgresql://drono:drono@localhost/drono
+Environment=REDIS_URL=redis://localhost:6379
+Environment=DEBUG=False
+
+ExecStart=/opt/drono-control/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+# Security
+NoNewPrivileges=yes
+ProtectSystem=full
+ProtectHome=yes
+PrivateTmp=yes
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+# Resource limits
+LimitNOFILE=65535
+LimitNPROC=4096
+
+# Restart policy
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 

@@ -1,0 +1,70 @@
+2025-05-11 07:27:41,199 - batch_simulation - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:27:41,200 - batch_simulation - INFO - Starting simulations with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:27:41,200 - batch_simulation - INFO - Settings: {'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 07:27:41,200 - batch_simulation - INFO - Devices: ['R9WR310F4GJ']
+2025-05-11 07:27:41,200 - batch_simulation - INFO - Execution mode: Sequential
+2025-05-11 07:27:41,200 - batch_simulation - INFO - Running simulation on device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:27:48,430 - batch_simulation - INFO - Successfully started simulation on device R9WR310F4GJ
+2025-05-11 07:27:48,430 - batch_simulation - INFO - Completed in 7.23 seconds
+2025-05-11 07:27:48,430 - batch_simulation - INFO - Results: 1/1 successful
+2025-05-11 07:27:48,430 - batch_simulation - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:27:54,789 - batch_simulation - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:27:54,790 - batch_simulation - INFO - Starting simulations with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:27:54,790 - batch_simulation - INFO - Settings: {'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 07:27:54,790 - batch_simulation - INFO - Devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 07:27:54,790 - batch_simulation - INFO - Execution mode: Parallel
+2025-05-11 07:27:54,792 - batch_simulation - INFO - Running simulation on device R38N9014KDM with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:27:54,792 - batch_simulation - INFO - Running simulation on device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:28:01,644 - batch_simulation - INFO - Successfully started simulation on device R38N9014KDM
+2025-05-11 07:28:01,991 - batch_simulation - INFO - Successfully started simulation on device R9WR310F4GJ
+2025-05-11 07:28:01,992 - batch_simulation - INFO - Completed in 7.20 seconds
+2025-05-11 07:28:01,992 - batch_simulation - INFO - Results: 2/2 successful
+2025-05-11 07:28:01,992 - batch_simulation - INFO - R38N9014KDM: SUCCESS
+2025-05-11 07:28:01,992 - batch_simulation - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:28:05,973 - batch_simulation - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:28:05,974 - batch_simulation - INFO - Starting simulations with URL: https://veewoy.com/ip-test
+2025-05-11 07:28:05,974 - batch_simulation - INFO - Settings: {'iterations': 100, 'min_interval': 1, 'max_interval': 3, 'delay': 2000, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 07:28:05,974 - batch_simulation - INFO - Devices: ['R9WR310F4GJ']
+2025-05-11 07:28:05,974 - batch_simulation - INFO - Execution mode: Sequential
+2025-05-11 07:28:05,974 - batch_simulation - INFO - Running simulation on device R9WR310F4GJ with URL: https://veewoy.com/ip-test
+2025-05-11 07:28:09,751 - batch_simulation - INFO - Successfully started simulation on device R9WR310F4GJ
+2025-05-11 07:28:09,751 - batch_simulation - INFO - Completed in 3.78 seconds
+2025-05-11 07:28:09,751 - batch_simulation - INFO - Results: 1/1 successful
+2025-05-11 07:28:09,751 - batch_simulation - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:28:14,572 - batch_simulation - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:28:14,572 - batch_simulation - INFO - Starting simulations with URL: https://example.com
+2025-05-11 07:28:14,572 - batch_simulation - INFO - Settings: {'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 07:28:14,572 - batch_simulation - INFO - Devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 07:28:14,572 - batch_simulation - INFO - Execution mode: Parallel
+2025-05-11 07:28:14,573 - batch_simulation - INFO - Running simulation on device R38N9014KDM with URL: https://example.com
+2025-05-11 07:28:14,573 - batch_simulation - INFO - Running simulation on device R9WR310F4GJ with URL: https://example.com
+2025-05-11 07:28:18,421 - batch_simulation - INFO - Successfully started simulation on device R9WR310F4GJ
+2025-05-11 07:28:21,374 - batch_simulation - INFO - Successfully started simulation on device R38N9014KDM
+2025-05-11 07:28:21,375 - batch_simulation - INFO - Completed in 6.80 seconds
+2025-05-11 07:28:21,375 - batch_simulation - INFO - Results: 2/2 successful
+2025-05-11 07:28:21,375 - batch_simulation - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:28:21,375 - batch_simulation - INFO - R38N9014KDM: SUCCESS
+2025-05-11 07:30:02,377 - batch_simulation - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:30:02,378 - batch_simulation - INFO - Starting simulations with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:30:02,378 - batch_simulation - INFO - Settings: {'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 07:30:02,378 - batch_simulation - INFO - Devices: ['R9WR310F4GJ']
+2025-05-11 07:30:02,378 - batch_simulation - INFO - Execution mode: Sequential
+2025-05-11 07:30:02,378 - batch_simulation - INFO - Running simulation on device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:30:02,386 - batch_simulation - ERROR - Failed to start simulation on device R9WR310F4GJ: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/pre_start_settings.sh: line 170: unexpected EOF while looking for matching `"'
+/Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/pre_start_settings.sh: line 174: syntax error: unexpected end of file
+
+2025-05-11 07:30:02,386 - batch_simulation - INFO - Completed in 0.01 seconds
+2025-05-11 07:30:02,386 - batch_simulation - INFO - Results: 0/1 successful
+2025-05-11 07:30:02,386 - batch_simulation - INFO - R9WR310F4GJ: FAILED
+2025-05-11 07:31:23,045 - batch_simulation - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:31:23,046 - batch_simulation - INFO - Starting simulations with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:31:23,046 - batch_simulation - INFO - Settings: {'iterations': 900, 'min_interval': 1, 'max_interval': 2, 'delay': 3000, 'use_webview_mode': True, 'rotate_ip': True, 'use_random_device_profile': True, 'new_webview_per_request': True}
+2025-05-11 07:31:23,046 - batch_simulation - INFO - Devices: ['R9WR310F4GJ']
+2025-05-11 07:31:23,046 - batch_simulation - INFO - Execution mode: Sequential
+2025-05-11 07:31:23,046 - batch_simulation - INFO - Running simulation on device R9WR310F4GJ with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:31:23,054 - batch_simulation - ERROR - Failed to start simulation on device R9WR310F4GJ: /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/pre_start_settings.sh: line 171: unexpected EOF while looking for matching `"'
+/Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/pre_start_settings.sh: line 175: syntax error: unexpected end of file
+
+2025-05-11 07:31:23,054 - batch_simulation - INFO - Completed in 0.01 seconds
+2025-05-11 07:31:23,054 - batch_simulation - INFO - Results: 0/1 successful
+2025-05-11 07:31:23,054 - batch_simulation - INFO - R9WR310F4GJ: FAILED

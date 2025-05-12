@@ -1,0 +1,39 @@
+[Unit]
+Description=Drono Android Device Control Server
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+User=drono
+Group=drono
+WorkingDirectory=/opt/drono/server
+Environment="PATH=/opt/drono/venv/bin"
+Environment="DATABASE_URL=postgresql://drono:drono@localhost:5432/drono"
+Environment="SECRET_KEY=your-secret-key-here"
+Environment="ALGORITHM=HS256"
+Environment="ACCESS_TOKEN_EXPIRE_MINUTES=30"
+ExecStart=/opt/drono/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 
+Description=Drono Android Device Control Server
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+User=drono
+Group=drono
+WorkingDirectory=/opt/drono/server
+Environment="PATH=/opt/drono/venv/bin"
+Environment="DATABASE_URL=postgresql://drono:drono@localhost:5432/drono"
+Environment="SECRET_KEY=your-secret-key-here"
+Environment="ALGORITHM=HS256"
+Environment="ACCESS_TOKEN_EXPIRE_MINUTES=30"
+ExecStart=/opt/drono/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target 

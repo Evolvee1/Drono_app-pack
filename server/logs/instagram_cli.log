@@ -1,0 +1,386 @@
+2025-05-12 00:41:23,494 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:41:23,659 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:41:23,659 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:41:23,756 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 00:41:23,757 - core.instagram_manager - INFO - Created URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:41:23,757 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 00:41:23,758 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:41:23,758 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 00:41:23,906 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:41:23,907 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 00:41:23,998 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 00:41:23,999 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:41:24,301 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 00:41:24,302 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 00:41:24,387 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 00:41:24,387 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 00:41:27,738 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 00:41:27,739 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 00:41:27,880 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 00:41:27,880 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 00:41:27,921 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 00:41:27,922 - core.instagram_manager - INFO - Created URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:41:27,922 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 00:41:27,923 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:41:27,923 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 00:41:28,003 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 00:41:28,003 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 00:41:28,077 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 00:41:28,077 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 00:41:28,313 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 00:41:28,313 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 00:41:28,373 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 00:41:28,373 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 00:41:31,670 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:01:48,417 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:01:48,576 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:01:48,577 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:01:48,670 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:01:48,671 - core.instagram_manager - INFO - Created URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 01:01:48,671 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:01:48,671 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:01:48,671 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:01:48,764 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:01:48,764 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:01:48,853 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:01:48,853 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:01:49,175 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:01:49,175 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:01:52,263 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:01:52,263 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:01:55,579 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:01:55,716 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:01:55,839 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:01:55,839 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:01:55,913 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:01:55,914 - core.instagram_manager - INFO - Created URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 01:01:55,914 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:01:55,914 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:01:55,915 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:01:56,023 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:01:56,023 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:01:56,197 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:01:56,197 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:01:56,682 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:01:56,682 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:01:59,777 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:01:59,778 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:02:03,053 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:02:50,509 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:02:50,667 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:02:50,667 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:02:50,749 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:02:50,750 - core.instagram_manager - INFO - Created URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 01:02:50,750 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:02:50,751 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:02:50,751 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:02:50,857 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:02:50,857 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:02:50,956 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:02:50,957 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:02:51,274 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:02:51,274 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:02:54,358 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:02:54,359 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:02:57,649 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:02:57,802 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:02:57,920 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:02:57,920 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:02:58,001 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:02:58,001 - core.instagram_manager - INFO - Created URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 01:02:58,002 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:02:58,002 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:02:58,002 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:02:58,114 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:02:58,114 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:02:58,222 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:02:58,222 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:02:58,653 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:02:58,653 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:03:01,759 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:03:01,759 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:03:05,107 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:03:28,824 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:03:28,978 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:03:28,978 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:03:29,081 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:03:29,081 - core.instagram_manager - INFO - Created URL config file with URL: "https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA"
+2025-05-12 01:03:29,081 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:03:29,081 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:03:29,082 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:03:29,195 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:03:29,196 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:03:29,289 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:03:29,290 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:03:29,607 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:03:29,607 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:03:32,692 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:03:32,693 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:03:35,996 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:03:36,132 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:03:36,251 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:03:36,251 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:03:36,361 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:03:36,361 - core.instagram_manager - INFO - Created URL config file with URL: "https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA"
+2025-05-12 01:03:36,361 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:03:36,362 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:03:36,362 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:03:36,503 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:03:36,503 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:03:36,610 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:03:36,611 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:03:37,045 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:03:37,046 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:03:40,140 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:03:40,141 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:03:43,503 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:08:07,512 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:08:07,669 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:08:07,669 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:08:07,756 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:08:07,757 - core.instagram_manager - INFO - Created URL config file with URL: "https://veewoy.com/ip-text"
+2025-05-12 01:08:07,757 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:08:07,758 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:08:07,758 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:08:07,852 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:08:07,852 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:08:07,947 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:08:07,947 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:08:08,317 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:08:08,317 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:08:11,402 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:08:11,403 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:08:14,698 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:08:14,829 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:08:14,952 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:08:14,952 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:08:14,997 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:08:14,998 - core.instagram_manager - INFO - Created URL config file with URL: "https://veewoy.com/ip-text"
+2025-05-12 01:08:14,998 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:08:14,998 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:08:14,998 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:08:15,066 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:08:15,067 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:08:15,150 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:08:15,150 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:08:15,379 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:08:15,380 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:08:18,437 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:08:18,437 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:08:21,692 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:09:58,620 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:09:58,781 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:09:58,781 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:09:58,879 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:09:58,880 - core.instagram_manager - INFO - Created URL config file with URL: "https://veewoy.com/ip-text"
+2025-05-12 01:09:58,880 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:09:58,880 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:09:58,880 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:09:58,988 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:09:58,989 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:09:59,091 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:09:59,091 - core.instagram_manager - INFO - Step 5c: Directly updating target_url in preferences file
+2025-05-12 01:09:59,323 - core.instagram_manager - INFO - Verified: target_url is now set to "https://veewoy.com/ip-text"
+2025-05-12 01:09:59,323 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:09:59,689 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:09:59,689 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:10:02,796 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:10:02,796 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:10:06,092 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:10:06,232 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:10:06,361 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:10:06,362 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:10:06,404 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:10:06,405 - core.instagram_manager - INFO - Created URL config file with URL: "https://veewoy.com/ip-text"
+2025-05-12 01:10:06,405 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:10:06,405 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:10:06,405 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:10:06,472 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:10:06,472 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:10:06,555 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:10:06,555 - core.instagram_manager - INFO - Step 5c: Directly updating target_url in preferences file
+2025-05-12 01:10:06,690 - core.instagram_manager - INFO - Verified: target_url is now set to "https://veewoy.com/ip-text"
+2025-05-12 01:10:06,690 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:10:06,915 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:10:06,915 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:10:09,975 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:10:09,975 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:10:13,243 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:11:25,694 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:11:25,833 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:11:25,833 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:11:25,914 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:11:25,916 - core.instagram_manager - INFO - Created URL config file with URL: "https://veewoy.com/ip-text"
+2025-05-12 01:11:25,916 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:11:25,916 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:11:25,916 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:11:26,002 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:11:26,002 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:11:26,089 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:11:26,089 - core.instagram_manager - INFO - Step 5c: Directly updating target_url in preferences file
+2025-05-12 01:11:26,089 - core.instagram_manager - INFO - Updating target_url to "https://veewoy.com/ip-text"...
+2025-05-12 01:11:26,529 - core.instagram_manager - WARNING - Could not verify target_url was set to "https://veewoy.com/ip-text"
+2025-05-12 01:11:26,529 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:11:26,851 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:11:26,851 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:11:29,964 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:11:29,964 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:11:33,266 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:11:33,394 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:11:33,524 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:11:33,524 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:11:33,568 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:11:33,568 - core.instagram_manager - INFO - Created URL config file with URL: "https://veewoy.com/ip-text"
+2025-05-12 01:11:33,569 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:11:33,569 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:11:33,569 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:11:33,645 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:11:33,646 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:11:33,730 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:11:33,730 - core.instagram_manager - INFO - Step 5c: Directly updating target_url in preferences file
+2025-05-12 01:11:33,730 - core.instagram_manager - INFO - Updating target_url to "https://veewoy.com/ip-text"...
+2025-05-12 01:11:33,871 - core.instagram_manager - WARNING - Could not verify target_url was set to "https://veewoy.com/ip-text"
+2025-05-12 01:11:33,871 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:11:34,112 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:11:34,112 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:11:37,161 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:11:37,161 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:11:40,443 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:12:33,570 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:12:33,724 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:12:33,725 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:12:33,810 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:12:33,811 - core.instagram_manager - INFO - Created URL config file with URL: "https://veewoy.com/ip-text"
+2025-05-12 01:12:33,811 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:12:33,811 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:12:33,811 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:12:33,907 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:12:33,908 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:12:33,998 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:12:33,999 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 01:12:33,999 - core.instagram_manager - INFO - Using direct adb command to set target_url to "https://veewoy.com/ip-text"
+2025-05-12 01:12:34,148 - core.instagram_manager - INFO - Root access failed, trying with run-as
+2025-05-12 01:12:34,180 - core.instagram_manager - ERROR - Failed to push prefs file with run-as: /system/bin/sh: can't create /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml: Permission denied
+
+2025-05-12 01:12:34,181 - core.instagram_manager - WARNING - Direct setting of target_url may not have worked, continuing anyway
+2025-05-12 01:12:34,181 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:12:34,497 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:12:34,497 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:12:37,607 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:12:37,608 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:12:40,901 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:12:41,042 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:12:41,180 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:12:41,180 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:12:41,228 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:12:41,229 - core.instagram_manager - INFO - Created URL config file with URL: "https://veewoy.com/ip-text"
+2025-05-12 01:12:41,229 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:12:41,229 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:12:41,229 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:12:41,294 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:12:41,295 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:12:41,370 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:12:41,370 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 01:12:41,370 - core.instagram_manager - INFO - Using direct adb command to set target_url to "https://veewoy.com/ip-text"
+2025-05-12 01:12:41,462 - core.instagram_manager - INFO - Root access failed, trying with run-as
+2025-05-12 01:12:41,490 - core.instagram_manager - ERROR - Failed to push prefs file with run-as: /system/bin/sh: can't create /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml: Permission denied
+
+2025-05-12 01:12:41,490 - core.instagram_manager - WARNING - Direct setting of target_url may not have worked, continuing anyway
+2025-05-12 01:12:41,490 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:12:41,709 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:12:41,709 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:12:44,767 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:12:44,768 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:12:48,053 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:22:20,888 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:22:21,049 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:22:21,050 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:22:21,145 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:22:21,146 - core.instagram_manager - INFO - Created URL config file with URL: ""https://veewoy.com/ip-text""
+2025-05-12 01:22:21,146 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:22:21,146 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:22:21,146 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:22:21,247 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:22:21,247 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:22:21,341 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:22:21,341 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 01:22:21,341 - core.instagram_manager - INFO - Using direct adb command to set target_url to "https://veewoy.com/ip-text"
+2025-05-12 01:22:21,482 - core.instagram_manager - INFO - Root access failed, trying with run-as
+2025-05-12 01:22:21,517 - core.instagram_manager - ERROR - Failed to push prefs file with run-as: /system/bin/sh: can't create /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml: Permission denied
+
+2025-05-12 01:22:21,517 - core.instagram_manager - WARNING - Direct setting of target_url may not have worked, continuing anyway
+2025-05-12 01:22:21,517 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:22:21,833 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:22:21,833 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:22:24,938 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:22:24,938 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:22:28,261 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:22:28,426 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:22:28,548 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:22:28,548 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:22:28,596 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:22:28,597 - core.instagram_manager - INFO - Created URL config file with URL: ""https://veewoy.com/ip-text""
+2025-05-12 01:22:28,597 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:22:28,597 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:22:28,597 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:22:28,666 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:22:28,666 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:22:28,732 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:22:28,732 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 01:22:28,732 - core.instagram_manager - INFO - Using direct adb command to set target_url to "https://veewoy.com/ip-text"
+2025-05-12 01:22:28,835 - core.instagram_manager - INFO - Root access failed, trying with run-as
+2025-05-12 01:22:28,864 - core.instagram_manager - ERROR - Failed to push prefs file with run-as: /system/bin/sh: can't create /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml: Permission denied
+
+2025-05-12 01:22:28,864 - core.instagram_manager - WARNING - Direct setting of target_url may not have worked, continuing anyway
+2025-05-12 01:22:28,864 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:22:29,104 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:22:29,105 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:22:32,165 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:22:32,166 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:22:35,463 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 01:22:53,759 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 01:22:53,920 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 01:22:53,920 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 01:22:54,012 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 01:22:54,013 - core.instagram_manager - INFO - Created URL config file with URL: ""https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA""
+2025-05-12 01:22:54,013 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 01:22:54,013 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:22:54,013 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 01:22:54,116 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 01:22:54,117 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 01:22:54,206 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 01:22:54,206 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 01:22:54,206 - core.instagram_manager - INFO - Using direct adb command to set target_url to "https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA"
+2025-05-12 01:22:54,441 - core.instagram_manager - INFO - Root access failed, trying with run-as
+2025-05-12 01:22:54,474 - core.instagram_manager - ERROR - Failed to push prefs file with run-as: /system/bin/sh: can't create /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml: Permission denied
+
+2025-05-12 01:22:54,474 - core.instagram_manager - WARNING - Direct setting of target_url may not have worked, continuing anyway
+2025-05-12 01:22:54,474 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 01:22:54,827 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 01:22:54,827 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 01:22:57,933 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 01:22:57,934 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 01:23:01,227 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 01:23:01,347 - core.instagram_manager - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 01:23:01,479 - core.instagram_manager - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 01:23:01,480 - core.instagram_manager - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 01:23:01,526 - core.instagram_manager - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 01:23:01,527 - core.instagram_manager - INFO - Created URL config file with URL: ""https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA""
+2025-05-12 01:23:01,527 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 01:23:01,527 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 01:23:01,527 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 01:23:01,584 - core.instagram_manager - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 01:23:01,584 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 01:23:01,664 - core.instagram_manager - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 01:23:01,664 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 01:23:01,664 - core.instagram_manager - INFO - Using direct adb command to set target_url to "https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA"
+2025-05-12 01:23:01,754 - core.instagram_manager - INFO - Root access failed, trying with run-as
+2025-05-12 01:23:01,784 - core.instagram_manager - ERROR - Failed to push prefs file with run-as: /system/bin/sh: can't create /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml: Permission denied
+
+2025-05-12 01:23:01,784 - core.instagram_manager - WARNING - Direct setting of target_url may not have worked, continuing anyway
+2025-05-12 01:23:01,784 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 01:23:02,002 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 01:23:02,003 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 01:23:05,059 - core.instagram_manager - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 01:23:05,059 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 01:23:08,327 - core.instagram_manager - INFO - Verified WebView process is running on R9WR310F4GJ

@@ -1,0 +1,37 @@
+# Drono Android device rules
+# This file should be placed in /etc/udev/rules.d/
+
+# Add udev rules for Android devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0660", GROUP="drono", SYMLINK+="drono_%n"
+
+# Add rules for specific device models
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", MODE="0660", GROUP="drono", SYMLINK+="drono_pixel_%n"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee3", MODE="0660", GROUP="drono", SYMLINK+="drono_pixel_%n"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee4", MODE="0660", GROUP="drono", SYMLINK+="drono_pixel_%n"
+
+# Add rules for Samsung devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0660", GROUP="drono", SYMLINK+="drono_samsung_%n"
+
+# Add rules for generic Android devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0660", GROUP="drono", SYMLINK+="drono_android_%n"
+
+# Add rules for USB debugging
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d001", MODE="0660", GROUP="drono", SYMLINK+="drono_adb_%n" 
+# This file should be placed in /etc/udev/rules.d/
+
+# Add udev rules for Android devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0660", GROUP="drono", SYMLINK+="drono_%n"
+
+# Add rules for specific device models
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", MODE="0660", GROUP="drono", SYMLINK+="drono_pixel_%n"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee3", MODE="0660", GROUP="drono", SYMLINK+="drono_pixel_%n"
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee4", MODE="0660", GROUP="drono", SYMLINK+="drono_pixel_%n"
+
+# Add rules for Samsung devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0660", GROUP="drono", SYMLINK+="drono_samsung_%n"
+
+# Add rules for generic Android devices
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0660", GROUP="drono", SYMLINK+="drono_android_%n"
+
+# Add rules for USB debugging
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d001", MODE="0660", GROUP="drono", SYMLINK+="drono_adb_%n" 

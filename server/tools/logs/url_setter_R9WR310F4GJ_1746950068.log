@@ -1,0 +1,43 @@
+[2025-05-11 09:54:28] Starting direct URL setter for device: R9WR310F4GJ
+[2025-05-11 09:54:28] Target URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+[2025-05-11 09:54:28] Step 1: Verifying device connection
+[2025-05-11 09:54:28] Device is connected and authorized
+[2025-05-11 09:54:28] Step 2: Stopping any running instances of the app
+[2025-05-11 09:54:30] Method 1: Direct file creation and push
+[2025-05-11 09:54:30] Pushing settings file to device
+[2025-05-11 09:54:30] Copying settings to application locations
+[2025-05-11 09:54:31] Method 2: Using broadcast intents to set URL
+[2025-05-11 09:54:31] Running broadcast: am broadcast -a com.example.imtbf.debug.COMMAND --es command set_url --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+[2025-05-11 09:54:32] Running broadcast: am broadcast -a com.example.imtbf.debug.COMMAND --es command reload_url --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+[2025-05-11 09:54:33] Running broadcast: am broadcast -a com.example.imtbf.debug.SET_URL --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+[2025-05-11 09:54:34] Running broadcast: am broadcast -a com.example.imtbf.debug.LOAD_URL --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+[2025-05-11 09:54:35] Method 3: Starting app with deep link containing URL
+[2025-05-11 09:54:35] Starting with deep link: traffic-sim://load_url?url=https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123&force=true
+[2025-05-11 09:54:37] Starting with deep link: traffic-sim://set_url?url=https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+[2025-05-11 09:54:39] Starting with deep link: traffic-sim://instagram?url=https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+[2025-05-11 09:54:41] Method 4: Starting app normally and sending broadcast
+[2025-05-11 09:54:45] Running broadcast again: am broadcast -a com.example.imtbf.debug.COMMAND --es command set_url --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+[2025-05-11 09:54:47] Running broadcast again: am broadcast -a com.example.imtbf.debug.COMMAND --es command reload_url --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+[2025-05-11 09:54:48] Running broadcast again: am broadcast -a com.example.imtbf.debug.SET_URL --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+[2025-05-11 09:54:49] Running broadcast again: am broadcast -a com.example.imtbf.debug.LOAD_URL --es url "https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" -p com.example.imtbf.debug
+[2025-05-11 09:54:50] Method 5: Starting simulation
+[2025-05-11 09:54:52] Verification: Checking if URL was set correctly
+[2025-05-11 09:54:52] Current preferences file content:
+[2025-05-11 09:54:52] <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="use_webview_mode" value="false" />
+    <string name="device_id">c418e5e8-abbb-4d63-847d-5d4a02f07bd7</string>
+    <string name="current_session_id">20250511_095434</string>
+    <string name="target_url">https://example.com</string>
+    <int name="delay_max" value="5" />
+    <boolean name="is_first_run" value="false" />
+    <int name="airplane_mode_delay" value="3000" />
+    <int name="iterations" value="1000" />
+    <boolean name="is_running" value="true" />
+    <boolean name="config_expanded" value="true" />
+    <int name="min_interval" value="1" />
+    <int name="delay_min" value="1" />
+    <int name="max_interval" value="2" />
+</map>
+[2025-05-11 09:54:52] WARNING: Could not verify URL was set correctly, but actions were taken
+[2025-05-11 09:54:52] App should be running with the URL, but verification was not possible

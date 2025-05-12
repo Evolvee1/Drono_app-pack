@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drono WebSocket Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .device-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .device-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .device-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .status-running {
+            background-color: #4CAF50;
+        }
+        .status-stopped {
+            background-color: #F44336;
+        }
+        .status-unknown {
+            background-color: #9E9E9E;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow: auto;
+            font-size: 13px;
+        }
+        .log-container {
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .login-container {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        input {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 12px;
+            margin-right: 10px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3367d6;
+        }
+        .connection-status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .connected {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .disconnected {
+            background-color: #F44336;
+            color: white;
+        }
+        .connecting {
+            background-color: #FFC107;
+            color: black;
+        }
+        .progress-container {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .progress-text {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .time-remaining {
+            font-size: 13px;
+            color: #666;
+            margin-top: 3px;
+        }
+        .simulation-config {
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        .simulation-config input[type="number"] {
+            width: 80px;
+        }
+        .simulation-config input[type="text"] {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drono Device Control <span id="connection-status" class="connection-status disconnected">Disconnected</span></h1>
+    
+    <div class="login-container">
+        <h3>Authentication</h3>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" value="admin" placeholder="Username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" value="adminpassword" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <span id="auth-status"></span>
+        </div>
+    </div>
+    
+    <div>
+        <button onclick="connectWebSocket()">Connect WebSocket</button>
+        <button onclick="requestDeviceList()">Refresh Device List</button>
+    </div>
+    
+    <h2>Connected Devices</h2>
+    <div id="device-container" class="device-container">
+        <p>No devices connected. Please connect WebSocket first.</p>
+    </div>
+    
+    <h2>WebSocket Log</h2>
+    <div id="log-container" class="log-container"></div>
+    
+    <script>
+        let ws = null;
+        let devices = {};
+        let reconnectAttempts = 0;
+        let maxReconnectAttempts = 5;
+        let reconnectInterval = 3000;
+        let reconnectTimeoutId = null;
+        let authToken = "";
+        let deviceStartTimes = {};
+        let lastStatusUpdate = 0;
+        let pollingEnabled = false;
+        let pollingInterval = null;
+        
+        function updateConnectionStatus(status) {
+            const statusElement = document.getElementById('connection-status');
+            statusElement.className = 'connection-status ' + status;
+            statusElement.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+        }
+        
+        function logMessage(message) {
+            const logContainer = document.getElementById('log-container');
+            const logEntry = document.createElement('div');
+            logEntry.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+        
+        function formatTimeRemaining(seconds) {
+            if (seconds < 60) {
+                return `${Math.floor(seconds)} seconds`;
+            } else if (seconds < 3600) {
+                return `${Math.floor(seconds / 60)} minutes, ${Math.floor(seconds % 60)} seconds`;
+            } else {
+                const hours = Math.floor(seconds / 3600);
+                const minutes = Math.floor((seconds % 3600) / 60);
+                return `${hours} hours, ${minutes} minutes`;
+            }
+        }
+        
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const authStatus = document.getElementById('auth-status');
+            
+            if (!username || !password) {
+                authStatus.textContent = "Please enter username and password";
+                authStatus.style.color = "red";
+                return;
+            }
+            
+            authStatus.textContent = "Authenticating...";
+            authStatus.style.color = "black";
+            
+            const formData = new FormData();
+            formData.append('username', username);
+            formData.append('password', password);
+            
+            fetch(`http://${window.location.hostname}:8000/auth/token`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Authentication failed: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                authToken = data.access_token;
+                authStatus.textContent = "✅ Authentication successful";
+                authStatus.style.color = "green";
+                logMessage("Successfully authenticated");
+                
+                // Automatically connect WebSocket and request device list
+                connectWebSocket();
+                requestDeviceList();
+                
+                // Start polling as a fallback
+                startPolling();
+            })
+            .catch(error => {
+                authStatus.textContent = `❌ ${error.message}`;
+                authStatus.style.color = "red";
+                logMessage(`Authentication error: ${error.message}`);
+                authToken = "";
+            });
+        }
+        
+        function connectWebSocket() {
+            if (ws) {
+                ws.close();
+            }
+            
+            updateConnectionStatus('connecting');
+            logMessage('Connecting to WebSocket...');
+            reconnectAttempts = 0;
+            
+            try {
+                // Create WebSocket
+                ws = new WebSocket(`ws://${window.location.hostname}:8000/devices/ws`);
+                
+                ws.onopen = function(event) {
+                    updateConnectionStatus('connected');
+                    logMessage('WebSocket connection established');
+                    reconnectAttempts = 0;
+                    
+                    // Request initial device list
+                    try {
+                        ws.send(JSON.stringify({
+                            type: 'request_device_list'
+                        }));
+                    } catch (error) {
+                        logMessage(`Error sending initial request: ${error.message}`);
+                    }
+                };
+                
+                ws.onmessage = function(event) {
+                    try {
+                        const data = JSON.parse(event.data);
+                        
+                        if (data.type === 'initial_devices') {
+                            logMessage(`Received initial list of ${data.devices.length} devices`);
+                            data.devices.forEach(device => {
+                                devices[device.id] = device;
+                            });
+                            renderDeviceList();
+                        } else if (data.device && data.simulation) {
+                            // Status update for a device
+                            logMessage(`Received status update for device ${data.device.id}`);
+                            devices[data.device.id] = data.device;
+                            updateDeviceCard(data.device.id, data);
+                            lastStatusUpdate = Date.now();
+                        }
+                    } catch (error) {
+                        logMessage(`Error processing message: ${error.message}`);
+                    }
+                };
+                
+                ws.onclose = function(event) {
+                    updateConnectionStatus('disconnected');
+                    logMessage(`WebSocket connection closed: ${event.code} ${event.reason}`);
+                    
+                    // Attempt to reconnect
+                    if (reconnectAttempts < maxReconnectAttempts) {
+                        reconnectAttempts++;
+                        logMessage(`Attempting to reconnect (${reconnectAttempts}/${maxReconnectAttempts})...`);
+                        reconnectTimeoutId = setTimeout(connectWebSocket, reconnectInterval);
+                    } else {
+                        logMessage('Max reconnect attempts reached. Please try again manually.');
+                        // Start polling as a fallback if websocket fails
+                        startPolling();
+                    }
+                };
+                
+                ws.onerror = function(error) {
+                    updateConnectionStatus('disconnected');
+                    logMessage(`WebSocket error: ${error.message || 'Unknown error'}`);
+                    console.error('WebSocket error:', error);
+                };
+            } catch (error) {
+                updateConnectionStatus('disconnected');
+                logMessage(`Failed to create WebSocket: ${error.message}`);
+                console.error('WebSocket creation error:', error);
+                // Start polling as a fallback
+                startPolling();
+            }
+        }
+        
+        function startPolling() {
+            if (pollingEnabled || !authToken) return;
+            
+            pollingEnabled = true;
+            logMessage("Starting polling fallback for updates");
+            
+            // Poll every 2 seconds
+            pollingInterval = setInterval(() => {
+                // Get updates for all devices we know about
+                const deviceIds = Object.keys(devices);
+                if (deviceIds.length === 0) {
+                    requestDeviceList();
+                    return;
+                }
+                
+                // Poll status for each device 
+                deviceIds.forEach(deviceId => {
+                    fetch(`http://${window.location.hostname}:8000/devices/${deviceId}/status`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${authToken}`
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        devices[deviceId] = data.device;
+                        updateDeviceCard(deviceId, data);
+                        lastStatusUpdate = Date.now();
+                    })
+                    .catch(error => {
+                        console.error(`Error polling device ${deviceId}:`, error);
+                    });
+                });
+            }, 2000);
+        }
+        
+        function stopPolling() {
+            if (pollingInterval) {
+                clearInterval(pollingInterval);
+                pollingInterval = null;
+            }
+            pollingEnabled = false;
+            logMessage("Stopped polling");
+        }
+        
+        function renderDeviceList() {
+            const container = document.getElementById('device-container');
+            container.innerHTML = '';
+            
+            if (Object.keys(devices).length === 0) {
+                container.innerHTML = '<p>No devices connected.</p>';
+                return;
+            }
+            
+            for (const [deviceId, device] of Object.entries(devices)) {
+                const card = createDeviceCard(deviceId, device);
+                container.appendChild(card);
+            }
+        }
+        
+        function createDeviceCard(deviceId, device) {
+            const card = document.createElement('div');
+            card.className = 'device-card';
+            card.id = `device-${deviceId}`;
+            
+            const statusClass = device.running ? 'status-running' : 'status-stopped';
+            const statusText = device.running ? 'Running' : 'Stopped';
+            
+            card.innerHTML = `
+                <div class="device-header">
+                    <h3>${device.model || 'Unknown Device'} (${deviceId})</h3>
+                    <div>
+                        <span id="status-text-${deviceId}">${statusText}</span>
+                        <span class="status-indicator ${statusClass}" id="status-indicator-${deviceId}"></span>
+                    </div>
+                </div>
+                <div>
+                    <p><strong>Status:</strong> ${device.status}</p>
+                    <p><strong>Last Command:</strong> ${device.last_command_status || 'N/A'}</p>
+                    <p><strong>Last Updated:</strong> ${device.last_updated ? new Date(device.last_updated).toLocaleTimeString() : 'N/A'}</p>
+                    
+                    <div class="progress-container" id="progress-container-${deviceId}" style="display: none;">
+                        <div class="progress-text" id="progress-text-${deviceId}">Progress: 0/0 (0%)</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill-${deviceId}" style="width: 0%"></div>
+                        </div>
+                        <div class="time-remaining" id="time-remaining-${deviceId}"></div>
+                    </div>
+                    
+                    <div id="simulation-details-${deviceId}">
+                        <p>Loading simulation details...</p>
+                    </div>
+                    
+                    <div class="simulation-config">
+                        <h4>Simulation Settings</h4>
+                        <div>
+                            <label for="url-${deviceId}">URL:</label>
+                            <input type="text" id="url-${deviceId}" value="https://veewoy.com/ip-text" placeholder="URL to test">
+                        </div>
+                        <div>
+                            <label for="iterations-${deviceId}">Iterations:</label>
+                            <input type="number" id="iterations-${deviceId}" value="50" min="1" max="1000">
+                            
+                            <label for="min-interval-${deviceId}">Min interval:</label>
+                            <input type="number" id="min-interval-${deviceId}" value="1" min="1" max="60">
+                            
+                            <label for="max-interval-${deviceId}">Max interval:</label>
+                            <input type="number" id="max-interval-${deviceId}" value="2" min="1" max="60">
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <button onclick="requestDeviceStatus('${deviceId}')">Refresh Status</button>
+                        <button onclick="startSimulation('${deviceId}')">Start</button>
+                        <button onclick="stopSimulation('${deviceId}')">Stop</button>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        function updateDeviceCard(deviceId, data) {
+            const device = data.device;
+            const simulation = data.simulation;
+            
+            const statusText = document.getElementById(`status-text-${deviceId}`);
+            const statusIndicator = document.getElementById(`status-indicator-${deviceId}`);
+            const simulationDetails = document.getElementById(`simulation-details-${deviceId}`);
+            const progressContainer = document.getElementById(`progress-container-${deviceId}`);
+            const progressText = document.getElementById(`progress-text-${deviceId}`);
+            const progressFill = document.getElementById(`progress-fill-${deviceId}`);
+            const timeRemaining = document.getElementById(`time-remaining-${deviceId}`);
+            
+            if (!statusText || !statusIndicator || !simulationDetails) {
+                // Elements not found, card might need to be recreated
+                if (device) {
+                    devices[deviceId] = device;
+                    renderDeviceList();
+                }
+                return;
+            }
+            
+            const isRunning = device.running || (simulation && simulation.is_running);
+            statusText.textContent = isRunning ? 'Running' : 'Stopped';
+            
+            statusIndicator.className = 'status-indicator';
+            statusIndicator.classList.add(isRunning ? 'status-running' : 'status-stopped');
+            
+            // If starting a simulation, record the start time
+            if (isRunning && !deviceStartTimes[deviceId]) {
+                deviceStartTimes[deviceId] = {
+                    startTime: Date.now(),
+                    lastIteration: 0
+                };
+            }
+            
+            // If stopping a simulation, clear the start time
+            if (!isRunning && deviceStartTimes[deviceId]) {
+                delete deviceStartTimes[deviceId];
+            }
+            
+            // Update progress if available
+            if (simulation && simulation.current_iteration !== undefined && simulation.iterations !== undefined) {
+                const current = simulation.current_iteration;
+                const total = simulation.iterations;
+                const percentage = total > 0 ? Math.round((current / total) * 100 * 10) / 10 : 0;
+                
+                if (progressContainer && progressText && progressFill) {
+                    progressContainer.style.display = 'block';
+                    progressText.textContent = `Progress: ${current}/${total} (${percentage}%)`;
+                    progressFill.style.width = `${percentage}%`;
+                    
+                    // Calculate and display time remaining
+                    if (timeRemaining && deviceStartTimes[deviceId] && current > deviceStartTimes[deviceId].lastIteration) {
+                        const startTime = deviceStartTimes[deviceId].startTime;
+                        const elapsedTime = Date.now() - startTime;
+                        const iterationsCompleted = current - 1; // Subtract 1 since current is the iteration in progress
+                        
+                        if (iterationsCompleted > 0) {
+                            const timePerIteration = elapsedTime / iterationsCompleted;
+                            const remainingIterations = total - current;
+                            const estimatedTimeRemaining = timePerIteration * remainingIterations;
+                            
+                            timeRemaining.textContent = `Estimated time remaining: ${formatTimeRemaining(estimatedTimeRemaining / 1000)}`;
+                        }
+                        
+                        // Update the last iteration seen
+                        deviceStartTimes[deviceId].lastIteration = current;
+                    }
+                }
+            } else if (progressContainer) {
+                progressContainer.style.display = 'none';
+            }
+            
+            if (simulationDetails) {
+                let detailsHTML = '<h4>Simulation Details:</h4>';
+                
+                if (!simulation || Object.keys(simulation).length === 0) {
+                    detailsHTML += '<p>No simulation data available</p>';
+                } else {
+                    detailsHTML += `
+                        <p><strong>Running:</strong> ${simulation.is_running ? 'Yes' : 'No'}</p>
+                        <p><strong>URL:</strong> ${simulation.url || 'N/A'}</p>
+                        <p><strong>Iterations:</strong> ${simulation.iterations || 'N/A'}</p>
+                    `;
+                    
+                    if (simulation.current_iteration !== undefined) {
+                        detailsHTML += `<p><strong>Current Iteration:</strong> ${simulation.current_iteration}</p>`;
+                    }
+                    
+                    // Add last updated timestamp
+                    detailsHTML += `<p><strong>Last Updated:</strong> ${new Date().toLocaleTimeString()}</p>`;
+                }
+                
+                // Add refresh button inside the details
+                detailsHTML += `<button onclick="requestDeviceStatus('${deviceId}')">Refresh Status</button>`;
+                
+                simulationDetails.innerHTML = detailsHTML;
+            }
+        }
+        
+        function requestDeviceStatus(deviceId) {
+            // First try WebSocket if connected
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                try {
+                    ws.send(JSON.stringify({
+                        type: 'request_status',
+                        device_id: deviceId
+                    }));
+                    
+                    logMessage(`Requested status for device ${deviceId} via WebSocket`);
+                } catch (error) {
+                    logMessage(`Error sending WebSocket request: ${error.message}`);
+                    // Fall back to REST API
+                    requestDeviceStatusViaApi(deviceId);
+                }
+            } else {
+                // Use REST API as fallback
+                requestDeviceStatusViaApi(deviceId);
+            }
+        }
+        
+        function requestDeviceStatusViaApi(deviceId) {
+            if (!authToken) {
+                logMessage('Please login first');
+                return;
+            }
+            
+            logMessage(`Requesting status for device ${deviceId} via REST API...`);
+            
+            fetch(`http://${window.location.hostname}:8000/devices/${deviceId}/status`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${authToken}`
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                logMessage(`Retrieved status for device ${deviceId}`);
+                updateDeviceCard(deviceId, data);
+            })
+            .catch(error => {
+                logMessage(`Error fetching device status: ${error.message}`);
+            });
+        }
+        
+        function requestDeviceList() {
+            if (!authToken) {
+                logMessage('Please login first');
+                return;
+            }
+            
+            logMessage('Requesting device list...');
+            
+            fetch(`http://${window.location.hostname}:8000/devices`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${authToken}`
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                logMessage(`Retrieved ${data.devices.length} devices from API`);
+                data.devices.forEach(device => {
+                    devices[device.id] = device;
+                    
+                    // Also get detailed status for each device
+                    requestDeviceStatusViaApi(device.id);
+                });
+                renderDeviceList();
+            })
+            .catch(error => {
+                logMessage(`Error fetching devices: ${error.message}`);
+            });
+        }
+        
+        function startSimulation(deviceId) {
+            if (!authToken) {
+                logMessage('Please login first');
+                return;
+            }
+            
+            const urlInput = document.getElementById(`url-${deviceId}`);
+            const iterationsInput = document.getElementById(`iterations-${deviceId}`);
+            const minIntervalInput = document.getElementById(`min-interval-${deviceId}`);
+            const maxIntervalInput = document.getElementById(`max-interval-${deviceId}`);
+            
+            const url = urlInput.value;
+            const iterations = parseInt(iterationsInput.value);
+            const minInterval = parseInt(minIntervalInput.value);
+            const maxInterval = parseInt(maxIntervalInput.value);
+            
+            if (!url || isNaN(iterations) || isNaN(minInterval) || isNaN(maxInterval)) {
+                logMessage('Please enter valid settings');
+                return;
+            }
+            
+            logMessage(`Starting simulation on device ${deviceId}...`);
+            
+            fetch(`http://${window.location.hostname}:8000/commands/start`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${authToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    device_id: deviceId,
+                    url: url,
+                    iterations: iterations,
+                    min_interval: minInterval,
+                    max_interval: maxInterval,
+                    webview_mode: true
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                logMessage(`Start command result: ${data.success ? 'Success' : 'Failed'}`);
+                
+                // Record start time for estimating completion
+                deviceStartTimes[deviceId] = {
+                    startTime: Date.now(),
+                    lastIteration: 0
+                };
+                
+                // Request updated status immediately and after a short delay
+                requestDeviceStatusViaApi(deviceId);
+                setTimeout(() => requestDeviceStatusViaApi(deviceId), 2000);
+            })
+            .catch(error => {
+                logMessage(`Error starting simulation: ${error.message}`);
+            });
+        }
+        
+        function stopSimulation(deviceId) {
+            if (!authToken) {
+                logMessage('Please login first');
+                return;
+            }
+            
+            logMessage(`Stopping simulation on device ${deviceId}...`);
+            
+            fetch(`http://${window.location.hostname}:8000/commands/stop`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${authToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    device_id: deviceId
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                logMessage(`Stop command result: ${data.success ? 'Success' : 'Failed'}`);
+                
+                // Clear start time data
+                delete deviceStartTimes[deviceId];
+                
+                // Request updated status immediately and after a short delay
+                requestDeviceStatusViaApi(deviceId);
+                setTimeout(() => requestDeviceStatusViaApi(deviceId), 2000);
+            })
+            .catch(error => {
+                logMessage(`Error stopping simulation: ${error.message}`);
+            });
+        }
+        
+        // Check for updates periodically
+        function checkForStaleUpdates() {
+            setInterval(() => {
+                const now = Date.now();
+                const staleDuration = 10000; // 10 seconds
+                
+                if (lastStatusUpdate > 0 && (now - lastStatusUpdate) > staleDuration) {
+                    logMessage("No status updates received for 10 seconds, refreshing...");
+                    
+                    // Refresh all devices
+                    for (const deviceId in devices) {
+                        requestDeviceStatusViaApi(deviceId);
+                    }
+                }
+            }, 10000); // Check every 10 seconds
+        }
+        
+        // Clean up WebSocket when page unloads
+        window.addEventListener('beforeunload', function() {
+            if (ws) {
+                ws.close();
+            }
+            if (reconnectTimeoutId) {
+                clearTimeout(reconnectTimeoutId);
+            }
+            stopPolling();
+        });
+        
+        // Auto-login on page load if username and password are filled
+        window.addEventListener('load', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username && password) {
+                login();
+            }
+            
+            // Start the stale update checker
+            checkForStaleUpdates();
+        });
+    </script>
+</body>
+</html> 

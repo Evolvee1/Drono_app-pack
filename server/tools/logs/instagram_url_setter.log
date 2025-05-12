@@ -1,0 +1,247 @@
+2025-05-12 00:06:28,608 - instagram_url_setter - INFO - Setting Instagram URL on 2 device(s)
+2025-05-12 00:06:28,608 - instagram_url_setter - INFO - URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:06:28,608 - instagram_url_setter - INFO - Setting URL on device R38N9014KDM (SM-A125F)
+2025-05-12 00:06:28,608 - instagram_url_setter - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:06:28,754 - instagram_url_setter - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:06:28,754 - instagram_url_setter - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:06:28,851 - instagram_url_setter - INFO - Step 3: Updating local URL config for R38N9014KDM
+2025-05-12 00:06:28,852 - instagram_url_setter - ERROR - Error updating URL config file: not well-formed (invalid token): line 3, column 221
+2025-05-12 00:06:28,852 - instagram_url_setter - WARNING - Failed to update local URL config file, continuing anyway
+2025-05-12 00:06:28,852 - instagram_url_setter - INFO - Step 4: Pushing URL config to R38N9014KDM
+2025-05-12 00:06:28,948 - instagram_url_setter - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:06:28,948 - instagram_url_setter - INFO - Step 5: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:06:29,012 - instagram_url_setter - ERROR - Failed to send URL broadcast to R38N9014KDM: /system/bin/sh: -p: inaccessible or not found
+
+2025-05-12 00:06:29,012 - instagram_url_setter - INFO - Setting URL on device R9WR310F4GJ (SM-A226B)
+2025-05-12 00:06:29,012 - instagram_url_setter - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 00:06:29,153 - instagram_url_setter - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 00:06:29,153 - instagram_url_setter - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 00:06:29,194 - instagram_url_setter - INFO - Step 3: Updating local URL config for R9WR310F4GJ
+2025-05-12 00:06:29,194 - instagram_url_setter - ERROR - Error updating URL config file: not well-formed (invalid token): line 3, column 221
+2025-05-12 00:06:29,194 - instagram_url_setter - WARNING - Failed to update local URL config file, continuing anyway
+2025-05-12 00:06:29,194 - instagram_url_setter - INFO - Step 4: Pushing URL config to R9WR310F4GJ
+2025-05-12 00:06:29,244 - instagram_url_setter - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 00:06:29,244 - instagram_url_setter - INFO - Step 5: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 00:06:29,285 - instagram_url_setter - ERROR - Failed to send URL broadcast to R9WR310F4GJ: /system/bin/sh: -p: inaccessible or not found
+
+2025-05-12 00:06:29,285 - instagram_url_setter - INFO - Results: 0/2 devices successful
+2025-05-12 00:06:29,285 - instagram_url_setter - INFO - ❌ Failed: R38N9014KDM - Failed to send broadcast commands
+2025-05-12 00:06:29,285 - instagram_url_setter - INFO - ❌ Failed: R9WR310F4GJ - Failed to send broadcast commands
+2025-05-12 00:07:52,615 - instagram_url_setter - INFO - Setting Instagram URL on 2 device(s)
+2025-05-12 00:07:52,616 - instagram_url_setter - INFO - URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:07:52,616 - instagram_url_setter - INFO - Setting URL on device R38N9014KDM (SM-A125F)
+2025-05-12 00:07:52,616 - instagram_url_setter - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:07:52,695 - instagram_url_setter - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:07:52,695 - instagram_url_setter - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:07:52,764 - instagram_url_setter - INFO - Step 3: Creating new URL config for R38N9014KDM
+2025-05-12 00:07:52,766 - instagram_url_setter - INFO - Created new URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:07:52,766 - instagram_url_setter - INFO - Step 4: Pushing URL config to R38N9014KDM
+2025-05-12 00:07:52,851 - instagram_url_setter - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:07:52,851 - instagram_url_setter - INFO - Step 5: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:07:53,054 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 00:07:53,054 - instagram_url_setter - INFO - Step 6: Starting app with direct URL on R38N9014KDM
+2025-05-12 00:07:53,147 - instagram_url_setter - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 00:07:53,148 - instagram_url_setter - INFO - Step 7: Verifying URL loaded on R38N9014KDM
+2025-05-12 00:07:56,379 - instagram_url_setter - WARNING - Could not verify URL loaded on R38N9014KDM
+2025-05-12 00:07:56,380 - instagram_url_setter - INFO - Setting URL on device R9WR310F4GJ (SM-A226B)
+2025-05-12 00:07:56,380 - instagram_url_setter - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 00:07:56,491 - instagram_url_setter - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 00:07:56,492 - instagram_url_setter - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 00:07:56,570 - instagram_url_setter - INFO - Step 3: Creating new URL config for R9WR310F4GJ
+2025-05-12 00:07:56,571 - instagram_url_setter - INFO - Created new URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:07:56,571 - instagram_url_setter - INFO - Step 4: Pushing URL config to R9WR310F4GJ
+2025-05-12 00:07:56,671 - instagram_url_setter - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 00:07:56,672 - instagram_url_setter - INFO - Step 5: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 00:07:56,924 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 00:07:56,924 - instagram_url_setter - INFO - Step 6: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 00:07:57,002 - instagram_url_setter - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 00:07:57,002 - instagram_url_setter - INFO - Step 7: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 00:08:00,339 - instagram_url_setter - WARNING - Could not verify URL loaded on R9WR310F4GJ
+2025-05-12 00:08:00,340 - instagram_url_setter - INFO - Results: 2/2 devices successful
+2025-05-12 00:08:00,340 - instagram_url_setter - INFO - ✅ Success: R38N9014KDM - URL set but could not verify loading
+2025-05-12 00:08:00,340 - instagram_url_setter - INFO - ✅ Success: R9WR310F4GJ - URL set but could not verify loading
+2025-05-12 00:15:03,473 - instagram_url_setter - INFO - Setting Instagram URL on 2 device(s)
+2025-05-12 00:15:03,474 - instagram_url_setter - INFO - URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:15:03,474 - instagram_url_setter - INFO - Setting URL on device R38N9014KDM (SM-A125F)
+2025-05-12 00:15:03,474 - instagram_url_setter - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:15:03,633 - instagram_url_setter - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:15:03,633 - instagram_url_setter - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:15:03,715 - instagram_url_setter - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 00:15:03,717 - instagram_url_setter - INFO - Created new URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:15:03,717 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 00:15:03,718 - instagram_url_setter - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:15:03,718 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 00:15:03,810 - instagram_url_setter - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:15:03,810 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 00:15:03,889 - instagram_url_setter - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 00:15:03,889 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:15:04,226 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 00:15:04,226 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 00:15:04,302 - instagram_url_setter - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 00:15:04,302 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 00:15:07,578 - instagram_url_setter - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 00:15:07,578 - instagram_url_setter - INFO - Setting URL on device R9WR310F4GJ (SM-A226B)
+2025-05-12 00:15:07,579 - instagram_url_setter - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 00:15:07,710 - instagram_url_setter - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 00:15:07,711 - instagram_url_setter - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 00:15:07,756 - instagram_url_setter - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 00:15:07,756 - instagram_url_setter - INFO - Created new URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:15:07,756 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 00:15:07,757 - instagram_url_setter - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:15:07,757 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 00:15:07,816 - instagram_url_setter - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 00:15:07,816 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 00:15:07,878 - instagram_url_setter - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 00:15:07,879 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 00:15:08,098 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 00:15:08,098 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 00:15:08,163 - instagram_url_setter - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 00:15:08,164 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 00:15:11,443 - instagram_url_setter - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 00:15:11,443 - instagram_url_setter - INFO - Results: 2/2 devices successful
+2025-05-12 00:15:11,443 - instagram_url_setter - INFO - ✅ Success: R38N9014KDM - URL successfully set and verified
+2025-05-12 00:15:11,443 - instagram_url_setter - INFO - ✅ Success: R9WR310F4GJ - URL successfully set and verified
+2025-05-12 00:17:35,122 - instagram_url_setter - INFO - Setting Instagram URL on 1 device(s)
+2025-05-12 00:17:35,122 - instagram_url_setter - INFO - URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:17:35,122 - instagram_url_setter - INFO - Setting URL on device R38N9014KDM (SM-A125F)
+2025-05-12 00:17:35,122 - instagram_url_setter - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:17:35,273 - instagram_url_setter - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:17:35,273 - instagram_url_setter - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:17:35,364 - instagram_url_setter - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 00:17:35,365 - instagram_url_setter - INFO - Created new URL config file with URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-12 00:17:35,365 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 00:17:35,366 - instagram_url_setter - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:17:35,366 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 00:17:35,460 - instagram_url_setter - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:17:35,460 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 00:17:35,552 - instagram_url_setter - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 00:17:35,552 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:17:35,851 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 00:17:35,851 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 00:17:35,931 - instagram_url_setter - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 00:17:35,931 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 00:17:39,200 - instagram_url_setter - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 00:17:39,200 - instagram_url_setter - INFO - Results: 1/1 devices successful
+2025-05-12 00:17:39,200 - instagram_url_setter - INFO - ✅ Success: R38N9014KDM - URL successfully set and verified
+2025-05-12 00:19:30,420 - instagram_url_setter - INFO - Setting Instagram URL on 1 device(s)
+2025-05-12 00:19:30,421 - instagram_url_setter - INFO - URL: https://www.instagram.com/p/12345
+2025-05-12 00:19:30,421 - instagram_url_setter - INFO - Setting URL on device R38N9014KDM (SM-A125F)
+2025-05-12 00:19:30,421 - instagram_url_setter - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:19:30,569 - instagram_url_setter - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:19:30,569 - instagram_url_setter - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:19:30,677 - instagram_url_setter - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 00:19:30,677 - instagram_url_setter - INFO - Created new URL config file with URL: https://www.instagram.com/p/12345
+2025-05-12 00:19:30,677 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 00:19:30,678 - instagram_url_setter - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:19:30,678 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 00:19:30,777 - instagram_url_setter - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:19:30,777 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 00:19:30,860 - instagram_url_setter - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 00:19:30,860 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:19:31,200 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 00:19:31,200 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 00:19:31,288 - instagram_url_setter - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 00:19:31,288 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 00:19:34,555 - instagram_url_setter - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 00:19:34,555 - instagram_url_setter - INFO - Results: 1/1 devices successful
+2025-05-12 00:19:34,555 - instagram_url_setter - INFO - ✅ Success: R38N9014KDM - URL successfully set and verified
+2025-05-12 00:19:47,115 - instagram_url_setter - INFO - Setting Instagram URL on 1 device(s)
+2025-05-12 00:19:47,117 - instagram_url_setter - INFO - URL: https://www.instagram.com/p/12345
+2025-05-12 00:19:47,117 - instagram_url_setter - INFO - Setting URL on device R9WR310F4GJ (SM-A226B)
+2025-05-12 00:19:47,118 - instagram_url_setter - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 00:19:47,268 - instagram_url_setter - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 00:19:47,269 - instagram_url_setter - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 00:19:47,309 - instagram_url_setter - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 00:19:47,309 - instagram_url_setter - INFO - Created new URL config file with URL: https://www.instagram.com/p/12345
+2025-05-12 00:19:47,309 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 00:19:47,310 - instagram_url_setter - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:19:47,310 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 00:19:47,372 - instagram_url_setter - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 00:19:47,372 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 00:19:47,431 - instagram_url_setter - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 00:19:47,431 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 00:19:47,646 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 00:19:47,647 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 00:19:47,704 - instagram_url_setter - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 00:19:47,704 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 00:19:50,977 - instagram_url_setter - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 00:19:50,977 - instagram_url_setter - INFO - Results: 1/1 devices successful
+2025-05-12 00:19:50,977 - instagram_url_setter - INFO - ✅ Success: R9WR310F4GJ - URL successfully set and verified
+2025-05-12 00:20:30,272 - instagram_settings_api - INFO - Setting Instagram URL on 1 device(s)
+2025-05-12 00:20:30,273 - instagram_settings_api - INFO - Applying settings to device R38N9014KDM
+2025-05-12 00:20:30,273 - instagram_url_setter - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:20:30,426 - instagram_url_setter - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:20:30,427 - instagram_url_setter - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:20:30,509 - instagram_url_setter - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 00:20:30,510 - instagram_url_setter - INFO - Created new URL config file with URL: https://www.instagram.com/p/complex-url-test
+2025-05-12 00:20:30,510 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 00:20:30,510 - instagram_url_setter - INFO - Created main preferences file with iterations=50, min_interval=2, max_interval=4
+2025-05-12 00:20:30,510 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 00:20:30,601 - instagram_url_setter - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:20:30,601 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 00:20:30,686 - instagram_url_setter - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 00:20:30,686 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:20:30,979 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 00:20:30,979 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 00:20:31,062 - instagram_url_setter - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 00:20:31,062 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 00:20:34,344 - instagram_url_setter - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 00:21:37,123 - instagram_settings_api - INFO - Setting Instagram URL on 2 device(s)
+2025-05-12 00:21:37,123 - instagram_settings_api - INFO - Applying settings to device R38N9014KDM
+2025-05-12 00:21:37,123 - instagram_url_setter - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:21:37,276 - instagram_url_setter - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:21:37,276 - instagram_url_setter - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:21:37,359 - instagram_url_setter - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 00:21:37,361 - instagram_url_setter - INFO - Created new URL config file with URL: https://www.instagram.com/p/test-script-fix
+2025-05-12 00:21:37,361 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 00:21:37,362 - instagram_url_setter - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:21:37,362 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 00:21:37,457 - instagram_url_setter - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:21:37,457 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 00:21:37,549 - instagram_url_setter - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 00:21:37,549 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:21:37,889 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 00:21:37,889 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 00:21:37,979 - instagram_url_setter - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 00:21:37,980 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 00:21:41,271 - instagram_url_setter - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 00:21:41,271 - instagram_settings_api - INFO - Applying settings to device R9WR310F4GJ
+2025-05-12 00:21:41,271 - instagram_url_setter - INFO - Step 1: Force stopping app on R9WR310F4GJ
+2025-05-12 00:21:41,397 - instagram_url_setter - INFO - Successfully force stopped app on R9WR310F4GJ
+2025-05-12 00:21:41,398 - instagram_url_setter - INFO - Step 2: Checking access method for R9WR310F4GJ
+2025-05-12 00:21:41,448 - instagram_url_setter - INFO - Step 3: Creating URL config for R9WR310F4GJ
+2025-05-12 00:21:41,449 - instagram_url_setter - INFO - Created new URL config file with URL: https://www.instagram.com/p/test-script-fix
+2025-05-12 00:21:41,449 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R9WR310F4GJ
+2025-05-12 00:21:41,449 - instagram_url_setter - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:21:41,449 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R9WR310F4GJ
+2025-05-12 00:21:41,532 - instagram_url_setter - INFO - Successfully pushed config file to R9WR310F4GJ
+2025-05-12 00:21:41,532 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R9WR310F4GJ
+2025-05-12 00:21:41,604 - instagram_url_setter - INFO - Successfully pushed main preferences file to R9WR310F4GJ
+2025-05-12 00:21:41,604 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R9WR310F4GJ
+2025-05-12 00:21:41,822 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R9WR310F4GJ
+2025-05-12 00:21:41,822 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R9WR310F4GJ
+2025-05-12 00:21:41,880 - instagram_url_setter - INFO - Successfully started app with direct URL on R9WR310F4GJ
+2025-05-12 00:21:41,881 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R9WR310F4GJ
+2025-05-12 00:21:45,151 - instagram_url_setter - INFO - Verified WebView process is running on R9WR310F4GJ
+2025-05-12 00:23:05,827 - instagram_url_setter - INFO - Setting Instagram URL on 1 device(s)
+2025-05-12 00:23:05,827 - instagram_url_setter - INFO - URL: https://www.instagram.com/test_visible_check
+2025-05-12 00:23:05,827 - instagram_url_setter - INFO - Setting URL on device R38N9014KDM (SM-A125F)
+2025-05-12 00:23:05,827 - instagram_url_setter - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 00:23:05,991 - instagram_url_setter - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 00:23:05,991 - instagram_url_setter - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 00:23:06,080 - instagram_url_setter - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 00:23:06,081 - instagram_url_setter - INFO - Created new URL config file with URL: https://www.instagram.com/test_visible_check
+2025-05-12 00:23:06,081 - instagram_url_setter - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 00:23:06,081 - instagram_url_setter - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 00:23:06,081 - instagram_url_setter - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 00:23:06,190 - instagram_url_setter - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 00:23:06,190 - instagram_url_setter - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 00:23:06,276 - instagram_url_setter - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 00:23:06,276 - instagram_url_setter - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 00:23:06,580 - instagram_url_setter - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 00:23:06,580 - instagram_url_setter - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 00:23:06,676 - instagram_url_setter - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 00:23:06,677 - instagram_url_setter - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 00:23:09,983 - instagram_url_setter - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 00:23:09,983 - instagram_url_setter - INFO - Results: 1/1 devices successful
+2025-05-12 00:23:09,983 - instagram_url_setter - INFO - ✅ Success: R38N9014KDM - URL successfully set and verified

@@ -1,0 +1,11 @@
+{
+  "url": "https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA",
+  "iterations": 900,
+  "min_interval": 1,
+  "max_interval": 2,
+  "airplane_mode_delay": 3000,
+  "webview_mode": true,
+  "rotate_ip": true,
+  "random_devices": true,
+  "new_webview_per_request": true
+} 

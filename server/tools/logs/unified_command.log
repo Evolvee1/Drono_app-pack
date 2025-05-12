@@ -1,0 +1,273 @@
+2025-05-11 23:48:15,744 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:48:21,278 - improved_settings_api - INFO - Setting URL on 1 devices: https://example.com
+2025-05-11 23:48:21,279 - unified_command - INFO - Setting URL on device R38N9014KDM: https://example.com
+2025-05-11 23:48:21,447 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:21,773 - unified_command - INFO - Preference target_url set on R38N9014KDM
+2025-05-11 23:48:21,936 - unified_command - INFO - Preference cached_url set on R38N9014KDM
+2025-05-11 23:48:22,106 - unified_command - INFO - Preference start_url set on R38N9014KDM
+2025-05-11 23:48:22,264 - unified_command - INFO - Preference iterations set on R38N9014KDM
+2025-05-11 23:48:22,453 - unified_command - INFO - Preference min_interval set on R38N9014KDM
+2025-05-11 23:48:22,620 - unified_command - INFO - Preference max_interval set on R38N9014KDM
+2025-05-11 23:48:22,779 - unified_command - INFO - Preference use_webview_mode set on R38N9014KDM
+2025-05-11 23:48:22,942 - unified_command - INFO - Preference rotate_ip set on R38N9014KDM
+2025-05-11 23:48:23,125 - unified_command - INFO - Preference use_random_device_profile set on R38N9014KDM
+2025-05-11 23:48:23,328 - unified_command - INFO - Preference new_webview_per_request set on R38N9014KDM
+2025-05-11 23:48:23,442 - unified_command - INFO - Activity started on R38N9014KDM: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:48:25,476 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:26,495 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:30,142 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:48:30,258 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:48:30,258 - improved_settings_api - INFO - Setting URL on 2 devices: https://example.com/complex?param1=test&param2=value
+2025-05-11 23:48:30,258 - unified_command - INFO - Setting URL on device R38N9014KDM: https://example.com/complex?param1=test&param2=value
+2025-05-11 23:48:30,260 - unified_command - INFO - Setting URL on device R9WR310F4GJ: https://example.com/complex?param1=test&param2=value
+2025-05-11 23:48:30,397 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:30,422 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:30,604 - unified_command - INFO - Preference target_url set on R9WR310F4GJ
+2025-05-11 23:48:30,722 - unified_command - INFO - Preference target_url set on R38N9014KDM
+2025-05-11 23:48:30,824 - unified_command - INFO - Preference cached_url set on R9WR310F4GJ
+2025-05-11 23:48:30,886 - unified_command - INFO - Preference cached_url set on R38N9014KDM
+2025-05-11 23:48:31,015 - unified_command - INFO - Preference start_url set on R9WR310F4GJ
+2025-05-11 23:48:31,046 - unified_command - INFO - Preference start_url set on R38N9014KDM
+2025-05-11 23:48:31,202 - unified_command - INFO - Preference iterations set on R38N9014KDM
+2025-05-11 23:48:31,217 - unified_command - INFO - Preference iterations set on R9WR310F4GJ
+2025-05-11 23:48:31,389 - unified_command - INFO - Preference min_interval set on R38N9014KDM
+2025-05-11 23:48:31,425 - unified_command - INFO - Preference min_interval set on R9WR310F4GJ
+2025-05-11 23:48:31,572 - unified_command - INFO - Preference max_interval set on R38N9014KDM
+2025-05-11 23:48:31,636 - unified_command - INFO - Preference max_interval set on R9WR310F4GJ
+2025-05-11 23:48:31,763 - unified_command - INFO - Preference use_webview_mode set on R38N9014KDM
+2025-05-11 23:48:31,832 - unified_command - INFO - Preference use_webview_mode set on R9WR310F4GJ
+2025-05-11 23:48:31,959 - unified_command - INFO - Preference rotate_ip set on R38N9014KDM
+2025-05-11 23:48:32,066 - unified_command - INFO - Preference rotate_ip set on R9WR310F4GJ
+2025-05-11 23:48:32,147 - unified_command - INFO - Preference use_random_device_profile set on R38N9014KDM
+2025-05-11 23:48:32,287 - unified_command - INFO - Preference use_random_device_profile set on R9WR310F4GJ
+2025-05-11 23:48:32,326 - unified_command - INFO - Preference new_webview_per_request set on R38N9014KDM
+2025-05-11 23:48:32,445 - unified_command - INFO - Activity started on R38N9014KDM: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:48:32,512 - unified_command - ERROR - Failed to send broadcast to R38N9014KDM: /system/bin/sh: --es: inaccessible or not found
+
+2025-05-11 23:48:32,571 - unified_command - INFO - Preference new_webview_per_request set on R9WR310F4GJ
+2025-05-11 23:48:32,678 - unified_command - INFO - Activity started on R9WR310F4GJ: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:48:32,746 - unified_command - ERROR - Failed to send broadcast to R9WR310F4GJ: /system/bin/sh: --es: inaccessible or not found
+
+2025-05-11 23:48:34,011 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:34,887 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:40,657 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:48:40,764 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:48:40,765 - improved_settings_api - INFO - Setting URL on 2 devices: https://example.com/complex?param1=test&param2=value
+2025-05-11 23:48:40,765 - unified_command - INFO - Setting URL on device R38N9014KDM: https://example.com/complex?param1=test&param2=value
+2025-05-11 23:48:40,766 - unified_command - INFO - Setting URL on device R9WR310F4GJ: https://example.com/complex?param1=test&param2=value
+2025-05-11 23:48:40,899 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:40,953 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:41,213 - unified_command - INFO - Preference target_url set on R38N9014KDM
+2025-05-11 23:48:41,308 - unified_command - INFO - Preference target_url set on R9WR310F4GJ
+2025-05-11 23:48:41,378 - unified_command - INFO - Preference cached_url set on R38N9014KDM
+2025-05-11 23:48:41,536 - unified_command - INFO - Preference start_url set on R38N9014KDM
+2025-05-11 23:48:41,541 - unified_command - INFO - Preference cached_url set on R9WR310F4GJ
+2025-05-11 23:48:41,696 - unified_command - INFO - Preference iterations set on R38N9014KDM
+2025-05-11 23:48:41,762 - unified_command - INFO - Preference start_url set on R9WR310F4GJ
+2025-05-11 23:48:41,879 - unified_command - INFO - Preference min_interval set on R38N9014KDM
+2025-05-11 23:48:41,997 - unified_command - INFO - Preference iterations set on R9WR310F4GJ
+2025-05-11 23:48:42,040 - unified_command - INFO - Preference max_interval set on R38N9014KDM
+2025-05-11 23:48:42,199 - unified_command - INFO - Preference min_interval set on R9WR310F4GJ
+2025-05-11 23:48:42,205 - unified_command - INFO - Preference use_webview_mode set on R38N9014KDM
+2025-05-11 23:48:42,373 - unified_command - INFO - Preference rotate_ip set on R38N9014KDM
+2025-05-11 23:48:42,417 - unified_command - INFO - Preference max_interval set on R9WR310F4GJ
+2025-05-11 23:48:42,564 - unified_command - INFO - Preference use_random_device_profile set on R38N9014KDM
+2025-05-11 23:48:42,619 - unified_command - INFO - Preference use_webview_mode set on R9WR310F4GJ
+2025-05-11 23:48:42,749 - unified_command - INFO - Preference new_webview_per_request set on R38N9014KDM
+2025-05-11 23:48:42,836 - unified_command - INFO - Preference rotate_ip set on R9WR310F4GJ
+2025-05-11 23:48:42,850 - unified_command - INFO - Activity started on R38N9014KDM: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:48:42,927 - unified_command - ERROR - Failed to send broadcast to R38N9014KDM: /system/bin/sh: --es: inaccessible or not found
+
+2025-05-11 23:48:43,041 - unified_command - INFO - Preference use_random_device_profile set on R9WR310F4GJ
+2025-05-11 23:48:43,222 - unified_command - INFO - Preference new_webview_per_request set on R9WR310F4GJ
+2025-05-11 23:48:43,295 - unified_command - INFO - Activity started on R9WR310F4GJ: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:48:43,337 - unified_command - ERROR - Failed to send broadcast to R9WR310F4GJ: /system/bin/sh: --es: inaccessible or not found
+
+2025-05-11 23:48:44,226 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:45,268 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:56,500 - improved_settings_api - INFO - Setting URL on 1 devices: https://example.com/test
+2025-05-11 23:48:56,501 - unified_command - INFO - Setting URL on device R38N9014KDM: https://example.com/test
+2025-05-11 23:48:56,645 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:48:56,959 - unified_command - INFO - Preference target_url set on R38N9014KDM
+2025-05-11 23:48:57,125 - unified_command - INFO - Preference cached_url set on R38N9014KDM
+2025-05-11 23:48:57,285 - unified_command - INFO - Preference start_url set on R38N9014KDM
+2025-05-11 23:48:57,437 - unified_command - INFO - Preference iterations set on R38N9014KDM
+2025-05-11 23:48:57,587 - unified_command - INFO - Preference min_interval set on R38N9014KDM
+2025-05-11 23:48:57,745 - unified_command - INFO - Preference max_interval set on R38N9014KDM
+2025-05-11 23:48:57,928 - unified_command - INFO - Preference use_webview_mode set on R38N9014KDM
+2025-05-11 23:48:58,112 - unified_command - INFO - Preference rotate_ip set on R38N9014KDM
+2025-05-11 23:48:58,326 - unified_command - INFO - Preference use_random_device_profile set on R38N9014KDM
+2025-05-11 23:48:58,530 - unified_command - INFO - Preference new_webview_per_request set on R38N9014KDM
+2025-05-11 23:48:58,639 - unified_command - INFO - Activity started on R38N9014KDM: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:49:00,478 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:49:01,279 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:49:06,017 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:49:06,018 - improved_settings_api - INFO - Setting URL on 2 devices: https://instagram.com/profile/test
+2025-05-11 23:49:06,018 - unified_command - INFO - Setting URL on device R38N9014KDM: https://instagram.com/profile/test
+2025-05-11 23:49:06,019 - unified_command - INFO - Setting URL on device R9WR310F4GJ: https://instagram.com/profile/test
+2025-05-11 23:49:06,155 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:49:06,192 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:49:06,473 - unified_command - INFO - Preference target_url set on R9WR310F4GJ
+2025-05-11 23:49:06,481 - unified_command - INFO - Preference target_url set on R38N9014KDM
+2025-05-11 23:49:06,634 - unified_command - INFO - Preference cached_url set on R38N9014KDM
+2025-05-11 23:49:06,671 - unified_command - INFO - Preference cached_url set on R9WR310F4GJ
+2025-05-11 23:49:06,785 - unified_command - INFO - Preference start_url set on R38N9014KDM
+2025-05-11 23:49:06,901 - unified_command - INFO - Preference start_url set on R9WR310F4GJ
+2025-05-11 23:49:06,928 - unified_command - INFO - Preference iterations set on R38N9014KDM
+2025-05-11 23:49:07,078 - unified_command - INFO - Preference min_interval set on R38N9014KDM
+2025-05-11 23:49:07,111 - unified_command - INFO - Preference iterations set on R9WR310F4GJ
+2025-05-11 23:49:07,232 - unified_command - INFO - Preference max_interval set on R38N9014KDM
+2025-05-11 23:49:07,337 - unified_command - INFO - Preference min_interval set on R9WR310F4GJ
+2025-05-11 23:49:07,417 - unified_command - INFO - Preference use_webview_mode set on R38N9014KDM
+2025-05-11 23:49:07,556 - unified_command - INFO - Preference max_interval set on R9WR310F4GJ
+2025-05-11 23:49:07,621 - unified_command - INFO - Preference rotate_ip set on R38N9014KDM
+2025-05-11 23:49:07,765 - unified_command - INFO - Preference use_webview_mode set on R9WR310F4GJ
+2025-05-11 23:49:07,838 - unified_command - INFO - Preference use_random_device_profile set on R38N9014KDM
+2025-05-11 23:49:07,984 - unified_command - INFO - Preference rotate_ip set on R9WR310F4GJ
+2025-05-11 23:49:08,016 - unified_command - INFO - Preference new_webview_per_request set on R38N9014KDM
+2025-05-11 23:49:08,117 - unified_command - INFO - Activity started on R38N9014KDM: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:49:08,191 - unified_command - INFO - Preference use_random_device_profile set on R9WR310F4GJ
+2025-05-11 23:49:08,437 - unified_command - INFO - Preference new_webview_per_request set on R9WR310F4GJ
+2025-05-11 23:49:08,550 - unified_command - INFO - Activity started on R9WR310F4GJ: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:49:09,383 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:49:09,531 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:49:09,968 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:49:10,755 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:50:39,520 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:50:39,624 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:50:39,625 - improved_settings_api - INFO - Setting URL on 2 devices: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 23:50:39,625 - unified_command - INFO - Setting URL on device R38N9014KDM: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 23:50:39,626 - unified_command - INFO - Setting URL on device R9WR310F4GJ: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 23:50:39,758 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:50:39,774 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:50:40,063 - unified_command - INFO - Preference target_url set on R38N9014KDM
+2025-05-11 23:50:40,089 - unified_command - INFO - Preference target_url set on R9WR310F4GJ
+2025-05-11 23:50:40,259 - unified_command - INFO - Preference cached_url set on R38N9014KDM
+2025-05-11 23:50:40,325 - unified_command - INFO - Preference cached_url set on R9WR310F4GJ
+2025-05-11 23:50:40,417 - unified_command - INFO - Preference start_url set on R38N9014KDM
+2025-05-11 23:50:40,542 - unified_command - INFO - Preference start_url set on R9WR310F4GJ
+2025-05-11 23:50:40,574 - unified_command - INFO - Preference iterations set on R38N9014KDM
+2025-05-11 23:50:40,760 - unified_command - INFO - Preference min_interval set on R38N9014KDM
+2025-05-11 23:50:40,775 - unified_command - INFO - Preference iterations set on R9WR310F4GJ
+2025-05-11 23:50:40,951 - unified_command - INFO - Preference max_interval set on R38N9014KDM
+2025-05-11 23:50:40,986 - unified_command - INFO - Preference min_interval set on R9WR310F4GJ
+2025-05-11 23:50:41,111 - unified_command - INFO - Preference use_webview_mode set on R38N9014KDM
+2025-05-11 23:50:41,198 - unified_command - INFO - Preference max_interval set on R9WR310F4GJ
+2025-05-11 23:50:41,273 - unified_command - INFO - Preference rotate_ip set on R38N9014KDM
+2025-05-11 23:50:41,397 - unified_command - INFO - Preference use_webview_mode set on R9WR310F4GJ
+2025-05-11 23:50:41,447 - unified_command - INFO - Preference use_random_device_profile set on R38N9014KDM
+2025-05-11 23:50:41,605 - unified_command - INFO - Preference rotate_ip set on R9WR310F4GJ
+2025-05-11 23:50:41,637 - unified_command - INFO - Preference new_webview_per_request set on R38N9014KDM
+2025-05-11 23:50:41,744 - unified_command - INFO - Activity started on R38N9014KDM: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:50:41,811 - unified_command - ERROR - Failed to send broadcast to R38N9014KDM: /system/bin/sh: --es: inaccessible or not found
+
+2025-05-11 23:50:41,847 - unified_command - INFO - Preference use_random_device_profile set on R9WR310F4GJ
+2025-05-11 23:50:42,080 - unified_command - INFO - Preference new_webview_per_request set on R9WR310F4GJ
+2025-05-11 23:50:42,175 - unified_command - INFO - Activity started on R9WR310F4GJ: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:50:42,227 - unified_command - ERROR - Failed to send broadcast to R9WR310F4GJ: /system/bin/sh: --es: inaccessible or not found
+
+2025-05-11 23:50:43,120 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:50:44,195 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:54:42,791 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:54:42,904 - unified_command - INFO - Found 2 connected devices
+2025-05-11 23:54:42,904 - improved_settings_api - INFO - Setting URL on 2 devices: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 23:54:42,904 - unified_command - INFO - Setting URL on device R38N9014KDM: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 23:54:42,906 - unified_command - INFO - Setting URL on device R9WR310F4GJ: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 23:54:42,994 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:54:42,997 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:54:43,234 - unified_command - INFO - Preference target_url set on R38N9014KDM
+2025-05-11 23:54:43,300 - unified_command - INFO - Preference target_url set on R9WR310F4GJ
+2025-05-11 23:54:43,426 - unified_command - INFO - Preference cached_url set on R38N9014KDM
+2025-05-11 23:54:43,531 - unified_command - INFO - Preference cached_url set on R9WR310F4GJ
+2025-05-11 23:54:43,621 - unified_command - INFO - Preference start_url set on R38N9014KDM
+2025-05-11 23:54:43,722 - unified_command - INFO - Preference start_url set on R9WR310F4GJ
+2025-05-11 23:54:43,803 - unified_command - INFO - Preference iterations set on R38N9014KDM
+2025-05-11 23:54:43,938 - unified_command - INFO - Preference iterations set on R9WR310F4GJ
+2025-05-11 23:54:43,980 - unified_command - INFO - Preference min_interval set on R38N9014KDM
+2025-05-11 23:54:44,144 - unified_command - INFO - Preference min_interval set on R9WR310F4GJ
+2025-05-11 23:54:44,149 - unified_command - INFO - Preference max_interval set on R38N9014KDM
+2025-05-11 23:54:44,318 - unified_command - INFO - Preference use_webview_mode set on R38N9014KDM
+2025-05-11 23:54:44,344 - unified_command - INFO - Preference max_interval set on R9WR310F4GJ
+2025-05-11 23:54:44,511 - unified_command - INFO - Preference rotate_ip set on R38N9014KDM
+2025-05-11 23:54:44,550 - unified_command - INFO - Preference use_webview_mode set on R9WR310F4GJ
+2025-05-11 23:54:44,706 - unified_command - INFO - Preference use_random_device_profile set on R38N9014KDM
+2025-05-11 23:54:44,746 - unified_command - INFO - Preference rotate_ip set on R9WR310F4GJ
+2025-05-11 23:54:44,898 - unified_command - INFO - Preference new_webview_per_request set on R38N9014KDM
+2025-05-11 23:54:44,974 - unified_command - INFO - Preference use_random_device_profile set on R9WR310F4GJ
+2025-05-11 23:54:45,004 - unified_command - INFO - Activity started on R38N9014KDM: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:54:45,073 - unified_command - ERROR - Failed to send broadcast to R38N9014KDM: /system/bin/sh: --es: inaccessible or not found
+
+2025-05-11 23:54:45,194 - unified_command - INFO - Preference new_webview_per_request set on R9WR310F4GJ
+2025-05-11 23:54:45,301 - unified_command - INFO - Activity started on R9WR310F4GJ: Starting: Intent { cmp=com.example.imtbf.debug/com.example.imtbf.presentation.activities.MainActivity (has extras) }
+
+2025-05-11 23:54:45,342 - unified_command - ERROR - Failed to send broadcast to R9WR310F4GJ: /system/bin/sh: --es: inaccessible or not found
+
+2025-05-11 23:54:46,211 - unified_command - INFO - Broadcast sent to R9WR310F4GJ: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+
+2025-05-11 23:54:47,431 - unified_command - INFO - Broadcast sent to R38N9014KDM: Broadcasting: Intent { act=com.example.imtbf.debug.COMMAND flg=0x400000 pkg=com.example.imtbf.debug (has extras) }
+Broadcast completed: result=0
+

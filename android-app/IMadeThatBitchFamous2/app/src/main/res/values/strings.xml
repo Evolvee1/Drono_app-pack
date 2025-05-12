@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">IMadeThatBitchFamous</string>
+    <string name="title_settings">Settings</string>
+
+    <!-- Main activity -->
+    <string name="btn_start">Start Simulation</string>
+    <string name="btn_stop">Stop Simulation</string>
+    <string name="hint_target_url">Target URL</string>
+    <string name="label_min_interval">Min Interval (sec)</string>
+    <string name="label_max_interval">Max Interval (sec)</string>
+    <string name="label_iterations">Iterations</string>
+    <string name="label_status">Status: Ready</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">Traffic Simulator</string>
+    <string name="notification_channel_description">Shows ongoing simulations</string>
+    <string name="notification_title">IMadeThatBitchFamous</string>
+    <string name="notification_text">Simulation is running</string>
+
+    <!-- Settings -->
+    <string name="settings_category_general">General Settings</string>
+    <string name="settings_category_behavior">Behavior Simulation</string>
+    <string name="settings_category_network">Network Settings</string>
+    <string name="settings_category_advanced">Advanced</string>
+
+    <string name="settings_debug_logging">Enable Debug Logging</string>
+    <string name="settings_debug_logging_summary">Log additional debug information</string>
+
+    <string name="settings_airplane_delay">Airplane Mode Delay (ms)</string>
+    <string name="settings_airplane_delay_summary">Duration between toggling airplane mode on and off</string>
+
+    <string name="settings_user_agent_type">User Agent Selection</string>
+    <string name="settings_user_agent_type_summary">Choose the type of user agent to simulate</string>
+
+    <!-- Errors and status messages -->
+    <string name="error_network_unavailable">Network is unavailable</string>
+    <string name="error_invalid_url">Please enter a valid URL</string>
+    <string name="status_simulation_started">Simulation started</string>
+    <string name="status_simulation_stopped">Simulation stopped</string>
+    <string name="status_simulation_completed">Simulation completed</string>
+
+    <!-- Traffic Distribution -->
+    <string name="traffic_distribution_title">Traffic Distribution</string>
+    <string name="scheduled_mode_switch">Scheduled Traffic Distribution</string>
+    <string name="distribution_pattern">Distribution Pattern</string>
+    <string name="distribution_duration">Distribution Duration (hours)</string>
+    <string name="peak_hours">Peak Hours</string>
+    <string name="peak_hour_start">Start: </string>
+    <string name="peak_hour_end">End: </string>
+    <string name="peak_traffic_weight">Peak Traffic Weight</string>
+    <string name="distribution_preview">Distribution Preview</string>
+    <string name="distribution_status">Distribution Status</string>
+    <string name="progress_format">Progress: %1$d/%2$d requests</string>
+    <string name="time_remaining">Time remaining: %1$s</string>
+    <string name="estimated_completion">Estimated completion: %1$s</string>
+    <string name="hours_format">%1$dh</string>
+    <string name="percent_format">%1$d%%</string>
+
+    <!-- Distribution Pattern Names -->
+    <string name="pattern_even">Even Distribution</string>
+    <string name="pattern_peak_hours">Peak Hours</string>
+    <string name="pattern_random">Random Distribution</string>
+    <string name="pattern_burst">Burst Mode</string>
+</resources>

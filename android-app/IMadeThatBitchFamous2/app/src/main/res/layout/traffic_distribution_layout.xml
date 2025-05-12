@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Scheduled Mode Toggle -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchScheduledMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Scheduled Traffic Distribution"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Distribution Settings (visible when scheduled mode is enabled) -->
+    <LinearLayout
+        android:id="@+id/layoutDistributionSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Distribution Pattern -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Distribution Pattern"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerDistributionPattern"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Duration Hours -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Distribution Duration (hours)"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderDurationHours"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:valueFrom="1"
+                android:valueTo="72"
+                android:stepSize="1"
+                android:value="24" />
+
+            <TextView
+                android:id="@+id/tvDurationValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24h"
+                android:minWidth="40dp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Peak Hours Settings (visible only when Peak Hours pattern is selected) -->
+        <LinearLayout
+            android:id="@+id/layoutPeakHoursSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Peak Hours"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start: " />
+
+                <Spinner
+                    android:id="@+id/spinnerPeakHourStart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="End: " />
+
+                <Spinner
+                    android:id="@+id/spinnerPeakHourEnd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Peak Traffic Weight"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderPeakWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:valueFrom="0.1"
+                    android:valueTo="0.9"
+                    android:stepSize="0.05"
+                    android:value="0.7" />
+
+                <TextView
+                    android:id="@+id/tvPeakWeightValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="70%"
+                    android:minWidth="40dp"
+                    android:gravity="end" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Distribution Visualization -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Distribution Preview"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <FrameLayout
+            android:id="@+id/chartContainer"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/light_gray"
+            android:layout_marginTop="4dp" />
+
+        <!-- Current Status (when running) -->
+        <LinearLayout
+            android:id="@+id/layoutDistributionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Distribution Status"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressDistribution"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvDistributionProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Progress: 0/0 requests"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvTimeRemaining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time remaining: --:--:--"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvCompletionTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estimated completion: --:--:--"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

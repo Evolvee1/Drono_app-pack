@@ -1,0 +1,1332 @@
+2025-05-12 02:04:05,043 - instagram_url_test - INFO - === Starting Instagram URL Persistence Tests ===
+2025-05-12 02:04:05,231 - instagram_url_test - INFO - Device access method: run-as
+2025-05-12 02:04:05,232 - instagram_url_test - INFO - Test 1/6: https://instagram.com
+2025-05-12 02:04:05,232 - instagram_url_test - INFO - === Testing URL: https://instagram.com ===
+2025-05-12 02:04:05,232 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:04:05,395 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:04:05,395 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:04:05,481 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:04:05,482 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com"
+2025-05-12 02:04:05,482 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:04:05,483 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:04:05,483 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:04:05,578 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:04:05,578 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:04:05,675 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:04:05,676 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:04:05,676 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com
+2025-05-12 02:04:05,952 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com
+2025-05-12 02:04:05,952 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:04:06,258 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:04:06,258 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:04:09,362 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:04:09,363 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:04:12,666 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:04:12,666 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:04:15,667 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:04:15,843 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:04:15,844 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:04:15,844 - instagram_url_test - INFO - Verifying target_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:04:16,013 - instagram_url_test - INFO - Found: <string name="target_url">https://instagram.com</string>
+2025-05-12 02:04:16,013 - instagram_url_test - INFO - ✅ Verified: target_url is set to https://instagram.com
+2025-05-12 02:04:16,013 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:04:16,189 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:04:16,314 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:04:21,315 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:04:21,487 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:04:21,487 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:04:21,487 - instagram_url_test - INFO - Verifying target_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:04:21,644 - instagram_url_test - INFO - Found: <string name="target_url">https://instagram.com</string>
+2025-05-12 02:04:21,644 - instagram_url_test - INFO - ✅ Verified: target_url is set to https://instagram.com
+2025-05-12 02:04:24,936 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:04:24,937 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com
+2025-05-12 02:04:24,937 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:04:29,938 - instagram_url_test - INFO - Test 2/6: https://instagram.com/explore
+2025-05-12 02:04:29,939 - instagram_url_test - INFO - === Testing URL: https://instagram.com/explore ===
+2025-05-12 02:04:30,066 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:04:30,218 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:04:30,219 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:04:30,305 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:04:30,306 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/explore"
+2025-05-12 02:04:30,306 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:04:30,306 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:04:30,306 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:04:30,405 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:04:30,405 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:04:30,498 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:04:30,498 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:04:30,498 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/explore
+2025-05-12 02:04:30,772 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/explore
+2025-05-12 02:04:30,772 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:04:31,120 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:04:31,120 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:04:34,229 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:04:34,230 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:04:37,511 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:04:37,512 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:04:40,513 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:04:40,694 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:04:40,695 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:04:40,695 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:04:40,857 - instagram_url_test - INFO - Found: <string name="target_url">https://instagram.com/explore</string>
+2025-05-12 02:04:40,857 - instagram_url_test - INFO - ✅ Verified: target_url is set to https://instagram.com/explore
+2025-05-12 02:04:40,857 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:04:40,992 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:04:41,096 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:04:46,098 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:04:46,281 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:04:46,281 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:04:46,281 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:04:46,454 - instagram_url_test - INFO - Found: <string name="target_url">https://instagram.com/explore</string>
+2025-05-12 02:04:46,455 - instagram_url_test - INFO - ✅ Verified: target_url is set to https://instagram.com/explore
+2025-05-12 02:04:49,755 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:04:49,755 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/explore
+2025-05-12 02:04:49,756 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:04:54,757 - instagram_url_test - INFO - Test 3/6: https://instagram.com/p/C123abcDEF
+2025-05-12 02:04:54,758 - instagram_url_test - INFO - === Testing URL: https://instagram.com/p/C123abcDEF ===
+2025-05-12 02:04:54,890 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:04:55,046 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:04:55,046 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:04:55,148 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:04:55,149 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/p/C123abcDEF"
+2025-05-12 02:04:55,149 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:04:55,150 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:04:55,150 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:04:55,251 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:04:55,251 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:04:55,343 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:04:55,343 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:04:55,343 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/p/C123abcDEF
+2025-05-12 02:04:55,606 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:04:55,606 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:04:55,961 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:04:55,961 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:04:59,068 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:04:59,068 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:05:02,376 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:05:02,377 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:05:05,378 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:05:05,553 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:05:05,553 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:05:05,553 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:05:05,716 - instagram_url_test - INFO - Found: <string name="target_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:05:05,716 - instagram_url_test - INFO - ✅ Verified: target_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:05:05,716 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:05:05,881 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:05:06,002 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:05:11,003 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:05:11,187 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:05:11,187 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:05:11,187 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:05:11,357 - instagram_url_test - INFO - Found: <string name="target_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:05:11,357 - instagram_url_test - INFO - ✅ Verified: target_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:05:14,661 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:05:14,662 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/p/C123abcDEF
+2025-05-12 02:05:14,662 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:05:19,664 - instagram_url_test - INFO - Test 4/6: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:05:19,666 - instagram_url_test - INFO - === Testing URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== ===
+2025-05-12 02:05:19,809 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:05:19,972 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:05:19,973 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:05:20,061 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:05:20,062 - core.instagram_manager - INFO - Created URL config file with URL: "https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA=="
+2025-05-12 02:05:20,062 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:05:20,065 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:05:20,065 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:05:20,163 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:05:20,163 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:05:20,258 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:05:20,258 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:05:20,258 - core.instagram_manager - INFO - Using direct method to set target_url to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:05:20,520 - core.instagram_manager - INFO - Verified: target_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:05:20,521 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:05:20,847 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:05:20,847 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:05:23,943 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:05:23,944 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:05:27,230 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:05:27,230 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:05:30,231 - instagram_url_test - INFO - Verifying instagram_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:05:30,406 - instagram_url_test - INFO - Found: <string name="instagram_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:05:30,406 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:05:30,406 - instagram_url_test - INFO - Verifying target_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:05:30,586 - instagram_url_test - INFO - Found: <string name="target_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:05:30,587 - instagram_url_test - INFO - ✅ Verified: target_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:05:30,587 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:05:30,742 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:05:30,860 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:05:35,861 - instagram_url_test - INFO - Verifying instagram_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:05:36,040 - instagram_url_test - INFO - Found: <string name="instagram_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:05:36,040 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:05:36,040 - instagram_url_test - INFO - Verifying target_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:05:36,208 - instagram_url_test - INFO - Found: <string name="target_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:05:36,208 - instagram_url_test - INFO - ✅ Verified: target_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:05:39,500 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:05:39,502 - instagram_url_test - INFO - ✅ URL Test PASSED: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:05:39,502 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:05:44,503 - instagram_url_test - INFO - Test 5/6: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:05:44,504 - instagram_url_test - INFO - === Testing URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share ===
+2025-05-12 02:05:44,659 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:05:44,813 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:05:44,814 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:05:44,902 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:05:44,902 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share"
+2025-05-12 02:05:44,902 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:05:44,903 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:05:44,903 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:05:45,000 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:05:45,000 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:05:45,088 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:05:45,089 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:05:45,089 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:05:45,338 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:05:45,338 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:05:45,399 - core.instagram_manager - ERROR - Failed to send URL broadcast to R38N9014KDM: /system/bin/sh: -p: inaccessible or not found
+
+2025-05-12 02:05:45,399 - core.instagram_manager - WARNING - Broadcast commands may not have been successful, continuing anyway
+2025-05-12 02:05:45,399 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:05:48,486 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:05:48,487 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:05:51,760 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:05:51,761 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:05:54,763 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:05:54,955 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share</string>
+2025-05-12 02:05:54,955 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:05:54,955 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:05:55,113 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:05:55,113 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:05:55,113 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:05:55,113 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:05:55,279 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:05:55,381 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:06:00,384 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:06:00,566 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share</string>
+2025-05-12 02:06:00,567 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:06:00,567 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:06:00,723 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:06:00,723 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:06:00,723 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:06:04,034 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:06:04,035 - instagram_url_test - ERROR - ❌ URL Test FAILED: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:06:04,035 - instagram_url_test - ERROR -   - Failed step: main_prefs_before_restart
+2025-05-12 02:06:04,035 - instagram_url_test - ERROR -   - Failed step: main_prefs_after_restart
+2025-05-12 02:06:04,035 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:06:09,037 - instagram_url_test - INFO - Test 6/6: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:06:09,037 - instagram_url_test - INFO - === Testing URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b ===
+2025-05-12 02:06:09,166 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:06:09,338 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:06:09,338 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:06:09,442 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:06:09,443 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/search?q=test&tag=test/with/slash&special=a&b"
+2025-05-12 02:06:09,443 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:06:09,444 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:06:09,444 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:06:09,541 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:06:09,541 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:06:09,647 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:06:09,647 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:06:09,647 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:06:10,141 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:06:10,141 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:06:10,220 - core.instagram_manager - ERROR - Failed to send URL broadcast to R38N9014KDM: /system/bin/sh: b: inaccessible or not found
+
+2025-05-12 02:06:10,220 - core.instagram_manager - WARNING - Broadcast commands may not have been successful, continuing anyway
+2025-05-12 02:06:10,220 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:06:10,317 - core.instagram_manager - ERROR - Failed to start app with URL on R38N9014KDM: /system/bin/sh: b: inaccessible or not found
+
+2025-05-12 02:06:10,317 - instagram_url_test - ERROR - Failed to set URL: Failed to start app with URL
+2025-05-12 02:06:10,317 - instagram_url_test - INFO - 
+=== TEST SUMMARY ===
+2025-05-12 02:06:10,317 - instagram_url_test - INFO - Device: R38N9014KDM
+2025-05-12 02:06:10,317 - instagram_url_test - INFO - Access method: run-as
+2025-05-12 02:06:10,317 - instagram_url_test - INFO - Tests passed: 4/6 (66.7%)
+2025-05-12 02:06:10,317 - instagram_url_test - INFO - Test 1: ✅ PASS - https://instagram.com
+2025-05-12 02:06:10,317 - instagram_url_test - INFO - Test 2: ✅ PASS - https://instagram.com/explore
+2025-05-12 02:06:10,317 - instagram_url_test - INFO - Test 3: ✅ PASS - https://instagram.com/p/C123abcDEF
+2025-05-12 02:06:10,318 - instagram_url_test - INFO - Test 4: ✅ PASS - https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:06:10,318 - instagram_url_test - INFO - Test 5: ❌ FAIL - https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:06:10,318 - instagram_url_test - INFO -   - Failed step: main_prefs_before_restart
+2025-05-12 02:06:10,318 - instagram_url_test - INFO -   - Failed step: main_prefs_after_restart
+2025-05-12 02:06:10,318 - instagram_url_test - INFO - Test 6: ❌ FAIL - https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:06:10,318 - instagram_url_test - INFO - === Tests completed ===
+2025-05-12 02:07:27,877 - instagram_url_test - INFO - === Starting Instagram URL Persistence Tests ===
+2025-05-12 02:07:28,075 - instagram_url_test - INFO - Device access method: run-as
+2025-05-12 02:07:28,075 - instagram_url_test - INFO - Test 1/6: https://instagram.com
+2025-05-12 02:07:28,075 - instagram_url_test - INFO - === Testing URL: https://instagram.com ===
+2025-05-12 02:07:28,075 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:07:28,244 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:07:28,245 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:07:28,340 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:07:28,340 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com"
+2025-05-12 02:07:28,341 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:07:28,341 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:07:28,341 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:07:28,443 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:07:28,443 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:07:28,537 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:07:28,537 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:07:28,537 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com
+2025-05-12 02:07:28,884 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com
+2025-05-12 02:07:28,884 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:07:29,255 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:07:29,256 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:07:32,363 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:07:32,364 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:07:35,649 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:07:35,651 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:07:38,652 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:07:38,831 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:07:38,831 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:07:38,832 - instagram_url_test - INFO - Verifying target_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:07:38,980 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:07:38,980 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com
+2025-05-12 02:07:38,980 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:07:38,980 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:07:39,137 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:07:39,243 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:07:44,244 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:07:44,429 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:07:44,429 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:07:44,429 - instagram_url_test - INFO - Verifying target_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:07:44,591 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:07:44,592 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com
+2025-05-12 02:07:44,592 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:07:47,876 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:07:47,877 - instagram_url_test - ERROR - ❌ URL Test FAILED: https://instagram.com
+2025-05-12 02:07:47,877 - instagram_url_test - ERROR -   - Failed step: main_prefs_before_restart
+2025-05-12 02:07:47,877 - instagram_url_test - ERROR -   - Failed step: main_prefs_after_restart
+2025-05-12 02:07:47,877 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:07:52,878 - instagram_url_test - INFO - Test 2/6: https://instagram.com/explore
+2025-05-12 02:07:52,879 - instagram_url_test - INFO - === Testing URL: https://instagram.com/explore ===
+2025-05-12 02:07:53,025 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:07:53,197 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:07:53,197 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:07:53,296 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:07:53,297 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/explore"
+2025-05-12 02:07:53,297 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:07:53,297 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:07:53,297 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:07:53,405 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:07:53,405 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:07:53,500 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:07:53,500 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:07:53,500 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/explore
+2025-05-12 02:07:53,836 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/explore
+2025-05-12 02:07:53,836 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:07:54,183 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:07:54,183 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:07:57,293 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:07:57,294 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:08:00,585 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:08:00,585 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:08:03,586 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:08:03,775 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:08:03,776 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:08:03,776 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:08:03,936 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:03,936 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/explore
+2025-05-12 02:08:03,936 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:03,936 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:08:04,071 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:08:04,183 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:08:09,184 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:08:09,361 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:08:09,361 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:08:09,361 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:08:09,527 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:09,527 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/explore
+2025-05-12 02:08:09,527 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:12,834 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:08:12,835 - instagram_url_test - ERROR - ❌ URL Test FAILED: https://instagram.com/explore
+2025-05-12 02:08:12,835 - instagram_url_test - ERROR -   - Failed step: main_prefs_before_restart
+2025-05-12 02:08:12,835 - instagram_url_test - ERROR -   - Failed step: main_prefs_after_restart
+2025-05-12 02:08:12,835 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:08:17,837 - instagram_url_test - INFO - Test 3/6: https://instagram.com/p/C123abcDEF
+2025-05-12 02:08:17,837 - instagram_url_test - INFO - === Testing URL: https://instagram.com/p/C123abcDEF ===
+2025-05-12 02:08:17,960 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:08:18,129 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:08:18,129 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:08:18,216 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:08:18,218 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/p/C123abcDEF"
+2025-05-12 02:08:18,218 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:08:18,218 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:08:18,218 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:08:18,314 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:08:18,315 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:08:18,406 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:08:18,406 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:08:18,406 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/p/C123abcDEF
+2025-05-12 02:08:18,751 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:08:18,751 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:08:19,098 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:08:19,099 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:08:22,204 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:08:22,205 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:08:25,508 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:08:25,509 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:08:28,511 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:08:28,718 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:08:28,718 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:08:28,718 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:08:28,874 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:28,874 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/p/C123abcDEF
+2025-05-12 02:08:28,874 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:28,874 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:08:29,044 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:08:29,160 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:08:34,162 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:08:34,344 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:08:34,345 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:08:34,345 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:08:34,513 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:34,513 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/p/C123abcDEF
+2025-05-12 02:08:34,513 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:37,816 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:08:37,816 - instagram_url_test - ERROR - ❌ URL Test FAILED: https://instagram.com/p/C123abcDEF
+2025-05-12 02:08:37,816 - instagram_url_test - ERROR -   - Failed step: main_prefs_before_restart
+2025-05-12 02:08:37,816 - instagram_url_test - ERROR -   - Failed step: main_prefs_after_restart
+2025-05-12 02:08:37,816 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:08:42,818 - instagram_url_test - INFO - Test 4/6: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:08:42,818 - instagram_url_test - INFO - === Testing URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== ===
+2025-05-12 02:08:42,941 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:08:43,087 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:08:43,088 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:08:43,175 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:08:43,176 - core.instagram_manager - INFO - Created URL config file with URL: "https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA=="
+2025-05-12 02:08:43,176 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:08:43,176 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:08:43,176 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:08:43,273 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:08:43,274 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:08:43,368 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:08:43,368 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:08:43,368 - core.instagram_manager - INFO - Using direct method to set target_url to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:08:43,712 - core.instagram_manager - INFO - Verified: target_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:08:43,712 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:08:44,045 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:08:44,045 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:08:47,143 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:08:47,144 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:08:50,430 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:08:50,431 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:08:53,432 - instagram_url_test - INFO - Verifying instagram_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:08:53,603 - instagram_url_test - INFO - Found: <string name="instagram_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:08:53,603 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:08:53,603 - instagram_url_test - INFO - Verifying target_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:08:53,751 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:53,752 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:08:53,752 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:53,752 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:08:53,946 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:08:54,062 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:08:59,065 - instagram_url_test - INFO - Verifying instagram_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:08:59,250 - instagram_url_test - INFO - Found: <string name="instagram_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:08:59,251 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:08:59,251 - instagram_url_test - INFO - Verifying target_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:08:59,419 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:08:59,419 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:08:59,419 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:02,706 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:09:02,706 - instagram_url_test - ERROR - ❌ URL Test FAILED: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:09:02,706 - instagram_url_test - ERROR -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:02,706 - instagram_url_test - ERROR -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:02,707 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:09:07,708 - instagram_url_test - INFO - Test 5/6: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:07,709 - instagram_url_test - INFO - === Testing URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share ===
+2025-05-12 02:09:07,846 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:09:07,998 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:09:07,999 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:09:08,101 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:09:08,101 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share"
+2025-05-12 02:09:08,101 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:09:08,102 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:09:08,102 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:09:08,189 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:09:08,190 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:09:08,272 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:09:08,272 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:09:08,272 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:08,582 - core.instagram_manager - WARNING - Could not verify target_url was set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:08,583 - core.instagram_manager - WARNING - Found: <map><int name="iterations" value="100" /><int name="min_interval" value="3" /><int name="max_interval" value="5" /><int name="airplane_mode_delay" value="3000" /><int name="delay_min" value="1" /><int name="delay_max" value="5" /><boolean name="is_running" value="false" /><boolean name="is_first_run" value="false" /><boolean name="rotate_ip" value="true" /><boolean name="use_webview_mode" value="true" /><boolean name="use_random_device_profile" value="true" /><boolean name="new_webview_per_request" value="true" /><boolean name="handle_marketing_redirects" value="true" /><string name=target_url>https://instagram.com/stories/username/12345678?igshid=abc123def<string name="target_url">https://instagram.com/stories/username/12345678?igshid=abc123def&amp;utm_source=ig_story_item_share</string>utm_source=ig_story_item_share</string></map>
+2025-05-12 02:09:08,583 - core.instagram_manager - INFO - Verified base URL part: https://instagram.com/stories/username/12345678
+2025-05-12 02:09:08,583 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:09:08,895 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:09:08,895 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:09:12,001 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:09:12,001 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:09:15,286 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:09:15,286 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:09:18,289 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:09:18,452 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share</string>
+2025-05-12 02:09:18,453 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:18,453 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:09:18,617 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:18,617 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:18,617 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:18,617 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:09:18,763 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:09:18,879 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:09:23,881 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:09:24,047 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share</string>
+2025-05-12 02:09:24,047 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:24,047 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:09:24,205 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:24,206 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:24,206 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:27,518 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:09:27,519 - instagram_url_test - ERROR - ❌ URL Test FAILED: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:27,519 - instagram_url_test - ERROR -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:27,519 - instagram_url_test - ERROR -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:27,519 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:09:32,521 - instagram_url_test - INFO - Test 6/6: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:32,522 - instagram_url_test - INFO - === Testing URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b ===
+2025-05-12 02:09:32,661 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:09:32,823 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:09:32,824 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:09:32,923 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:09:32,924 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/search?q=test&tag=test/with/slash&special=a&b"
+2025-05-12 02:09:32,924 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:09:32,925 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:09:32,925 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:09:33,051 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:09:33,051 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:09:33,132 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:09:33,132 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:09:33,132 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:33,468 - core.instagram_manager - WARNING - Could not verify target_url was set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:33,468 - core.instagram_manager - WARNING - Found: <map><int name="iterations" value="100" /><int name="min_interval" value="3" /><int name="max_interval" value="5" /><int name="airplane_mode_delay" value="3000" /><int name="delay_min" value="1" /><int name="delay_max" value="5" /><boolean name="is_running" value="false" /><boolean name="is_first_run" value="false" /><boolean name="rotate_ip" value="true" /><boolean name="use_webview_mode" value="true" /><boolean name="use_random_device_profile" value="true" /><boolean name="new_webview_per_request" value="true" /><boolean name="handle_marketing_redirects" value="true" /><string name=target_url>https://instagram.com/search?q=test<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>tag=test/with/slash<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>special=a<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>b</string></map>
+2025-05-12 02:09:33,468 - core.instagram_manager - INFO - Verified base URL part: https://instagram.com/search
+2025-05-12 02:09:33,468 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:09:33,838 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:09:33,839 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:09:36,946 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:09:36,947 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:09:40,249 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:09:40,249 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:09:43,252 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/search?q=test&tag=test/with/slash&special=a&b in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:09:43,446 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/search?q=test&tag=test/with/slash&special=a&b</string>
+2025-05-12 02:09:43,446 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:43,446 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/search?q=test&tag=test/with/slash&special=a&b in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:09:43,599 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:43,600 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:43,600 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:43,600 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:09:43,792 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:09:43,912 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:09:48,914 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/search?q=test&tag=test/with/slash&special=a&b in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:09:49,084 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/search?q=test&tag=test/with/slash&special=a&b</string>
+2025-05-12 02:09:49,084 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:49,085 - instagram_url_test - INFO - Verifying target_url=https://instagram.com/search?q=test&tag=test/with/slash&special=a&b in /data/data/com.example.imtbf.debug/shared_prefs/instagram_traffic_simulator_prefs.xml
+2025-05-12 02:09:49,250 - instagram_url_test - INFO - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:49,250 - instagram_url_test - ERROR - ❌ Failed: target_url does not contain https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:49,250 - instagram_url_test - ERROR - Found: <string name="target_url">https://example.com</string>
+2025-05-12 02:09:52,550 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:09:52,550 - instagram_url_test - ERROR - ❌ URL Test FAILED: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:52,550 - instagram_url_test - ERROR -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:52,550 - instagram_url_test - ERROR -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:52,550 - instagram_url_test - INFO - 
+=== TEST SUMMARY ===
+2025-05-12 02:09:52,550 - instagram_url_test - INFO - Device: R38N9014KDM
+2025-05-12 02:09:52,550 - instagram_url_test - INFO - Access method: run-as
+2025-05-12 02:09:52,550 - instagram_url_test - INFO - Tests passed: 0/6 (0.0%)
+2025-05-12 02:09:52,550 - instagram_url_test - INFO - Test 1: ❌ FAIL - https://instagram.com
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO - Test 2: ❌ FAIL - https://instagram.com/explore
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO - Test 3: ❌ FAIL - https://instagram.com/p/C123abcDEF
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO - Test 4: ❌ FAIL - https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO - Test 5: ❌ FAIL - https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO - Test 6: ❌ FAIL - https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_before_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO -   - Failed step: main_prefs_after_restart
+2025-05-12 02:09:52,551 - instagram_url_test - INFO - === Tests completed ===
+2025-05-12 02:11:11,417 - instagram_url_test - INFO - === Starting Instagram URL Persistence Tests ===
+2025-05-12 02:11:11,591 - instagram_url_test - INFO - Device access method: run-as
+2025-05-12 02:11:11,591 - instagram_url_test - INFO - Test 1/6: https://instagram.com
+2025-05-12 02:11:11,591 - instagram_url_test - INFO - === Testing URL: https://instagram.com ===
+2025-05-12 02:11:11,592 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:11:11,749 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:11:11,749 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:11:11,847 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:11:11,847 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com"
+2025-05-12 02:11:11,847 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:11:11,848 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:11:11,848 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:11:11,945 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:11:11,946 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:11:12,041 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:11:12,043 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:11:12,043 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com
+2025-05-12 02:11:12,388 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com
+2025-05-12 02:11:12,389 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:11:12,742 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:11:12,743 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:11:15,843 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:11:15,843 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:11:19,143 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:11:19,144 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:11:22,146 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:11:22,326 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:11:22,327 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:11:22,327 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com
+2025-05-12 02:11:24,606 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:11:24,676 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:11:24,676 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:11:24,816 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:11:24,918 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:11:29,920 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:11:30,090 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:11:30,090 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:11:30,090 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com
+2025-05-12 02:11:32,373 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:11:32,442 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:11:32,442 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com
+2025-05-12 02:11:32,442 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:11:37,445 - instagram_url_test - INFO - Test 2/6: https://instagram.com/explore
+2025-05-12 02:11:37,446 - instagram_url_test - INFO - === Testing URL: https://instagram.com/explore ===
+2025-05-12 02:11:37,593 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:11:37,754 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:11:37,754 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:11:37,837 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:11:37,838 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/explore"
+2025-05-12 02:11:37,838 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:11:37,839 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:11:37,839 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:11:37,936 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:11:37,936 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:11:38,030 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:11:38,031 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:11:38,031 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/explore
+2025-05-12 02:11:38,370 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/explore
+2025-05-12 02:11:38,370 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:11:38,728 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:11:38,728 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:11:41,845 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:11:41,845 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:11:45,142 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:11:45,143 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:11:48,145 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:11:48,333 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:11:48,333 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:11:48,333 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/explore
+2025-05-12 02:11:50,634 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:11:50,708 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:11:50,708 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:11:50,874 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:11:50,986 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:11:55,989 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:11:56,172 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:11:56,172 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:11:56,172 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/explore
+2025-05-12 02:11:58,455 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:11:58,523 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:11:58,523 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/explore
+2025-05-12 02:11:58,523 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:12:03,526 - instagram_url_test - INFO - Test 3/6: https://instagram.com/p/C123abcDEF
+2025-05-12 02:12:03,526 - instagram_url_test - INFO - === Testing URL: https://instagram.com/p/C123abcDEF ===
+2025-05-12 02:12:03,656 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:12:03,779 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:12:03,779 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:12:03,864 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:12:03,865 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/p/C123abcDEF"
+2025-05-12 02:12:03,865 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:12:03,865 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:12:03,865 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:12:03,964 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:12:03,964 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:12:04,055 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:12:04,055 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:12:04,055 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/p/C123abcDEF
+2025-05-12 02:12:04,394 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:12:04,394 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:12:04,732 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:12:04,733 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:12:07,841 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:12:07,842 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:12:11,134 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:12:11,134 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:12:14,137 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:12:14,324 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:12:14,324 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:12:14,324 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/p/C123abcDEF
+2025-05-12 02:12:16,604 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:12:16,671 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:12:16,671 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:12:16,837 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:12:16,955 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:12:21,957 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:12:22,140 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:12:22,141 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:12:22,141 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/p/C123abcDEF
+2025-05-12 02:12:24,434 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:12:24,512 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:12:24,513 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/p/C123abcDEF
+2025-05-12 02:12:24,513 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:12:29,515 - instagram_url_test - INFO - Test 4/6: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:12:29,515 - instagram_url_test - INFO - === Testing URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== ===
+2025-05-12 02:12:29,638 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:12:29,774 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:12:29,774 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:12:29,863 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:12:29,864 - core.instagram_manager - INFO - Created URL config file with URL: "https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA=="
+2025-05-12 02:12:29,864 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:12:29,864 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:12:29,864 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:12:29,952 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:12:29,952 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:12:30,038 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:12:30,039 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:12:30,039 - core.instagram_manager - INFO - Using direct method to set target_url to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:12:30,352 - core.instagram_manager - INFO - Verified: target_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:12:30,352 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:12:30,691 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:12:30,691 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:12:33,803 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:12:33,803 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:12:37,091 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:12:37,091 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:12:40,094 - instagram_url_test - INFO - Verifying instagram_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:12:40,271 - instagram_url_test - INFO - Found: <string name="instagram_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:12:40,272 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:12:40,272 - instagram_url_test - INFO - Verifying app is using URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:12:42,540 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:12:42,602 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:12:42,602 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:12:42,761 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:12:42,866 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:12:47,868 - instagram_url_test - INFO - Verifying instagram_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:12:48,049 - instagram_url_test - INFO - Found: <string name="instagram_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:12:48,049 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:12:48,049 - instagram_url_test - INFO - Verifying app is using URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:12:50,339 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:12:50,418 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:12:50,418 - instagram_url_test - INFO - ✅ URL Test PASSED: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:12:50,418 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:12:55,420 - instagram_url_test - INFO - Test 5/6: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:12:55,422 - instagram_url_test - INFO - === Testing URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share ===
+2025-05-12 02:12:55,549 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:12:55,712 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:12:55,712 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:12:55,816 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:12:55,817 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share"
+2025-05-12 02:12:55,817 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:12:55,817 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:12:55,817 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:12:55,918 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:12:55,918 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:12:56,010 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:12:56,010 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:12:56,010 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:12:56,353 - core.instagram_manager - WARNING - Could not verify target_url was set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:12:56,353 - core.instagram_manager - WARNING - Found: <map><int name="iterations" value="100" /><int name="min_interval" value="3" /><int name="max_interval" value="5" /><int name="airplane_mode_delay" value="3000" /><int name="delay_min" value="1" /><int name="delay_max" value="5" /><boolean name="is_running" value="false" /><boolean name="is_first_run" value="false" /><boolean name="rotate_ip" value="true" /><boolean name="use_webview_mode" value="true" /><boolean name="use_random_device_profile" value="true" /><boolean name="new_webview_per_request" value="true" /><boolean name="handle_marketing_redirects" value="true" /><string name=target_url>https://instagram.com/stories/username/12345678?igshid=abc123def<string name="target_url">https://instagram.com/stories/username/12345678?igshid=abc123def&amp;utm_source=ig_story_item_share</string>utm_source=ig_story_item_share</string></map>
+2025-05-12 02:12:56,353 - core.instagram_manager - INFO - Verified base URL part: https://instagram.com/stories/username/12345678
+2025-05-12 02:12:56,353 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:12:56,703 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:12:56,703 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:12:59,802 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:12:59,802 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:13:03,101 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:13:03,102 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:13:06,104 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:13:06,301 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share</string>
+2025-05-12 02:13:06,301 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:13:06,301 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:13:08,571 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:13:08,660 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:13:08,661 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:13:08,822 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:13:08,942 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:13:13,946 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:13:14,126 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share</string>
+2025-05-12 02:13:14,126 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:13:14,126 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:13:16,397 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:13:16,469 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:13:16,470 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:13:16,470 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:13:21,472 - instagram_url_test - INFO - Test 6/6: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:21,473 - instagram_url_test - INFO - === Testing URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b ===
+2025-05-12 02:13:21,611 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:13:21,778 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:13:21,779 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:13:21,879 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:13:21,879 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/search?q=test&tag=test/with/slash&special=a&b"
+2025-05-12 02:13:21,879 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:13:21,880 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:13:21,880 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:13:21,976 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:13:21,976 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:13:22,081 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:13:22,081 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:13:22,081 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:22,416 - core.instagram_manager - WARNING - Could not verify target_url was set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:22,416 - core.instagram_manager - WARNING - Found: <map><int name="iterations" value="100" /><int name="min_interval" value="3" /><int name="max_interval" value="5" /><int name="airplane_mode_delay" value="3000" /><int name="delay_min" value="1" /><int name="delay_max" value="5" /><boolean name="is_running" value="false" /><boolean name="is_first_run" value="false" /><boolean name="rotate_ip" value="true" /><boolean name="use_webview_mode" value="true" /><boolean name="use_random_device_profile" value="true" /><boolean name="new_webview_per_request" value="true" /><boolean name="handle_marketing_redirects" value="true" /><string name=target_url>https://instagram.com/search?q=test<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>tag=test/with/slash<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>special=a<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>b</string></map>
+2025-05-12 02:13:22,416 - core.instagram_manager - INFO - Verified base URL part: https://instagram.com/search
+2025-05-12 02:13:22,416 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:13:22,784 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:13:22,784 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:13:25,905 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:13:25,905 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:13:29,198 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:13:29,199 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:13:32,201 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/search?q=test&tag=test/with/slash&special=a&b in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:13:32,379 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/search?q=test&tag=test/with/slash&special=a&b</string>
+2025-05-12 02:13:32,379 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:32,379 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:34,667 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:13:34,739 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:13:34,739 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:13:34,897 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:13:35,014 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:13:40,017 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/search?q=test&tag=test/with/slash&special=a&b in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:13:40,196 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/search?q=test&tag=test/with/slash&special=a&b</string>
+2025-05-12 02:13:40,197 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:40,197 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:42,484 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - 
+=== TEST SUMMARY ===
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - Device: R38N9014KDM
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - Access method: run-as
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - Tests passed: 6/6 (100.0%)
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - Test 1: ✅ PASS - https://instagram.com
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - Test 2: ✅ PASS - https://instagram.com/explore
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - Test 3: ✅ PASS - https://instagram.com/p/C123abcDEF
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - Test 4: ✅ PASS - https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:13:42,562 - instagram_url_test - INFO - Test 5: ✅ PASS - https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:13:42,563 - instagram_url_test - INFO - Test 6: ✅ PASS - https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:13:42,563 - instagram_url_test - INFO - === Tests completed ===
+2025-05-12 02:42:42,573 - instagram_url_test - INFO - === Starting Instagram URL Persistence Tests ===
+2025-05-12 02:42:42,778 - instagram_url_test - INFO - Device access method: run-as
+2025-05-12 02:42:42,778 - instagram_url_test - INFO - Test 1/6: https://instagram.com
+2025-05-12 02:42:42,778 - instagram_url_test - INFO - === Testing URL: https://instagram.com ===
+2025-05-12 02:42:42,778 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:42:42,917 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:42:42,917 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:42:42,998 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:42:42,999 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com"
+2025-05-12 02:42:42,999 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:42:43,000 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:42:43,000 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:42:43,090 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:42:43,090 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:42:43,175 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:42:43,175 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:42:43,175 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com
+2025-05-12 02:42:43,496 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com
+2025-05-12 02:42:43,496 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:42:43,849 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:42:43,849 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:42:46,957 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:42:46,958 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:42:49,410 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:42:52,697 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:42:52,697 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:42:55,114 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:42:55,115 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:42:58,116 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:42:58,281 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:42:58,281 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:42:58,281 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com
+2025-05-12 02:42:58,439 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:43:00,766 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:43:00,919 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:43:00,919 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:43:00,919 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:43:01,083 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:43:01,193 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:43:06,194 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:43:06,373 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:43:06,373 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:43:06,373 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com
+2025-05-12 02:43:06,525 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:43:08,857 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - === URL PERSISTENCE REPORT ===
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - Expected URL: https://instagram.com
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - --- Before Restart ---
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - --- After Restart ---
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - URL works despite target_url reset in preferences
+2025-05-12 02:43:08,999 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:43:14,001 - instagram_url_test - INFO - Test 2/6: https://instagram.com/explore
+2025-05-12 02:43:14,001 - instagram_url_test - INFO - === Testing URL: https://instagram.com/explore ===
+2025-05-12 02:43:14,133 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:43:14,305 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:43:14,305 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:43:14,406 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:43:14,407 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/explore"
+2025-05-12 02:43:14,407 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:43:14,408 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:43:14,408 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:43:14,512 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:43:14,512 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:43:14,605 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:43:14,605 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:43:14,605 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/explore
+2025-05-12 02:43:14,954 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/explore
+2025-05-12 02:43:14,955 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:43:15,294 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:43:15,294 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:43:18,391 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:43:18,391 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:43:20,765 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:43:24,057 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:43:24,058 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:43:26,427 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:43:26,427 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:43:29,429 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:43:29,618 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:43:29,619 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:43:29,619 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/explore
+2025-05-12 02:43:29,784 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:43:32,080 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:43:32,224 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:43:32,224 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:43:32,224 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:43:32,357 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:43:32,465 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:43:37,466 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:43:37,651 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:43:37,651 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:43:37,651 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/explore
+2025-05-12 02:43:37,815 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:43:40,134 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - === URL PERSISTENCE REPORT ===
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - Expected URL: https://instagram.com/explore
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - --- Before Restart ---
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - --- After Restart ---
+2025-05-12 02:43:40,289 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:43:40,290 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:43:40,290 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:43:40,290 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/explore
+2025-05-12 02:43:40,290 - instagram_url_test - INFO - URL works despite target_url reset in preferences
+2025-05-12 02:43:40,290 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:43:45,290 - instagram_url_test - INFO - Test 3/6: https://instagram.com/p/C123abcDEF
+2025-05-12 02:43:45,291 - instagram_url_test - INFO - === Testing URL: https://instagram.com/p/C123abcDEF ===
+2025-05-12 02:43:45,424 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:43:45,569 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:43:45,569 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:43:45,651 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:43:45,652 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/p/C123abcDEF"
+2025-05-12 02:43:45,652 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:43:45,652 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:43:45,652 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:43:45,750 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:43:45,750 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:43:45,846 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:43:45,846 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:43:45,847 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/p/C123abcDEF
+2025-05-12 02:43:46,191 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:43:46,192 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:43:46,544 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:43:46,544 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:43:49,643 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:43:49,644 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:43:51,983 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:43:55,272 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:43:55,272 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:43:57,699 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:43:57,699 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:44:00,700 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:44:00,872 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:44:00,873 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:44:00,873 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/p/C123abcDEF
+2025-05-12 02:44:01,038 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:44:03,306 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:44:03,439 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:44:03,439 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:44:03,439 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:44:03,568 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:44:03,672 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:44:08,674 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:44:08,854 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:44:08,854 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:44:08,854 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/p/C123abcDEF
+2025-05-12 02:44:09,019 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:46:38,572 - instagram_url_test - INFO - === Starting Instagram URL Persistence Tests ===
+2025-05-12 02:46:38,762 - instagram_url_test - INFO - Device access method: run-as
+2025-05-12 02:46:38,762 - instagram_url_test - INFO - Test 1/6: https://instagram.com
+2025-05-12 02:46:38,762 - instagram_url_test - INFO - === Testing URL: https://instagram.com ===
+2025-05-12 02:46:38,762 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:46:38,893 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:46:38,893 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:46:38,986 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:46:38,987 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com"
+2025-05-12 02:46:38,987 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:46:38,987 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:46:38,987 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:46:39,079 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:46:39,079 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:46:39,164 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:46:39,164 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:46:39,164 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com
+2025-05-12 02:46:39,485 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com
+2025-05-12 02:46:39,486 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:46:39,857 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:46:39,866 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:46:43,077 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:46:43,077 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:46:45,438 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:46:48,726 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:46:48,727 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:46:51,144 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:46:51,145 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:46:54,147 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:46:54,322 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:46:54,322 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:46:54,322 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com
+2025-05-12 02:46:54,480 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:46:56,780 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:46:56,925 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:46:56,926 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:46:56,926 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:46:57,062 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:46:57,161 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:47:02,163 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:47:02,337 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com</string>
+2025-05-12 02:47:02,337 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com
+2025-05-12 02:47:02,337 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com
+2025-05-12 02:47:02,501 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:47:04,807 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:47:04,947 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:47:04,947 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:47:04,947 - instagram_url_test - INFO - === URL PERSISTENCE REPORT ===
+2025-05-12 02:47:04,947 - instagram_url_test - INFO - Expected URL: https://instagram.com
+2025-05-12 02:47:04,947 - instagram_url_test - INFO - --- Before Restart ---
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - --- After Restart ---
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - URL works despite target_url reset in preferences
+2025-05-12 02:47:04,948 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:47:09,949 - instagram_url_test - INFO - Test 2/6: https://instagram.com/explore
+2025-05-12 02:47:09,950 - instagram_url_test - INFO - === Testing URL: https://instagram.com/explore ===
+2025-05-12 02:47:10,109 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:47:10,258 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:47:10,258 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:47:10,337 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:47:10,338 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/explore"
+2025-05-12 02:47:10,338 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:47:10,338 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:47:10,338 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:47:10,437 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:47:10,438 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:47:10,527 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:47:10,527 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:47:10,527 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/explore
+2025-05-12 02:47:10,882 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/explore
+2025-05-12 02:47:10,883 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:47:11,223 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:47:11,223 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:47:14,322 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:47:14,323 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:47:16,668 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:47:19,965 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:47:19,966 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:47:22,344 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:47:22,345 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:47:25,346 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:47:25,520 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:47:25,521 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:47:25,521 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/explore
+2025-05-12 02:47:25,686 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:47:27,998 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:47:28,133 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:47:28,134 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:47:28,134 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:47:28,258 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:47:28,363 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:47:33,364 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/explore in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:47:33,547 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/explore</string>
+2025-05-12 02:47:33,548 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/explore
+2025-05-12 02:47:33,548 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/explore
+2025-05-12 02:47:33,714 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:47:36,054 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - === URL PERSISTENCE REPORT ===
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - Expected URL: https://instagram.com/explore
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - --- Before Restart ---
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - --- After Restart ---
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/explore
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - URL works despite target_url reset in preferences
+2025-05-12 02:47:36,212 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:47:41,214 - instagram_url_test - INFO - Test 3/6: https://instagram.com/p/C123abcDEF
+2025-05-12 02:47:41,215 - instagram_url_test - INFO - === Testing URL: https://instagram.com/p/C123abcDEF ===
+2025-05-12 02:47:41,354 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:47:41,512 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:47:41,513 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:47:41,596 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:47:41,598 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/p/C123abcDEF"
+2025-05-12 02:47:41,598 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:47:41,598 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:47:41,598 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:47:41,696 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:47:41,696 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:47:41,787 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:47:41,787 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:47:41,787 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/p/C123abcDEF
+2025-05-12 02:47:42,134 - core.instagram_manager - INFO - Verified: target_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:47:42,134 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:47:42,475 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:47:42,475 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:47:45,574 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:47:45,574 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:47:47,930 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:47:51,184 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:47:51,184 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:47:53,578 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:47:53,578 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:47:56,579 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:47:56,756 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:47:56,757 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:47:56,757 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/p/C123abcDEF
+2025-05-12 02:47:56,921 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:47:59,186 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:47:59,332 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:47:59,332 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:47:59,332 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:47:59,491 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:47:59,605 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:48:04,606 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/p/C123abcDEF in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:48:04,781 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/p/C123abcDEF</string>
+2025-05-12 02:48:04,781 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/p/C123abcDEF
+2025-05-12 02:48:04,781 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/p/C123abcDEF
+2025-05-12 02:48:04,941 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:48:07,257 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:48:07,389 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:48:07,389 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - === URL PERSISTENCE REPORT ===
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - Expected URL: https://instagram.com/p/C123abcDEF
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - --- Before Restart ---
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - --- After Restart ---
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/p/C123abcDEF
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - URL works despite target_url reset in preferences
+2025-05-12 02:48:07,390 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:48:12,391 - instagram_url_test - INFO - Test 4/6: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:12,392 - instagram_url_test - INFO - === Testing URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== ===
+2025-05-12 02:48:12,540 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:48:12,700 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:48:12,700 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:48:12,802 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:48:12,803 - core.instagram_manager - INFO - Created URL config file with URL: "https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA=="
+2025-05-12 02:48:12,803 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:48:12,804 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:48:12,804 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:48:12,903 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:48:12,903 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:48:12,997 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:48:12,998 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:48:12,998 - core.instagram_manager - INFO - Using direct method to set target_url to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:13,394 - core.instagram_manager - INFO - Verified: target_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:13,394 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:48:13,755 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:48:13,756 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:48:16,870 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:48:16,871 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:48:19,224 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:48:22,512 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:48:22,513 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:48:24,843 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:48:24,843 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:48:27,843 - instagram_url_test - INFO - Verifying instagram_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:48:28,010 - instagram_url_test - INFO - Found: <string name="instagram_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:48:28,011 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:28,011 - instagram_url_test - INFO - Verifying app is using URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:28,181 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:48:30,506 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:48:30,653 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:48:30,653 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:48:30,653 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:48:30,822 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:48:30,943 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:48:35,945 - instagram_url_test - INFO - Verifying instagram_url=https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA== in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:48:36,123 - instagram_url_test - INFO - Found: <string name="instagram_url">https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==</string>
+2025-05-12 02:48:36,124 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:36,124 - instagram_url_test - INFO - Verifying app is using URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:36,292 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:48:38,608 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - === URL PERSISTENCE REPORT ===
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - Expected URL: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - --- Before Restart ---
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - --- After Restart ---
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - ✅ URL Test PASSED: https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - URL works despite target_url reset in preferences
+2025-05-12 02:48:38,753 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:48:43,755 - instagram_url_test - INFO - Test 5/6: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:48:43,756 - instagram_url_test - INFO - === Testing URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share ===
+2025-05-12 02:48:43,886 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:48:44,058 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:48:44,059 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:48:44,162 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:48:44,163 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share"
+2025-05-12 02:48:44,163 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:48:44,163 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:48:44,163 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:48:44,263 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:48:44,263 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:48:44,353 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:48:44,353 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:48:44,353 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:48:44,687 - core.instagram_manager - WARNING - Could not verify target_url was set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:48:44,687 - core.instagram_manager - WARNING - Found: <map><int name="iterations" value="100" /><int name="min_interval" value="3" /><int name="max_interval" value="5" /><int name="airplane_mode_delay" value="3000" /><int name="delay_min" value="1" /><int name="delay_max" value="5" /><boolean name="is_running" value="false" /><boolean name="is_first_run" value="false" /><boolean name="rotate_ip" value="true" /><boolean name="use_webview_mode" value="true" /><boolean name="use_random_device_profile" value="true" /><boolean name="new_webview_per_request" value="true" /><boolean name="handle_marketing_redirects" value="true" /><string name=target_url>https://instagram.com/stories/username/12345678?igshid=abc123def<string name="target_url">https://instagram.com/stories/username/12345678?igshid=abc123def&amp;utm_source=ig_story_item_share</string>utm_source=ig_story_item_share</string></map>
+2025-05-12 02:48:44,687 - core.instagram_manager - INFO - Verified base URL part: https://instagram.com/stories/username/12345678
+2025-05-12 02:48:44,688 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:48:45,071 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:48:45,071 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:48:48,191 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:48:48,192 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:48:50,516 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:48:53,782 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:48:53,783 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:48:56,189 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:48:56,189 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:48:59,191 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:48:59,361 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share</string>
+2025-05-12 02:48:59,361 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:48:59,361 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:48:59,516 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:49:01,815 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:49:01,955 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:49:01,955 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:49:01,955 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:49:02,106 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:49:02,216 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:49:07,217 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:49:07,376 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share</string>
+2025-05-12 02:49:07,377 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:49:07,377 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:49:07,526 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:49:09,846 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:49:10,001 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - === URL PERSISTENCE REPORT ===
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - Expected URL: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - --- Before Restart ---
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - --- After Restart ---
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - URL works despite target_url reset in preferences
+2025-05-12 02:49:10,002 - instagram_url_test - INFO - Pausing between tests...
+2025-05-12 02:49:15,004 - instagram_url_test - INFO - Test 6/6: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:15,005 - instagram_url_test - INFO - === Testing URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b ===
+2025-05-12 02:49:15,139 - core.instagram_manager - INFO - Step 1: Force stopping app on R38N9014KDM
+2025-05-12 02:49:15,306 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:49:15,306 - core.instagram_manager - INFO - Step 2: Checking access method for R38N9014KDM
+2025-05-12 02:49:15,410 - core.instagram_manager - INFO - Step 3: Creating URL config for R38N9014KDM
+2025-05-12 02:49:15,411 - core.instagram_manager - INFO - Created URL config file with URL: "https://instagram.com/search?q=test&tag=test/with/slash&special=a&b"
+2025-05-12 02:49:15,411 - core.instagram_manager - INFO - Step 4: Creating main preferences file for R38N9014KDM
+2025-05-12 02:49:15,411 - core.instagram_manager - INFO - Created main preferences file with iterations=100, min_interval=3, max_interval=5
+2025-05-12 02:49:15,411 - core.instagram_manager - INFO - Step 5a: Pushing URL config to R38N9014KDM
+2025-05-12 02:49:15,509 - core.instagram_manager - INFO - Successfully pushed config file to R38N9014KDM
+2025-05-12 02:49:15,509 - core.instagram_manager - INFO - Step 5b: Pushing main preferences to R38N9014KDM
+2025-05-12 02:49:15,602 - core.instagram_manager - INFO - Successfully pushed main preferences file to R38N9014KDM
+2025-05-12 02:49:15,603 - core.instagram_manager - INFO - Step 5c: Directly setting target_url in preferences file
+2025-05-12 02:49:15,603 - core.instagram_manager - INFO - Using direct method to set target_url to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:15,954 - core.instagram_manager - WARNING - Could not verify target_url was set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:15,954 - core.instagram_manager - WARNING - Found: <map><int name="iterations" value="100" /><int name="min_interval" value="3" /><int name="max_interval" value="5" /><int name="airplane_mode_delay" value="3000" /><int name="delay_min" value="1" /><int name="delay_max" value="5" /><boolean name="is_running" value="false" /><boolean name="is_first_run" value="false" /><boolean name="rotate_ip" value="true" /><boolean name="use_webview_mode" value="true" /><boolean name="use_random_device_profile" value="true" /><boolean name="new_webview_per_request" value="true" /><boolean name="handle_marketing_redirects" value="true" /><string name=target_url>https://instagram.com/search?q=test<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>tag=test/with/slash<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>special=a<string name="target_url">https://instagram.com/search?q=test&amp;tag=test/with/slash&amp;special=a&amp;b</string>b</string></map>
+2025-05-12 02:49:15,955 - core.instagram_manager - INFO - Verified base URL part: https://instagram.com/search
+2025-05-12 02:49:15,955 - core.instagram_manager - INFO - Step 6: Sending broadcast commands to R38N9014KDM
+2025-05-12 02:49:16,316 - core.instagram_manager - INFO - Successfully sent all broadcast commands to R38N9014KDM
+2025-05-12 02:49:16,317 - core.instagram_manager - INFO - Step 7: Starting app with direct URL on R38N9014KDM
+2025-05-12 02:49:19,433 - core.instagram_manager - INFO - Successfully started app with direct URL on R38N9014KDM
+2025-05-12 02:49:19,434 - core.instagram_manager - INFO - Step 8: Verifying URL loaded on R38N9014KDM
+2025-05-12 02:49:21,760 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:49:25,062 - core.instagram_manager - INFO - Verified WebView process is running on R38N9014KDM
+2025-05-12 02:49:25,063 - core.instagram_manager - INFO - Step 9: Checking persisted target_url value in preferences
+2025-05-12 02:49:27,452 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:49:27,453 - instagram_url_test - INFO - Waiting for settings to propagate...
+2025-05-12 02:49:30,454 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/search?q=test&tag=test/with/slash&special=a&b in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:49:30,634 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/search?q=test&tag=test/with/slash&special=a&b</string>
+2025-05-12 02:49:30,634 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:30,634 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:30,794 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:49:33,105 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:49:33,244 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:49:33,244 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:49:33,245 - instagram_url_test - INFO - Restarting app to test URL persistence...
+2025-05-12 02:49:33,371 - core.instagram_manager - INFO - Successfully force stopped app on R38N9014KDM
+2025-05-12 02:49:33,475 - core.instagram_manager - INFO - Successfully restarted app on R38N9014KDM
+2025-05-12 02:49:38,478 - instagram_url_test - INFO - Verifying instagram_url=https://instagram.com/search?q=test&tag=test/with/slash&special=a&b in /data/data/com.example.imtbf.debug/shared_prefs/url_config.xml
+2025-05-12 02:49:38,667 - instagram_url_test - INFO - Found: <string name="instagram_url">https://instagram.com/search?q=test&tag=test/with/slash&special=a&b</string>
+2025-05-12 02:49:38,667 - instagram_url_test - INFO - ✅ Verified: instagram_url is set to https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:38,667 - instagram_url_test - INFO - Verifying app is using URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:38,837 - instagram_url_test - INFO - Found in preferences file: target_url=https://example.com
+2025-05-12 02:49:41,186 - core.instagram_manager - WARNING - Could not extract actual WebView URL
+2025-05-12 02:49:41,342 - instagram_url_test - INFO - WebView is running, URL may be loaded correctly
+2025-05-12 02:49:41,342 - instagram_url_test - INFO - WebView is running, assuming URL is loaded correctly
+2025-05-12 02:49:41,342 - instagram_url_test - INFO - === URL PERSISTENCE REPORT ===
+2025-05-12 02:49:41,342 - instagram_url_test - INFO - Expected URL: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - --- Before Restart ---
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - --- After Restart ---
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - target_url in preferences: https://example.com
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Actual URL in WebView: Could not detect
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - URL match: ✅ Yes
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - ✅ URL Test PASSED: https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - URL works despite target_url reset in preferences
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - 
+=== TEST SUMMARY ===
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Device: R38N9014KDM
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Access method: run-as
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Tests passed: 6/6 (100.0%)
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Test 1: ✅ PASS - https://instagram.com
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Test 2: ✅ PASS - https://instagram.com/explore
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Test 3: ✅ PASS - https://instagram.com/p/C123abcDEF
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Test 4: ✅ PASS - https://www.instagram.com/reel/C123abc/?igshid=MzRlODBiNWFlZA==
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Test 5: ✅ PASS - https://instagram.com/stories/username/12345678?igshid=abc123def&utm_source=ig_story_item_share
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - Test 6: ✅ PASS - https://instagram.com/search?q=test&tag=test/with/slash&special=a&b
+2025-05-12 02:49:41,343 - instagram_url_test - INFO - === Tests completed ===

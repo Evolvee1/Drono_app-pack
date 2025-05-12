@@ -1,0 +1,216 @@
+2025-05-11 07:32:51,099 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:32:51,099 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R9WR310F4GJ']
+2025-05-11 07:32:51,099 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 07:32:51,099 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:32:55,485 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:32:55,485 - batch_instagram - INFO - Completed in 4.39 seconds
+2025-05-11 07:32:55,485 - batch_instagram - INFO - Results: 1/1 successful
+2025-05-11 07:32:55,485 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:32:59,356 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:32:59,356 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 07:32:59,356 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 07:32:59,358 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 07:32:59,358 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:33:03,595 - batch_instagram - INFO - Successfully started Instagram simulation on device R38N9014KDM
+2025-05-11 07:33:03,714 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:33:03,714 - batch_instagram - INFO - Completed in 4.36 seconds
+2025-05-11 07:33:03,714 - batch_instagram - INFO - Results: 2/2 successful
+2025-05-11 07:33:03,714 - batch_instagram - INFO - R38N9014KDM: SUCCESS
+2025-05-11 07:33:03,714 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:33:58,155 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:33:58,155 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 07:33:58,156 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 07:33:58,157 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 07:33:58,157 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:34:02,367 - batch_instagram - INFO - Successfully started Instagram simulation on device R38N9014KDM
+2025-05-11 07:34:02,377 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:34:02,377 - batch_instagram - INFO - Completed in 4.22 seconds
+2025-05-11 07:34:02,377 - batch_instagram - INFO - Results: 2/2 successful
+2025-05-11 07:34:02,377 - batch_instagram - INFO - R38N9014KDM: SUCCESS
+2025-05-11 07:34:02,377 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:51:08,611 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:51:08,625 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:51:08,625 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 07:51:08,625 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 07:51:08,627 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 07:51:08,627 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:51:19,469 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:51:19,482 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:51:19,482 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R9WR310F4GJ']
+2025-05-11 07:51:19,483 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 07:51:19,483 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:51:26,543 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:51:26,544 - batch_instagram - INFO - Completed in 7.06 seconds
+2025-05-11 07:51:26,544 - batch_instagram - INFO - Results: 1/1 successful
+2025-05-11 07:51:26,544 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:51:26,608 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:51:26,621 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:51:26,621 - batch_instagram - ERROR - None of the specified devices are connected.
+2025-05-11 07:55:13,656 - batch_instagram - INFO - Setting Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:55:13,656 - batch_instagram - INFO - Successfully wrote URL to /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/instagram_url.txt
+2025-05-11 07:55:13,669 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:55:13,670 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R9WR310F4GJ']
+2025-05-11 07:55:13,670 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 07:55:13,670 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:55:20,889 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:55:20,889 - batch_instagram - INFO - Completed in 7.22 seconds
+2025-05-11 07:55:20,890 - batch_instagram - INFO - Results: 1/1 successful
+2025-05-11 07:55:20,890 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:55:20,939 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:55:20,951 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:55:20,952 - batch_instagram - ERROR - None of the specified devices are connected.
+2025-05-11 07:55:46,265 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 07:55:46,278 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:55:46,278 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R9WR310F4GJ']
+2025-05-11 07:55:46,278 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 07:55:46,281 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:55:53,508 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:55:53,508 - batch_instagram - INFO - Completed in 7.23 seconds
+2025-05-11 07:55:53,508 - batch_instagram - INFO - Results: 1/1 successful
+2025-05-11 07:55:53,508 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:57:58,074 - batch_instagram - INFO - Setting Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fanother-modified-url.net%2Ftest%3Fkey=value&param2=test123
+2025-05-11 07:57:58,074 - batch_instagram - INFO - Successfully wrote URL to /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/instagram_url.txt
+2025-05-11 07:57:58,087 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:57:58,087 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R9WR310F4GJ']
+2025-05-11 07:57:58,087 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 07:57:58,087 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:58:05,359 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:58:05,360 - batch_instagram - INFO - Completed in 7.27 seconds
+2025-05-11 07:58:05,360 - batch_instagram - INFO - Results: 1/1 successful
+2025-05-11 07:58:05,360 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 07:58:15,036 - batch_instagram - INFO - Setting Instagram URL: https://ad.doubleclick.net/ddm/trackclk/N1218293.3788853INSTAGRAMAD/B22959073.363382793;dc_trk_aid=554284222;dc_trk_cid=143855744;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;ltd=?utm_source=instagram&utm_medium=cpc&utm_campaign=conversion&utm_content=test
+2025-05-11 07:58:15,037 - batch_instagram - INFO - Successfully wrote URL to /Users/martinlovas/Desktop/veewoy/__drono-app_cursor/last_try_w_cursor/server/tools/instagram_url.txt
+2025-05-11 07:58:15,049 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 07:58:15,049 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R9WR310F4GJ']
+2025-05-11 07:58:15,049 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 07:58:15,049 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:58:22,389 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 07:58:22,389 - batch_instagram - INFO - Completed in 7.34 seconds
+2025-05-11 07:58:22,389 - batch_instagram - INFO - Results: 1/1 successful
+2025-05-11 07:58:22,389 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 08:01:37,486 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 08:01:37,500 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 08:01:37,500 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 08:01:37,500 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 08:01:37,503 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 08:01:37,503 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:01:44,711 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:01:44,969 - batch_instagram - INFO - Successfully started Instagram simulation on device R38N9014KDM
+2025-05-11 08:01:44,969 - batch_instagram - INFO - Completed in 7.47 seconds
+2025-05-11 08:01:44,969 - batch_instagram - INFO - Results: 2/2 successful
+2025-05-11 08:01:44,969 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 08:01:44,969 - batch_instagram - INFO - R38N9014KDM: SUCCESS
+2025-05-11 08:09:58,386 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 08:09:58,400 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 08:09:58,401 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 08:09:58,401 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 08:09:58,404 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 08:09:58,404 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:10:05,706 - batch_instagram - INFO - Successfully started Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:10:05,941 - batch_instagram - INFO - Successfully started Instagram simulation on device R38N9014KDM
+2025-05-11 08:10:05,942 - batch_instagram - INFO - Completed in 7.54 seconds
+2025-05-11 08:10:05,942 - batch_instagram - INFO - Results: 2/2 successful
+2025-05-11 08:10:05,942 - batch_instagram - INFO - R9WR310F4GJ: SUCCESS
+2025-05-11 08:10:05,942 - batch_instagram - INFO - R38N9014KDM: SUCCESS
+2025-05-11 08:12:57,155 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 08:12:57,171 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 08:12:57,171 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 08:12:57,171 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 08:12:57,174 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 08:12:57,174 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:13:04,402 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 7.8 MB/s (507 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 11.1 MB/s (928 bytes in 0.000s)
+
+2025-05-11 08:13:06,553 - batch_instagram - ERROR - Failed to start Instagram simulation on device R38N9014KDM: url_config.xml: 1 file pushed, 0 skipped. 6.5 MB/s (507 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 9.4 MB/s (928 bytes in 0.000s)
+
+2025-05-11 08:13:06,554 - batch_instagram - INFO - Completed in 9.38 seconds
+2025-05-11 08:13:06,554 - batch_instagram - INFO - Results: 0/2 successful
+2025-05-11 08:13:06,554 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+2025-05-11 08:13:06,554 - batch_instagram - INFO - R38N9014KDM: FAILED
+2025-05-11 08:15:36,653 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 08:15:36,666 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 08:15:36,666 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 08:15:36,666 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 08:15:36,669 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 08:15:36,669 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:15:43,988 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 6.7 MB/s (507 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 9.9 MB/s (928 bytes in 0.000s)
+
+2025-05-11 08:15:44,367 - batch_instagram - ERROR - Failed to start Instagram simulation on device R38N9014KDM: url_config.xml: 1 file pushed, 0 skipped. 6.1 MB/s (507 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 10.1 MB/s (928 bytes in 0.000s)
+
+2025-05-11 08:15:44,368 - batch_instagram - INFO - Completed in 7.70 seconds
+2025-05-11 08:15:44,368 - batch_instagram - INFO - Results: 0/2 successful
+2025-05-11 08:15:44,368 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+2025-05-11 08:15:44,368 - batch_instagram - INFO - R38N9014KDM: FAILED
+2025-05-11 08:20:16,425 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 08:20:16,439 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 08:20:16,440 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R9WR310F4GJ']
+2025-05-11 08:20:16,440 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 08:20:16,440 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:20:23,762 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 7.3 MB/s (507 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 12.2 MB/s (924 bytes in 0.000s)
+
+2025-05-11 08:20:23,763 - batch_instagram - INFO - Completed in 7.32 seconds
+2025-05-11 08:20:23,763 - batch_instagram - INFO - Results: 0/1 successful
+2025-05-11 08:20:23,763 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+2025-05-11 08:20:34,873 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 08:20:34,888 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 08:20:34,888 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R9WR310F4GJ']
+2025-05-11 08:20:34,888 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 08:20:34,888 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:20:42,370 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 6.0 MB/s (507 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 10.1 MB/s (924 bytes in 0.000s)
+
+2025-05-11 08:20:42,370 - batch_instagram - INFO - Completed in 7.48 seconds
+2025-05-11 08:20:42,371 - batch_instagram - INFO - Results: 0/1 successful
+2025-05-11 08:20:42,371 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+2025-05-11 08:20:54,937 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fdyson-sk.mtpc.se%2F5305509%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAae9cU1om-qtxUgSMM3SekltpV4Sai0bUQ9_Cd8rVDPLc9J7vJTUi4NUqcqJCw_aem_wEsehnLupPD2FBsIJ3bldA&e=AT0Btvg2c2OEqSpFlrQ3TXahMqFL25u4rzkr54i1O2Mo7bZbiOXJEOz09aifASkH0kmp39Rw_hKS59qtAW1l-S_8TrnA1F4Xl5wwuA
+2025-05-11 08:20:54,952 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 08:20:54,952 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 08:20:54,952 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 08:20:54,954 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 08:20:54,955 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 08:21:02,283 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 7.2 MB/s (507 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 10.0 MB/s (924 bytes in 0.000s)
+
+2025-05-11 08:21:02,653 - batch_instagram - ERROR - Failed to start Instagram simulation on device R38N9014KDM: url_config.xml: 1 file pushed, 0 skipped. 7.7 MB/s (507 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 11.4 MB/s (924 bytes in 0.000s)
+
+2025-05-11 08:21:02,653 - batch_instagram - INFO - Completed in 7.70 seconds
+2025-05-11 08:21:02,654 - batch_instagram - INFO - Results: 0/2 successful
+2025-05-11 08:21:02,654 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+2025-05-11 08:21:02,654 - batch_instagram - INFO - R38N9014KDM: FAILED
+2025-05-11 09:32:48,314 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+2025-05-11 09:32:48,326 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:32:48,326 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 09:32:48,326 - batch_instagram - INFO - Execution mode: Sequential
+2025-05-11 09:32:48,326 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 09:32:56,048 - batch_instagram - ERROR - Failed to start Instagram simulation on device R38N9014KDM: url_config.xml: 1 file pushed, 0 skipped. 3.3 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 5.3 MB/s (720 bytes in 0.000s)
+
+2025-05-11 09:32:56,048 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 09:33:03,678 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 2.0 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 5.5 MB/s (720 bytes in 0.000s)
+
+2025-05-11 09:33:03,678 - batch_instagram - INFO - Completed in 15.35 seconds
+2025-05-11 09:33:03,678 - batch_instagram - INFO - Results: 0/2 successful
+2025-05-11 09:33:03,678 - batch_instagram - INFO - R38N9014KDM: FAILED
+2025-05-11 09:33:03,678 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+2025-05-11 09:48:38,617 - batch_instagram - INFO - Using existing Instagram URL: https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123
+2025-05-11 09:48:38,629 - batch_instagram - INFO - Found 2 connected devices: R38N9014KDM, R9WR310F4GJ
+2025-05-11 09:48:38,629 - batch_instagram - INFO - Starting Instagram simulations on devices: ['R38N9014KDM', 'R9WR310F4GJ']
+2025-05-11 09:48:38,629 - batch_instagram - INFO - Execution mode: Parallel
+2025-05-11 09:48:38,631 - batch_instagram - INFO - Running Instagram simulation on device R38N9014KDM
+2025-05-11 09:48:38,631 - batch_instagram - INFO - Running Instagram simulation on device R9WR310F4GJ
+2025-05-11 09:48:46,064 - batch_instagram - ERROR - Failed to start Instagram simulation on device R9WR310F4GJ: url_config.xml: 1 file pushed, 0 skipped. 4.4 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 12.6 MB/s (720 bytes in 0.000s)
+
+2025-05-11 09:48:46,279 - batch_instagram - ERROR - Failed to start Instagram simulation on device R38N9014KDM: url_config.xml: 1 file pushed, 0 skipped. 2.9 MB/s (303 bytes in 0.000s)
+main_prefs.xml: 1 file pushed, 0 skipped. 11.4 MB/s (720 bytes in 0.000s)
+
+2025-05-11 09:48:46,280 - batch_instagram - INFO - Completed in 7.65 seconds
+2025-05-11 09:48:46,280 - batch_instagram - INFO - Results: 0/2 successful
+2025-05-11 09:48:46,280 - batch_instagram - INFO - R9WR310F4GJ: FAILED
+2025-05-11 09:48:46,280 - batch_instagram - INFO - R38N9014KDM: FAILED

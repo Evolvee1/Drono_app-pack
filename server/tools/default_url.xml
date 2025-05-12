@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="default_url">https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123</string>
+    <long name="default_timestamp">17469499043N</long>
+</map>

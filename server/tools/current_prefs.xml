@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="use_webview_mode" value="false" />
+    <string name="device_id">b8ce6426-62ea-4cf4-8f7d-afc6caeb4766</string>
+    <string name="current_session_id">20250511_081839</string>
+    <string name="target_url">https://example.com</string>
+    <int name="delay_max" value="5" />
+    <boolean name="is_first_run" value="false" />
+    <int name="airplane_mode_delay" value="3000" />
+    <int name="iterations" value="1000" />
+    <boolean name="is_running" value="true" />
+    <boolean name="config_expanded" value="true" />
+    <int name="min_interval" value="1" />
+    <int name="delay_min" value="1" />
+    <int name="max_interval" value="2" />
+</map>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Settings Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .device-list {
+            list-style: none;
+            padding: 0;
+        }
+        .device-list li {
+            padding: 10px;
+            background-color: #e8f4fc;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+        .results {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        .tab.active {
+            border-bottom: 2px solid #3498db;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .checkbox-group {
+            margin: 10px 0;
+        }
+        .spinner {
+            display: none;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Device Settings Dashboard</h1>
+        
+        <div class="section">
+            <h2>Connected Devices</h2>
+            <button id="refresh-devices">Refresh Devices</button>
+            <div id="spinner-devices" class="spinner"></div>
+            <ul id="device-list" class="device-list">
+                <li>Loading devices...</li>
+            </ul>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="general">General Settings</div>
+            <div class="tab" data-tab="instagram">Instagram Settings</div>
+        </div>
+        
+        <div id="general-tab" class="tab-content active">
+            <div class="section">
+                <h2>Apply General Settings</h2>
+                <form id="settings-form">
+                    <div class="form-group">
+                        <label for="url">URL:</label>
+                        <input type="text" id="url" value="https://veewoy.com/test" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="iterations">Iterations:</label>
+                        <input type="number" id="iterations" value="900" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="min-interval">Min Interval (seconds):</label>
+                        <input type="number" id="min-interval" value="1" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="max-interval">Max Interval (seconds):</label>
+                        <input type="number" id="max-interval" value="2" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delay">Delay (milliseconds):</label>
+                        <input type="number" id="delay" value="3000" />
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="webview-mode" checked />
+                        <label for="webview-mode">Use Webview Mode</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rotate-ip" checked />
+                        <label for="rotate-ip">Rotate IP</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="random-devices" checked />
+                        <label for="random-devices">Use Random Device Profiles</label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="new-webview" checked />
+                        <label for="new-webview">New Webview Per Request</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="all-devices" />
+                        <label for="all-devices">Use All Connected Devices</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="devices">Specific Devices (select multiple):</label>
+                        <select id="devices" multiple style="width: 100%; height: 100px;">
+                            <!-- Will be populated dynamically -->
+                        </select>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="parallel" checked />
+                        <label for="parallel">Run in Parallel</label>
+                    </div>
+                    
+                    <button type="button" id="apply-settings">Apply Settings</button>
+                    <div id="spinner-general" class="spinner"></div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="instagram-tab" class="tab-content">
+            <div class="section">
+                <h2>Apply Instagram Settings</h2>
+                <form id="instagram-form">
+                    <div class="form-group">
+                        <label for="instagram-url">Instagram URL:</label>
+                        <input type="text" id="instagram-url" style="width: 100%;"
+                               value="https://l.instagram.com/?u=https%3A%2F%2Fexample.com%2Ftest%3Fparam%3Dvalue%26another%3D123" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="checkbox" id="instagram-all-devices" />
+                        <label for="instagram-all-devices">Use All Connected Devices</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instagram-devices">Specific Devices (select multiple):</label>
+                        <select id="instagram-devices" multiple style="width: 100%; height: 100px;">
+                            <!-- Will be populated dynamically -->
+                        </select>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="instagram-parallel" checked />
+                        <label for="instagram-parallel">Run in Parallel</label>
+                    </div>
+                    
+                    <button type="button" id="apply-instagram">Apply Instagram Settings</button>
+                    <div id="spinner-instagram" class="spinner"></div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Results</h2>
+            <div id="results" class="results">No results yet.</div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE_URL = 'http://localhost:8000';
+        
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(`${tab.dataset.tab}-tab`).classList.add('active');
+            });
+        });
+        
+        // Get list of devices
+        async function getDevices() {
+            const deviceList = document.getElementById('device-list');
+            const devicesSelect = document.getElementById('devices');
+            const instagramDevicesSelect = document.getElementById('instagram-devices');
+            const spinner = document.getElementById('spinner-devices');
+            
+            deviceList.innerHTML = '<li>Loading devices...</li>';
+            devicesSelect.innerHTML = '';
+            instagramDevicesSelect.innerHTML = '';
+            spinner.style.display = 'block';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/devices`);
+                const data = await response.json();
+                
+                if (data.count === 0) {
+                    deviceList.innerHTML = '<li>No devices found</li>';
+                } else {
+                    deviceList.innerHTML = '';
+                    data.devices.forEach(device => {
+                        const modelInfo = device.model ? ` (${device.model})` : '';
+                        
+                        // Add to device list
+                        const li = document.createElement('li');
+                        li.textContent = `${device.id}${modelInfo}: ${device.status}`;
+                        deviceList.appendChild(li);
+                        
+                        // Add to general select
+                        const option = document.createElement('option');
+                        option.value = device.id;
+                        option.textContent = `${device.id}${modelInfo}`;
+                        devicesSelect.appendChild(option);
+                        
+                        // Add to instagram select
+                        const instaOption = document.createElement('option');
+                        instaOption.value = device.id;
+                        instaOption.textContent = `${device.id}${modelInfo}`;
+                        instagramDevicesSelect.appendChild(instaOption);
+                    });
+                }
+            } catch (error) {
+                deviceList.innerHTML = `<li>Error loading devices: ${error.message}</li>`;
+                console.error('Error fetching devices:', error);
+            } finally {
+                spinner.style.display = 'none';
+            }
+        }
+        
+        // Apply general settings
+        async function applySettings() {
+            const settings = {
+                url: document.getElementById('url').value,
+                iterations: parseInt(document.getElementById('iterations').value),
+                min_interval: parseInt(document.getElementById('min-interval').value),
+                max_interval: parseInt(document.getElementById('max-interval').value),
+                delay: parseInt(document.getElementById('delay').value),
+                webview_mode: document.getElementById('webview-mode').checked,
+                rotate_ip: document.getElementById('rotate-ip').checked,
+                random_devices: document.getElementById('random-devices').checked,
+                new_webview_per_request: document.getElementById('new-webview').checked
+            };
+            
+            const useAllDevices = document.getElementById('all-devices').checked;
+            const devicesSelect = document.getElementById('devices');
+            const selectedDevices = Array.from(devicesSelect.selectedOptions).map(option => option.value);
+            
+            const requestData = {
+                settings: settings,
+                devices: useAllDevices ? null : selectedDevices,
+                all_devices: useAllDevices,
+                parallel: document.getElementById('parallel').checked
+            };
+            
+            // Show spinner
+            const spinner = document.getElementById('spinner-general');
+            const resultsDiv = document.getElementById('results');
+            spinner.style.display = 'block';
+            resultsDiv.textContent = 'Applying settings...';
+            
+            try {
+                if (!useAllDevices && selectedDevices.length === 0) {
+                    throw new Error('Please select at least one device or use all devices');
+                }
+                
+                const response = await fetch(`${API_BASE_URL}/apply-settings`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestData),
+                });
+                
+                const data = await response.json();
+                
+                // Format the results
+                const formatted = JSON.stringify(data, null, 2);
+                resultsDiv.textContent = formatted;
+            } catch (error) {
+                resultsDiv.textContent = `Error: ${error.message}`;
+                console.error('Error applying settings:', error);
+            } finally {
+                spinner.style.display = 'none';
+            }
+        }
+        
+        // Apply Instagram settings
+        async function applyInstagramSettings() {
+            const url = document.getElementById('instagram-url').value;
+            const useAllDevices = document.getElementById('instagram-all-devices').checked;
+            const devicesSelect = document.getElementById('instagram-devices');
+            const selectedDevices = Array.from(devicesSelect.selectedOptions).map(option => option.value);
+            
+            const requestData = {
+                url: url,
+                devices: useAllDevices ? null : selectedDevices,
+                all_devices: useAllDevices,
+                parallel: document.getElementById('instagram-parallel').checked
+            };
+            
+            // Show spinner
+            const spinner = document.getElementById('spinner-instagram');
+            const resultsDiv = document.getElementById('results');
+            spinner.style.display = 'block';
+            resultsDiv.textContent = 'Applying Instagram settings...';
+            
+            try {
+                if (!useAllDevices && selectedDevices.length === 0) {
+                    throw new Error('Please select at least one device or use all devices');
+                }
+                
+                const response = await fetch(`${API_BASE_URL}/instagram-settings`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestData),
+                });
+                
+                const data = await response.json();
+                
+                // Format the results
+                const formatted = JSON.stringify(data, null, 2);
+                resultsDiv.textContent = formatted;
+            } catch (error) {
+                resultsDiv.textContent = `Error: ${error.message}`;
+                console.error('Error applying Instagram settings:', error);
+            } finally {
+                spinner.style.display = 'none';
+            }
+        }
+        
+        // Bind event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('refresh-devices').addEventListener('click', getDevices);
+            document.getElementById('apply-settings').addEventListener('click', applySettings);
+            document.getElementById('apply-instagram').addEventListener('click', applyInstagramSettings);
+            
+            // Toggle device select visibility based on "all devices" checkbox
+            document.getElementById('all-devices').addEventListener('change', function() {
+                document.getElementById('devices').disabled = this.checked;
+            });
+            
+            document.getElementById('instagram-all-devices').addEventListener('change', function() {
+                document.getElementById('instagram-devices').disabled = this.checked;
+            });
+            
+            // Load devices on page load
+            getDevices();
+        });
+    </script>
+</body>
+</html> 
