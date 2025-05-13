@@ -195,6 +195,7 @@
             border-radius: 5px;
             margin: 10px 0;
             overflow: hidden;
+            position: relative;
         }
         
         .progress-bar {
@@ -202,6 +203,71 @@
             background-color: #4caf50;
             border-radius: 5px;
             transition: width 0.5s ease-in-out;
+        }
+        
+        .progress-bar.paused {
+            background-color: #ff9800;
+        }
+        
+        .progress-percentage {
+            position: absolute;
+            right: 5px;
+            top: -5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .progress-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        
+        .simulation-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .stat-item {
+            background-color: #f5f7fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #1a73e8;
+        }
+        
+        .stat-item.elapsed {
+            border-left-color: #4caf50;
+        }
+        
+        .stat-item.remaining {
+            border-left-color: #ff9800;
+        }
+        
+        .stat-item.url {
+            border-left-color: #2196f3;
+            grid-column: span 2;
+        }
+        
+        .stat-item.interval {
+            border-left-color: #9c27b0;
+        }
+        
+        .stat-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 12px;
+        }
+        
+        .stat-value {
+            font-size: 14px;
+            color: #333;
+            word-break: break-word;
         }
         
         .form-group {
@@ -468,6 +534,13 @@
                         break;
                     case 'command_result':
                         handleCommandResult(message.data);
+                        // After a command, request updated status
+                        if (message.data.device_id) {
+                            socket.send(JSON.stringify({
+                                type: 'get_device_status',
+                                device_id: message.data.device_id
+                            }));
+                        }
                         break;
                     case 'url_distribution':
                         handleUrlDistributionResult(message.data);
@@ -476,10 +549,16 @@
                         handleBatchCommandResult(message.data);
                         break;
                     case 'status_update':
-                        updateDeviceStatus(message.data.devices_status);
+                        if (message.data.devices_status) {
+                            updateDeviceStatus(message.data.devices_status);
+                        }
                         break;
                     case 'device_status':
-                        updateSingleDeviceStatus(message.data.device_id, message.data.status);
+                        if (message.data.device_id && message.data.status) {
+                            updateSingleDeviceStatus(message.data.device_id, message.data.status);
+                        } else if (message.data.status) {
+                            updateSingleDeviceStatus(message.data.device_id || "unknown", message.data.status);
+                        }
                         break;
                     default:
                         log(`Unknown message type: ${message.type}`, 'warning');
@@ -563,7 +642,28 @@
                         </div>
                     </div>
                     <div class="device-status">
-                        <p>Loading status...</p>
+                        <h3>Simulation Status <span class="status-idle">⚪ LOADING</span></h3>
+                        <div class="status-info">
+                            <div>Loading simulation data...</div>
+                            <div class="simulation-stats">
+                                <div class="stat-item elapsed">
+                                    <div class="stat-label">ELAPSED TIME</div>
+                                    <div class="stat-value">-</div>
+                                </div>
+                                <div class="stat-item remaining">
+                                    <div class="stat-label">REMAINING TIME</div>
+                                    <div class="stat-value">-</div>
+                                </div>
+                                <div class="stat-item url">
+                                    <div class="stat-label">TARGET URL</div>
+                                    <div class="stat-value">Loading...</div>
+                                </div>
+                                <div class="stat-item interval">
+                                    <div class="stat-label">REQUEST INTERVAL</div>
+                                    <div class="stat-value">-</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 `;
                 
@@ -808,26 +908,87 @@
                     statusClass = 'status-idle';
             }
             
-            // Update status section
-            const progressBar = status.total_iterations > 0 ? 
-                `<div class="progress-bar-container">
-                    <div class="progress-bar" style="width: ${status.percentage}%"></div>
-                </div>` : '';
+            // Clamp percentage to 0-100 range
+            const percentage = Math.min(100, Math.max(0, status.percentage || 0));
             
-            statusSection.innerHTML = `
-                <h3>Simulation Status <span class="${statusClass}">${statusIcon} ${status.status.toUpperCase()}</span></h3>
-                ${status.current_iteration > 0 ? 
-                    `<div class="status-info">
-                        <div><strong>Progress:</strong> ${status.current_iteration}/${status.total_iterations} (${status.percentage}%)</div>
-                        ${progressBar}
-                        <div><strong>Elapsed Time:</strong> ${formatTime(status.elapsed_time)}</div>
-                        <div><strong>Remaining:</strong> ${formatTime(status.estimated_remaining)}</div>
-                        <div><strong>URL:</strong> ${status.url || 'N/A'}</div>
-                        <div><strong>Interval:</strong> ${status.min_interval}s - ${status.max_interval}s</div>
-                    </div>` : 
-                    `<div class="status-info">No active simulation</div>`
-                }
-            `;
+            // Make sure status has all required fields with defaults if missing
+            status = {
+                device_id: deviceId,
+                current_iteration: status.current_iteration || 0,
+                total_iterations: status.total_iterations || 0,
+                percentage: percentage,
+                url: status.url || 'Not available',
+                min_interval: status.min_interval || 0,
+                max_interval: status.max_interval || 0,
+                elapsed_time: status.elapsed_time || 0,
+                estimated_remaining: status.estimated_remaining || 0,
+                status: status.status || 'idle',
+                ...status
+            };
+            
+            // Update status section
+            if (status.current_iteration > 0 && status.total_iterations > 0) {
+                // Simulation is active with progress
+                statusSection.innerHTML = `
+                    <h3>Simulation Status <span class="${statusClass}">${statusIcon} ${status.status.toUpperCase()}</span></h3>
+                    <div class="status-info">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar ${status.status === 'paused' ? 'paused' : ''}" style="width: ${percentage}%"></div>
+                            <div class="progress-percentage">${percentage}%</div>
+                        </div>
+                        <div class="progress-details">
+                            <span>Progress: ${status.current_iteration}/${status.total_iterations}</span>
+                            <span>Remaining: ${formatTime(status.estimated_remaining)}</span>
+                        </div>
+                        
+                        <div class="simulation-stats">
+                            <div class="stat-item elapsed">
+                                <div class="stat-label">ELAPSED TIME</div>
+                                <div class="stat-value">${formatTime(status.elapsed_time)}</div>
+                            </div>
+                            <div class="stat-item remaining">
+                                <div class="stat-label">REMAINING TIME</div>
+                                <div class="stat-value">${formatTime(status.estimated_remaining)}</div>
+                            </div>
+                            <div class="stat-item url">
+                                <div class="stat-label">TARGET URL</div>
+                                <div class="stat-value">${status.url || 'Not available'}</div>
+                            </div>
+                            <div class="stat-item interval">
+                                <div class="stat-label">REQUEST INTERVAL</div>
+                                <div class="stat-value">${status.min_interval || 0}s - ${status.max_interval || 0}s</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // No active simulation
+                statusSection.innerHTML = `
+                    <h3>Simulation Status <span class="${statusClass}">${statusIcon} ${status.status.toUpperCase()}</span></h3>
+                    <div class="status-info">
+                        <div>No active simulation</div>
+                        <div class="simulation-stats">
+                            <div class="stat-item elapsed">
+                                <div class="stat-label">ELAPSED TIME</div>
+                                <div class="stat-value">0s</div>
+                            </div>
+                            <div class="stat-item remaining">
+                                <div class="stat-label">REMAINING TIME</div>
+                                <div class="stat-value">0s</div>
+                            </div>
+                            <div class="stat-item url">
+                                <div class="stat-label">TARGET URL</div>
+                                <div class="stat-value">No URL configured</div>
+                            </div>
+                            <div class="stat-item interval">
+                                <div class="stat-label">REQUEST INTERVAL</div>
+                                <div class="stat-value">0s - 0s</div>
+                            </div>
+                        </div>
+                        <button class="btn" onclick="executeCommand('${status.device_id}', 'start')">Start New Simulation</button>
+                    </div>
+                `;
+            }
         }
         
         // Initialize the page

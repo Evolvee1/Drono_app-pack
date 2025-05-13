@@ -2,6 +2,7 @@ import logging
 import json
 import asyncio
 import os
+import subprocess
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException, Depends, Query, BackgroundTasks
@@ -79,7 +80,14 @@ async def broadcast_status_updates():
 # Start background task on app startup
 @app.on_event("startup")
 async def startup_event():
+    """Start background tasks when application starts"""
+    # Create broadcast worker task
+    asyncio.create_task(connection_manager.start_broadcast_worker())
+    
+    # Create status update broadcast task
     asyncio.create_task(broadcast_status_updates())
+    
+    logger.info("Started background tasks for status updates and broadcast worker")
 
 # API endpoints for device management and control
 @app.get("/devices")
@@ -97,6 +105,7 @@ async def get_all_devices_status():
     """Get status information for all devices"""
     try:
         devices_status = await adb_controller.get_all_devices_status()
+        logger.info(f"Retrieved status for {len(devices_status)} devices")
         return {"devices_status": devices_status, "timestamp": datetime.now().isoformat()}
     except Exception as e:
         logger.error(f"Failed to get devices status: {e}")
@@ -111,9 +120,12 @@ async def get_device_status(device_id: str):
         device_ids = [d['id'] for d in devices]
         
         if device_id not in device_ids:
+            logger.warning(f"Requested status for unknown device: {device_id}")
             raise HTTPException(status_code=404, detail=f"Device {device_id} not found")
-            
+        
+        logger.info(f"Retrieving status for device {device_id}")
         status = adb_controller.get_device_status(device_id)
+        logger.info(f"Status for device {device_id}: {status['status']}, progress: {status['current_iteration']}/{status['total_iterations']}")
         return status
     except HTTPException:
         raise
@@ -366,6 +378,97 @@ async def get_dashboard():
 async def health_check():
     """Health check endpoint"""
     return {"status": "ok", "timestamp": datetime.now().isoformat()}
+
+# Test progress tracking endpoint
+@app.get("/test/progress/{device_id}")
+async def test_progress_tracking(device_id: str):
+    """Test endpoint for progress tracking functionality"""
+    try:
+        # Check if device exists
+        devices = adb_controller.get_devices()
+        device_ids = [d['id'] for d in devices]
+        
+        if device_id not in device_ids:
+            raise HTTPException(status_code=404, detail=f"Device {device_id} not found")
+        
+        # First get device status
+        status = adb_controller.get_device_status(device_id)
+        
+        # Now test all the methods used to get status
+        test_results = {
+            "device_status": status,
+            "prefs_file_test": {
+                "exists": False,
+                "content": None
+            },
+            "status_file_test": {
+                "exists": False,
+                "content": None
+            },
+            "ui_test": {
+                "success": False,
+                "content": None
+            },
+            "logcat_test": {
+                "success": False,
+                "content": None
+            }
+        }
+        
+        # Test prefs file access
+        prefs_data = adb_controller._get_prefs_from_device(device_id)
+        if prefs_data:
+            test_results["prefs_file_test"]["exists"] = True
+            test_results["prefs_file_test"]["content"] = prefs_data[:500] + "..." if len(prefs_data) > 500 else prefs_data
+        
+        # Test status file access
+        status_data = adb_controller._get_status_file_from_device(device_id)
+        if status_data:
+            test_results["status_file_test"]["exists"] = True
+            test_results["status_file_test"]["content"] = status_data[:500] + "..." if len(status_data) > 500 else status_data
+        
+        # Test UI dumpsys
+        try:
+            ui_dump = subprocess.run(
+                ['adb', '-s', device_id, 'shell', "dumpsys activity top | grep -E 'tvProgress|tvIteration'"],
+                capture_output=True,
+                text=True,
+                shell=True,
+                timeout=5
+            ).stdout
+            test_results["ui_test"]["success"] = True
+            test_results["ui_test"]["content"] = ui_dump[:500] + "..." if len(ui_dump) > 500 else ui_dump
+        except Exception as e:
+            test_results["ui_test"]["error"] = str(e)
+        
+        # Test logcat
+        try:
+            logcat_output = subprocess.run(
+                ['adb', '-s', device_id, 'logcat', '-d', '-t', '20', '-v', 'brief'],
+                capture_output=True,
+                text=True,
+                timeout=5
+            ).stdout
+            
+            # Filter the output to find relevant lines
+            relevant_lines = []
+            for line in logcat_output.splitlines():
+                if adb_controller.package in line and ("Progress:" in line or "Iteration:" in line):
+                    relevant_lines.append(line)
+            
+            test_results["logcat_test"]["success"] = True
+            test_results["logcat_test"]["content"] = "\n".join(relevant_lines)
+            if not relevant_lines:
+                test_results["logcat_test"]["content"] = "No progress updates found in logcat"
+        except Exception as e:
+            test_results["logcat_test"]["error"] = str(e)
+            
+        return test_results
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Failed to test progress tracking for {device_id}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn

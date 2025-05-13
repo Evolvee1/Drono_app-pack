@@ -1,5 +1,10 @@
 @echo off
 title Drono Lite Control Server
+echo Drono Lite Control Server
+echo ====================================
+
+:: Set UTF-8 encoding for the console
+chcp 65001 >nul
 
 REM Check if Python is installed
 where python >nul 2>nul
@@ -33,9 +38,22 @@ if not exist venv\Lib\site-packages\fastapi (
     pip install -r requirements.txt
 )
 
-REM Start the server
-echo Starting Drono Lite Control Server...
-echo Server will be available at http://localhost:8000
-python main.py
+:: Check if port is specified
+set PORT=8000
+if not "%1"=="" (
+    set PORT=%1
+)
+
+echo Starting server on port %PORT%...
+echo Access the dashboard at: http://localhost:%PORT%
+echo.
+echo Press Ctrl+C to stop the server
+echo.
+
+REM Start the server with the specified port
+python -m uvicorn main:app --host 0.0.0.0 --port %PORT%
+
+REM Deactivate virtual environment
+call deactivate
 
 pause 

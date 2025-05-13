@@ -537,28 +537,34 @@ class AdbController:
                 self.device_status_cache[device_id] = status_info
                 self.last_status_update[device_id] = current_time
                 return status_info
-                
-            # App is running, get detailed status
-            # Method 1: Check from preferences file
-            try:
-                # Get setting information using root access
-                prefs_check = subprocess.run(['adb', '-s', device_id, 'shell', 
-                                             f"su -c 'cat {self.prefs_file}'"], 
-                                            capture_output=True, text=True).stdout
-                
-                # Extract values
-                is_running_match = re.search(r'<boolean name="is_running" value="([^"]+)"', prefs_check)
-                iterations_match = re.search(r'<int name="iterations" value="([^"]+)"', prefs_check)
-                current_iter_match = re.search(r'<int name="current_iteration" value="([^"]+)"', prefs_check)
-                url_match = re.search(r'<string name="target_url">([^<]+)</string>', prefs_check)
-                min_interval_match = re.search(r'<int name="min_interval" value="([^"]+)"', prefs_check)
-                max_interval_match = re.search(r'<int name="max_interval" value="([^"]+)"', prefs_check)
-                start_time_match = re.search(r'<long name="simulation_start_time" value="([^"]+)"', prefs_check)
+            
+            # App is running, try all available methods to get status
+            
+            # Method 1: Get from shared preferences file using root
+            prefs_data = self._get_prefs_from_device(device_id)
+            if prefs_data:
+                # Extract values from prefs XML
+                is_running_match = re.search(r'<boolean name="is_running" value="([^"]+)"', prefs_data)
+                iterations_match = re.search(r'<int name="iterations" value="([^"]+)"', prefs_data)
+                current_iter_match = re.search(r'<int name="current_iteration" value="([^"]+)"', prefs_data)
+                url_match = re.search(r'<string name="target_url">([^<]+)</string>', prefs_data)
+                min_interval_match = re.search(r'<int name="min_interval" value="([^"]+)"', prefs_data)
+                max_interval_match = re.search(r'<int name="max_interval" value="([^"]+)"', prefs_data)
+                start_time_match = re.search(r'<long name="simulation_start_time" value="([^"]+)"', prefs_data)
+                simulation_paused_match = re.search(r'<boolean name="simulation_paused" value="([^"]+)"', prefs_data)
                 
                 # Update status with extracted values
                 if is_running_match:
                     status_info["is_running"] = is_running_match.group(1).lower() == "true"
-                    status_info["status"] = "running" if status_info["is_running"] else "paused"
+                
+                if simulation_paused_match:
+                    is_paused = simulation_paused_match.group(1).lower() == "true"
+                    if is_paused:
+                        status_info["status"] = "paused"
+                    elif status_info["is_running"]:
+                        status_info["status"] = "running"
+                elif status_info["is_running"]:
+                    status_info["status"] = "running"
                 
                 if iterations_match:
                     status_info["total_iterations"] = int(iterations_match.group(1))
@@ -592,51 +598,103 @@ class AdbController:
                         time_per_iteration = status_info["elapsed_time"] / status_info["current_iteration"]
                         remaining_iterations = status_info["total_iterations"] - status_info["current_iteration"]
                         status_info["estimated_remaining"] = round(time_per_iteration * remaining_iterations)
-            except Exception as e:
-                logger.debug(f"Error extracting from preferences: {e}")
+            
+            # Method 2: Try to get status from app internal storage files
+            if not status_info["current_iteration"] > 0:
+                status_file_data = self._get_status_file_from_device(device_id)
+                if status_file_data:
+                    try:
+                        status_data = json.loads(status_file_data)
+                        status_info["current_iteration"] = status_data.get("currentIteration", 0)
+                        status_info["total_iterations"] = status_data.get("totalIterations", 0)
+                        status_info["is_running"] = status_data.get("isRunning", False)
+                        status_info["status"] = "running" if status_data.get("isRunning", False) else "paused"
+                        
+                        # Update percentage
+                        if status_info["total_iterations"] > 0 and status_info["current_iteration"] > 0:
+                            status_info["percentage"] = round(
+                                (status_info["current_iteration"] / status_info["total_iterations"]) * 100, 1
+                            )
+                        
+                        # Get elapsed time
+                        if "startTimeMs" in status_data:
+                            start_time = int(status_data["startTimeMs"]) / 1000
+                            current_time_ms = int(time.time())
+                            status_info["elapsed_time"] = current_time_ms - start_time
+                            
+                            # Estimate remaining time
+                            if status_info["current_iteration"] > 0 and status_info["is_running"]:
+                                time_per_iteration = status_info["elapsed_time"] / status_info["current_iteration"]
+                                remaining_iterations = status_info["total_iterations"] - status_info["current_iteration"]
+                                status_info["estimated_remaining"] = round(time_per_iteration * remaining_iterations)
+                    except json.JSONDecodeError:
+                        logger.debug(f"Error parsing status file as JSON")
                 
-            # Method 2: Try to get progress from UI
+            # Method 3: Try to get progress from UI
             if status_info["current_iteration"] == 0:
                 try:
                     # Check if there's a progress TextView visible
                     ui_dump = subprocess.run(
-                        ['adb', '-s', device_id, 'shell', "dumpsys activity top | grep tvProgress"],
-                        capture_output=True,
-                        text=True
-                    ).stdout
-                    
-                    progress_match = re.search(r'Progress: (\d+)/(\d+)', ui_dump)
-                    if progress_match:
-                        status_info["current_iteration"] = int(progress_match.group(1))
-                        status_info["total_iterations"] = int(progress_match.group(2))
-                        
-                        if status_info["total_iterations"] > 0:
-                            status_info["percentage"] = round(
-                                (status_info["current_iteration"] / status_info["total_iterations"]) * 100, 1
-                            )
-                except Exception as e:
-                    logger.debug(f"Error getting progress from UI: {e}")
-            
-            # Method 3: Try to get progress from logcat
-            if status_info["current_iteration"] == 0:
-                try:
-                    logcat_output = subprocess.run(
-                        ['adb', '-s', device_id, 'logcat', '-d', '-t', '20', '-v', 'brief', 
-                         f"{self.package}:I", "*:S", '|', 'grep', '-i', "Progress"],
+                        ['adb', '-s', device_id, 'shell', "dumpsys activity top | grep -E 'tvProgress|tvIteration'"],
                         capture_output=True,
                         text=True,
                         shell=True
                     ).stdout
                     
-                    progress_match = re.search(r'Progress: (\d+)/(\d+)', logcat_output)
+                    progress_match = re.search(r'Progress: (\d+)/(\d+)', ui_dump)
+                    iterations_match = re.search(r'Iteration: (\d+)/(\d+)', ui_dump)
+                    
                     if progress_match:
                         status_info["current_iteration"] = int(progress_match.group(1))
                         status_info["total_iterations"] = int(progress_match.group(2))
+                        status_info["status"] = "running"
+                        status_info["is_running"] = True
+                    elif iterations_match:
+                        status_info["current_iteration"] = int(iterations_match.group(1))
+                        status_info["total_iterations"] = int(iterations_match.group(2))
+                        status_info["status"] = "running"
+                        status_info["is_running"] = True
                         
-                        if status_info["total_iterations"] > 0:
-                            status_info["percentage"] = round(
-                                (status_info["current_iteration"] / status_info["total_iterations"]) * 100, 1
-                            )
+                    if status_info["total_iterations"] > 0 and status_info["current_iteration"] > 0:
+                        status_info["percentage"] = round(
+                            (status_info["current_iteration"] / status_info["total_iterations"]) * 100, 1
+                        )
+                except Exception as e:
+                    logger.debug(f"Error getting progress from UI: {e}")
+            
+            # Method 4: Try to get progress from logcat
+            if status_info["current_iteration"] == 0:
+                try:
+                    # Use shell=False to avoid command injection issues
+                    logcat_output = subprocess.run(
+                        ['adb', '-s', device_id, 'logcat', '-d', '-t', '20', '-v', 'brief'],
+                        capture_output=True,
+                        text=True
+                    ).stdout
+                    
+                    # Filter the output in Python instead of using grep
+                    for line in logcat_output.splitlines():
+                        if f"{self.package}" in line and ("Progress:" in line or "Iteration:" in line):
+                            progress_match = re.search(r'Progress: (\d+)/(\d+)', line)
+                            iterations_match = re.search(r'Iteration: (\d+)/(\d+)', line)
+                            
+                            if progress_match:
+                                status_info["current_iteration"] = int(progress_match.group(1))
+                                status_info["total_iterations"] = int(progress_match.group(2))
+                                status_info["status"] = "running"
+                                status_info["is_running"] = True
+                                break
+                            elif iterations_match:
+                                status_info["current_iteration"] = int(iterations_match.group(1))
+                                status_info["total_iterations"] = int(iterations_match.group(2))
+                                status_info["status"] = "running"
+                                status_info["is_running"] = True
+                                break
+                    
+                    if status_info["total_iterations"] > 0 and status_info["current_iteration"] > 0:
+                        status_info["percentage"] = round(
+                            (status_info["current_iteration"] / status_info["total_iterations"]) * 100, 1
+                        )
                 except Exception as e:
                     logger.debug(f"Error getting progress from logcat: {e}")
             
@@ -649,6 +707,36 @@ class AdbController:
             logger.error(f"Failed to get device status: {e}")
             return status_info
     
+    def _get_prefs_from_device(self, device_id: str) -> str:
+        """Get XML preferences data from device"""
+        try:
+            prefs_data = subprocess.run(
+                ['adb', '-s', device_id, 'shell', f"su -c 'cat {self.prefs_file}'"],
+                capture_output=True,
+                text=True,
+                timeout=5
+            ).stdout
+            return prefs_data
+        except Exception as e:
+            logger.debug(f"Error reading preferences file: {e}")
+            return ""
+    
+    def _get_status_file_from_device(self, device_id: str) -> str:
+        """Get status file data from device"""
+        try:
+            # Try to read the status.json file from internal storage
+            status_file = f"/data/data/{self.package}/files/status.json"
+            status_data = subprocess.run(
+                ['adb', '-s', device_id, 'shell', f"su -c 'cat {status_file}'"],
+                capture_output=True,
+                text=True,
+                timeout=5
+            ).stdout
+            return status_data
+        except Exception as e:
+            logger.debug(f"Error reading status file: {e}")
+            return ""
+            
     async def get_all_devices_status(self) -> Dict[str, Dict]:
         """
         Get status for all connected devices

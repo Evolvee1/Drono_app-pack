@@ -1,5 +1,6 @@
 #!/bin/bash
-# Drono Lite Control Server startup script
+echo "Drono Lite Control Server"
+echo "===================================="
 
 # Set error handling
 set -e
@@ -32,7 +33,21 @@ if [ ! -d "venv/lib/python3.*/site-packages/fastapi" ]; then
     pip install -r requirements.txt
 fi
 
+# Use default port 8000 or provided port as argument
+PORT=8000
+if [ -n "$1" ]; then
+    PORT=$1
+fi
+
 # Start the server
-echo "Starting Drono Lite Control Server..."
-echo "Server will be available at http://localhost:8000"
-python main.py 
+echo "Starting server on port $PORT..."
+echo "Access the dashboard at: http://localhost:$PORT"
+echo ""
+echo "Press Ctrl+C to stop the server"
+echo ""
+
+# Run the server with the specified port
+python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+
+# Deactivate virtual environment
+deactivate 
