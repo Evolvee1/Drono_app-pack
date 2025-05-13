@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drono Lite Control Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3 {
+            color: #1a73e8;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .device-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+        
+        .device-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .device-header {
+            background-color: #f5f5f5;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .device-header h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .device-id {
+            font-size: 12px;
+            font-weight: normal;
+            color: #666;
+            margin-left: 8px;
+        }
+        
+        .device-indicators {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .indicator {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .indicator.root {
+            background-color: #4caf50;
+            color: white;
+        }
+        
+        .indicator.no-root {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .indicator.write {
+            background-color: #2196f3;
+            color: white;
+        }
+        
+        .indicator.no-write {
+            background-color: #ff9800;
+            color: white;
+        }
+        
+        .indicator.battery {
+            background-color: #9e9e9e;
+            color: white;
+        }
+        
+        .device-actions {
+            padding: 12px 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .action-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .btn {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: #1557b0;
+        }
+        
+        .device-details {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .device-detail {
+            background-color: #f0f4f8;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .device-status {
+            padding: 16px;
+        }
+        
+        .device-status h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .status-running {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .status-paused {
+            color: #ff9800;
+            font-weight: bold;
+        }
+        
+        .status-stopped {
+            color: #f44336;
+            font-weight: bold;
+        }
+        
+        .status-idle {
+            color: #9e9e9e;
+            font-weight: bold;
+        }
+        
+        .status-info {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .status-info > div {
+            margin-bottom: 6px;
+        }
+        
+        .progress-bar-container {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: #4caf50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #1a73e8;
+        }
+        
+        .device-status {
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .device-status.online {
+            background-color: #e6f4ea;
+            color: #137333;
+        }
+        
+        .device-status.offline {
+            background-color: #fce8e6;
+            color: #c5221f;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #5f6368;
+            font-size: 13px;
+        }
+
+        #log {
+            background-color: #292929;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            margin-top: 20px;
+        }
+
+        .log-entry {
+            margin-bottom: 5px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+
+        .error {
+            color: #ea4335;
+        }
+
+        .success {
+            color: #34a853;
+        }
+
+        .info {
+            color: #1a73e8;
+        }
+        
+        .warning {
+            color: #fbbc04;
+        }
+
+        .device-access {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .access-badge {
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
+
+        .access-badge.write {
+            background-color: #e6f4ea;
+            color: #137333;
+        }
+
+        .access-badge.root {
+            background-color: #fef7e0;
+            color: #e37400;
+        }
+
+        .access-badge.limited {
+            background-color: #fce8e6;
+            color: #c5221f;
+        }
+
+        .toggle-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #1a73e8;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+
+        .toggle-label {
+            margin-left: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Drono Lite Control Dashboard</h1>
+            <p>Control panel for managing Android devices running IMadeThatBitchFamous app</p>
+            <button id="refreshDevicesBtn">Refresh Devices</button>
+        </div>
+        
+        <div class="card">
+            <h2>URL Distribution</h2>
+            <form id="urlDistributionForm">
+                <div class="form-group">
+                    <label for="targetUrl">Target URL:</label>
+                    <input type="text" id="targetUrl" name="targetUrl" placeholder="https://example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="iterations">Iterations:</label>
+                    <input type="number" id="iterations" name="iterations" min="1" value="100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="minInterval">Minimum Interval (seconds):</label>
+                    <input type="number" id="minInterval" name="minInterval" min="1" value="1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="maxInterval">Maximum Interval (seconds):</label>
+                    <input type="number" id="maxInterval" name="maxInterval" min="1" value="2">
+                </div>
+                
+                <div class="toggle-group">
+                    <div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="useWebview" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-label">Use WebView Mode</span>
+                    </div>
+                    
+                    <div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="rotateIp" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-label">Rotate IP</span>
+                    </div>
+                </div>
+                
+                <button type="submit">Distribute URL to All Devices</button>
+            </form>
+        </div>
+        
+        <div class="card">
+            <h2>Connected Devices</h2>
+            <div id="deviceList">
+                <p>Loading devices...</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Activity Log</h2>
+            <div id="log"></div>
+        </div>
+        
+        <div class="footer">
+            Drono Lite Control Server &copy; 2023
+        </div>
+    </div>
+    
+    <script>
+        const API_URL = window.location.origin;
+        let socket;
+        let devices = [];
+        let isWebSocketConnected = false;
+        
+        // Initialize WebSocket connection
+        function connectWebSocket() {
+            socket = new WebSocket(`ws://${window.location.host}/ws/dashboard`);
+            
+            socket.onopen = function(e) {
+                log('WebSocket connection established', 'success');
+                isWebSocketConnected = true;
+                
+                // After connection, get initial device list
+                getDevices();
+            };
+            
+            socket.onmessage = function(event) {
+                const message = JSON.parse(event.data);
+                
+                switch(message.type) {
+                    case 'device_list':
+                        updateDeviceList(message.data.devices);
+                        break;
+                    case 'command_result':
+                        handleCommandResult(message.data);
+                        break;
+                    case 'url_distribution':
+                        handleUrlDistributionResult(message.data);
+                        break;
+                    case 'batch_command_result':
+                        handleBatchCommandResult(message.data);
+                        break;
+                    case 'status_update':
+                        updateDeviceStatus(message.data.devices_status);
+                        break;
+                    case 'device_status':
+                        updateSingleDeviceStatus(message.data.device_id, message.data.status);
+                        break;
+                    default:
+                        log(`Unknown message type: ${message.type}`, 'warning');
+                }
+            };
+            
+            socket.onclose = function(event) {
+                log('WebSocket connection closed, reconnecting...', 'warning');
+                isWebSocketConnected = false;
+                
+                // Try to reconnect in 3 seconds
+                setTimeout(connectWebSocket, 3000);
+            };
+            
+            socket.onerror = function(error) {
+                log(`WebSocket error: ${error}`, 'error');
+                isWebSocketConnected = false;
+            };
+        }
+        
+        // Get list of connected devices
+        async function getDevices() {
+            try {
+                if (isWebSocketConnected) {
+                    // If WebSocket is connected, use it to request device scan
+                    socket.send(JSON.stringify({
+                        type: 'scan_devices'
+                    }));
+                } else {
+                    // Fallback to HTTP API
+                    const response = await fetch(`${API_URL}/devices`);
+                    const data = await response.json();
+                    updateDeviceList(data.devices);
+                }
+            } catch (error) {
+                log(`Error fetching devices: ${error}`, 'error');
+            }
+        }
+        
+        // Update device list UI
+        function updateDeviceList(deviceList) {
+            devices = deviceList;
+            const deviceListElement = document.getElementById('deviceList');
+            
+            if (devices.length === 0) {
+                deviceListElement.innerHTML = '<p>No devices connected</p>';
+                return;
+            }
+            
+            deviceListElement.innerHTML = '';
+            
+            devices.forEach(device => {
+                const deviceCard = document.createElement('div');
+                deviceCard.className = 'device-card';
+                deviceCard.id = `device-${device.id}`;
+                
+                // Access indicators
+                const rootIndicator = device.has_root_access ? 
+                    '<span class="indicator root">ROOT</span>' : 
+                    '<span class="indicator no-root">NO ROOT</span>';
+                    
+                const writeIndicator = device.has_write_access ? 
+                    '<span class="indicator write">WRITE</span>' : 
+                    '<span class="indicator no-write">NO WRITE</span>';
+                
+                deviceCard.innerHTML = `
+                    <div class="device-header">
+                        <h3>${device.model} <span class="device-id">${device.id}</span></h3>
+                        <div class="device-indicators">
+                            ${rootIndicator}
+                            ${writeIndicator}
+                            <span class="indicator battery">${device.battery}</span>
+                        </div>
+                    </div>
+                    <div class="device-actions">
+                        <div class="action-group">
+                            <button class="btn" onclick="executeCommand('${device.id}', 'start')">Start</button>
+                            <button class="btn" onclick="executeCommand('${device.id}', 'stop')">Stop</button>
+                            <button class="btn" onclick="executeCommand('${device.id}', 'pause')">Pause</button>
+                            <button class="btn" onclick="executeCommand('${device.id}', 'resume')">Resume</button>
+                        </div>
+                    </div>
+                    <div class="device-status">
+                        <p>Loading status...</p>
+                    </div>
+                `;
+                
+                deviceListElement.appendChild(deviceCard);
+                
+                // Request status for this device
+                if (isWebSocketConnected) {
+                    socket.send(JSON.stringify({
+                        type: 'get_device_status',
+                        device_id: device.id
+                    }));
+                }
+            });
+            
+            log(`Found ${devices.length} device(s)`, 'info');
+        }
+        
+        // Execute command on specific device
+        async function executeCommand(deviceId, command) {
+            log(`Executing command '${command}' on device ${deviceId}...`, 'info');
+            
+            // Get URL and other parameters if command is start
+            let params = {};
+            if (command === 'start') {
+                const targetUrl = document.getElementById('targetUrl').value;
+                const iterations = parseInt(document.getElementById('iterations').value);
+                const minInterval = parseInt(document.getElementById('minInterval').value);
+                const maxInterval = parseInt(document.getElementById('maxInterval').value);
+                const useWebview = document.getElementById('useWebview').checked;
+                const rotateIp = document.getElementById('rotateIp').checked;
+                
+                params = {
+                    url: targetUrl,
+                    iterations: iterations,
+                    min_interval: minInterval,
+                    max_interval: maxInterval,
+                    use_webview: useWebview,
+                    rotate_ip: rotateIp
+                };
+            }
+            
+            try {
+                if (isWebSocketConnected) {
+                    // Use WebSocket for commands
+                    socket.send(JSON.stringify({
+                        type: 'execute_command',
+                        device_id: deviceId,
+                        command: command,
+                        parameters: params
+                    }));
+                } else {
+                    // Fallback to HTTP API
+                    const response = await fetch(`${API_URL}/devices/${deviceId}/command`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            command: command,
+                            parameters: params
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    handleCommandResult({
+                        device_id: deviceId,
+                        command: command,
+                        result: result
+                    });
+                }
+            } catch (error) {
+                log(`Error executing command: ${error}`, 'error');
+            }
+        }
+        
+        // Handle command result
+        function handleCommandResult(data) {
+            const { device_id, command, result } = data;
+            
+            if (result.success) {
+                log(`Command '${command}' successful on device ${device_id}`, 'success');
+            } else {
+                log(`Command '${command}' failed on device ${device_id}: ${result.error || 'Unknown error'}`, 'error');
+            }
+        }
+        
+        // Handle URL distribution result
+        function handleUrlDistributionResult(data) {
+            const { url, devices, results } = data;
+            
+            log(`URL distribution for '${url}' to ${devices.length} device(s)`, 'info');
+            
+            for (const [deviceId, result] of Object.entries(results)) {
+                if (result.success) {
+                    log(`URL distributed to device ${deviceId} successfully`, 'success');
+                } else {
+                    log(`Failed to distribute URL to device ${deviceId}: ${result.error || 'Unknown error'}`, 'error');
+                }
+            }
+        }
+        
+        // Handle batch command result
+        function handleBatchCommandResult(data) {
+            const { command, results } = data;
+            
+            log(`Batch command '${command}' executed on ${Object.keys(results).length} device(s)`, 'info');
+            
+            for (const [deviceId, result] of Object.entries(results)) {
+                if (result.success) {
+                    log(`Command successful on device ${deviceId}`, 'success');
+                } else {
+                    log(`Command failed on device ${deviceId}: ${result.error || 'Unknown error'}`, 'error');
+                }
+            }
+        }
+        
+        // Distribute URL to all devices
+        async function distributeUrl(event) {
+            event.preventDefault();
+            
+            const targetUrl = document.getElementById('targetUrl').value;
+            const iterations = parseInt(document.getElementById('iterations').value);
+            const minInterval = parseInt(document.getElementById('minInterval').value);
+            const maxInterval = parseInt(document.getElementById('maxInterval').value);
+            
+            log(`Distributing URL '${targetUrl}' to all devices...`, 'info');
+            
+            try {
+                if (isWebSocketConnected) {
+                    // Use WebSocket
+                    socket.send(JSON.stringify({
+                        type: 'distribute_url',
+                        url: targetUrl,
+                        iterations: iterations,
+                        min_interval: minInterval,
+                        max_interval: maxInterval
+                    }));
+                } else {
+                    // Fallback to HTTP API
+                    const response = await fetch(`${API_URL}/distribute-url`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            url: targetUrl,
+                            iterations: iterations,
+                            min_interval: minInterval,
+                            max_interval: maxInterval
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    handleUrlDistributionResult({
+                        url: targetUrl,
+                        devices: Object.keys(result.results),
+                        results: result.results
+                    });
+                }
+            } catch (error) {
+                log(`Error distributing URL: ${error}`, 'error');
+            }
+        }
+        
+        // Log to UI
+        function log(message, type = 'info') {
+            const logElement = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry ${type}`;
+            logEntry.textContent = `[${timestamp}] ${message}`;
+            
+            logElement.appendChild(logEntry);
+            logElement.scrollTop = logElement.scrollHeight;
+            
+            // Limit log entries
+            const maxEntries = 100;
+            while (logElement.children.length > maxEntries) {
+                logElement.removeChild(logElement.firstChild);
+            }
+        }
+        
+        // Update status information for all devices
+        function updateDeviceStatus(devicesStatus) {
+            if (!devicesStatus) return;
+            
+            Object.entries(devicesStatus).forEach(([deviceId, status]) => {
+                updateSingleDeviceStatus(deviceId, status);
+            });
+        }
+        
+        // Update status for a single device
+        function updateSingleDeviceStatus(deviceId, status) {
+            if (!status) return;
+            
+            const deviceCard = document.getElementById(`device-${deviceId}`);
+            if (!deviceCard) return;
+            
+            // Find or create status section
+            let statusSection = deviceCard.querySelector('.device-status');
+            if (!statusSection) {
+                statusSection = document.createElement('div');
+                statusSection.className = 'device-status';
+                deviceCard.appendChild(statusSection);
+            }
+            
+            // Format elapsed and remaining time
+            const formatTime = (seconds) => {
+                if (!seconds) return '0s';
+                
+                const hours = Math.floor(seconds / 3600);
+                const minutes = Math.floor((seconds % 3600) / 60);
+                const secs = Math.floor(seconds % 60);
+                
+                if (hours > 0) {
+                    return `${hours}h ${minutes}m ${secs}s`;
+                } else if (minutes > 0) {
+                    return `${minutes}m ${secs}s`;
+                } else {
+                    return `${secs}s`;
+                }
+            };
+            
+            // Determine status icon and class
+            let statusIcon, statusClass;
+            switch(status.status) {
+                case 'running':
+                    statusIcon = '▶️';
+                    statusClass = 'status-running';
+                    break;
+                case 'paused':
+                    statusIcon = '⏸️';
+                    statusClass = 'status-paused';
+                    break;
+                case 'stopped':
+                    statusIcon = '⏹️';
+                    statusClass = 'status-stopped';
+                    break;
+                default:
+                    statusIcon = '⚪';
+                    statusClass = 'status-idle';
+            }
+            
+            // Update status section
+            const progressBar = status.total_iterations > 0 ? 
+                `<div class="progress-bar-container">
+                    <div class="progress-bar" style="width: ${status.percentage}%"></div>
+                </div>` : '';
+            
+            statusSection.innerHTML = `
+                <h3>Simulation Status <span class="${statusClass}">${statusIcon} ${status.status.toUpperCase()}</span></h3>
+                ${status.current_iteration > 0 ? 
+                    `<div class="status-info">
+                        <div><strong>Progress:</strong> ${status.current_iteration}/${status.total_iterations} (${status.percentage}%)</div>
+                        ${progressBar}
+                        <div><strong>Elapsed Time:</strong> ${formatTime(status.elapsed_time)}</div>
+                        <div><strong>Remaining:</strong> ${formatTime(status.estimated_remaining)}</div>
+                        <div><strong>URL:</strong> ${status.url || 'N/A'}</div>
+                        <div><strong>Interval:</strong> ${status.min_interval}s - ${status.max_interval}s</div>
+                    </div>` : 
+                    `<div class="status-info">No active simulation</div>`
+                }
+            `;
+        }
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Connect WebSocket
+            connectWebSocket();
+            
+            // Add event listeners
+            document.getElementById('refreshDevicesBtn').addEventListener('click', getDevices);
+            document.getElementById('urlDistributionForm').addEventListener('submit', distributeUrl);
+            
+            // Initial log
+            log('Dashboard initialized', 'info');
+        });
+    </script>
+</body>
+</html> 
