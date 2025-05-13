@@ -30,13 +30,46 @@
             margin-bottom: 20px;
         }
         
+        #deviceList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: flex-start;
+        }
+        
         .device-card {
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 16px;
+            margin-bottom: 0;
             overflow: hidden;
             transition: box-shadow 0.3s;
+            flex: 0 0 calc(20% - 12px);
+            min-width: 240px;
+        }
+        
+        @media (max-width: 1400px) {
+            .device-card {
+                flex: 0 0 calc(25% - 12px);
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .device-card {
+                flex: 0 0 calc(33.33% - 12px);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .device-card {
+                flex: 0 0 calc(50% - 12px);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .device-card {
+                flex: 0 0 100%;
+            }
         }
         
         .device-card:hover {
@@ -47,14 +80,20 @@
             background-color: #f5f5f5;
             padding: 12px 16px;
             display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .device-header-main {
+            display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 6px;
         }
         
         .device-header h3 {
             margin: 0;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
             color: #333;
         }
@@ -68,14 +107,15 @@
         
         .device-indicators {
             display: flex;
-            gap: 8px;
+            gap: 6px;
+            font-size: 11px;
         }
         
         .indicator {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 500;
-            padding: 4px 8px;
-            border-radius: 12px;
+            padding: 3px 6px;
+            border-radius: 10px;
             display: inline-block;
         }
         
@@ -148,12 +188,13 @@
         
         .device-status {
             padding: 16px;
+            font-size: 13px;
         }
         
         .device-status h3 {
             margin-top: 0;
             margin-bottom: 10px;
-            font-size: 16px;
+            font-size: 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -180,9 +221,9 @@
         }
         
         .status-info {
-            font-size: 14px;
+            font-size: 13px;
             color: #555;
-            line-height: 1.5;
+            line-height: 1.4;
         }
         
         .status-info > div {
@@ -190,10 +231,10 @@
         }
         
         .progress-bar-container {
-            height: 10px;
+            height: 8px;
             background-color: #e0e0e0;
-            border-radius: 5px;
-            margin: 10px 0;
+            border-radius: 4px;
+            margin: 8px 0;
             overflow: hidden;
             position: relative;
         }
@@ -201,7 +242,7 @@
         .progress-bar {
             height: 100%;
             background-color: #4caf50;
-            border-radius: 5px;
+            border-radius: 4px;
             transition: width 0.5s ease-in-out;
         }
         
@@ -212,8 +253,8 @@
         .progress-percentage {
             position: absolute;
             right: 5px;
-            top: -5px;
-            font-size: 12px;
+            top: -7px;
+            font-size: 11px;
             font-weight: bold;
             color: #333;
         }
@@ -221,23 +262,28 @@
         .progress-details {
             display: flex;
             justify-content: space-between;
-            margin-top: 5px;
+            margin-top: 4px;
             font-size: 12px;
+            font-weight: 500;
         }
         
         .simulation-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 10px;
-            margin-bottom: 15px;
+            gap: 6px;
+            margin-top: 8px;
+            margin-bottom: 10px;
         }
         
         .stat-item {
             background-color: #f5f7fa;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 12px;
             border-left: 3px solid #1a73e8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .stat-item.elapsed {
@@ -253,21 +299,39 @@
             grid-column: span 2;
         }
         
+        .stat-item.iterations {
+            border-left-color: #9c27b0;
+            grid-column: span 2;
+        }
+        
         .stat-item.interval {
             border-left-color: #9c27b0;
         }
         
         .stat-label {
             font-weight: bold;
-            margin-bottom: 5px;
             color: #555;
-            font-size: 12px;
+            font-size: 11px;
+            text-transform: uppercase;
         }
         
         .stat-value {
-            font-size: 14px;
+            font-size: 12px;
             color: #333;
             word-break: break-word;
+            font-weight: 500;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .url-value {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
         }
         
         .form-group {
@@ -435,6 +499,48 @@
             margin-left: 10px;
             font-size: 14px;
         }
+        
+        /* Device selection styles */
+        .device-selection {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .device-checkbox {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .device-card.selected {
+            border-left: 4px solid #1a73e8;
+        }
+        
+        .selection-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .selection-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .selection-count {
+            font-weight: bold;
+            color: #1a73e8;
+            padding: 5px 10px;
+            background-color: #e8f0fe;
+            border-radius: 4px;
+        }
+        
+        .select-all-checkbox {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -484,14 +590,37 @@
                         </label>
                         <span class="toggle-label">Rotate IP</span>
                     </div>
+                    
+                    <div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="selectedDevicesOnly">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-label">Selected Devices Only</span>
+                    </div>
                 </div>
                 
-                <button type="submit">Distribute URL to All Devices</button>
+                <button type="submit">Distribute URL</button>
             </form>
         </div>
         
         <div class="card">
             <h2>Connected Devices</h2>
+            <div class="selection-controls">
+                <div>
+                    <label>
+                        <input type="checkbox" id="selectAllDevices" class="select-all-checkbox">
+                        Select All
+                    </label>
+                </div>
+                <div class="selection-count" id="selectionCount">0 devices selected</div>
+                <div class="selection-actions">
+                    <button id="startSelectedBtn" class="btn" disabled>Start Selected</button>
+                    <button id="stopSelectedBtn" class="btn" disabled>Stop Selected</button>
+                    <button id="pauseSelectedBtn" class="btn" disabled>Pause Selected</button>
+                    <button id="resumeSelectedBtn" class="btn" disabled>Resume Selected</button>
+                </div>
+            </div>
             <div id="deviceList">
                 <p>Loading devices...</p>
             </div>
@@ -526,42 +655,48 @@
             };
             
             socket.onmessage = function(event) {
-                const message = JSON.parse(event.data);
-                
-                switch(message.type) {
-                    case 'device_list':
-                        updateDeviceList(message.data.devices);
-                        break;
-                    case 'command_result':
-                        handleCommandResult(message.data);
-                        // After a command, request updated status
-                        if (message.data.device_id) {
-                            socket.send(JSON.stringify({
-                                type: 'get_device_status',
-                                device_id: message.data.device_id
-                            }));
-                        }
-                        break;
-                    case 'url_distribution':
-                        handleUrlDistributionResult(message.data);
-                        break;
-                    case 'batch_command_result':
-                        handleBatchCommandResult(message.data);
-                        break;
-                    case 'status_update':
-                        if (message.data.devices_status) {
-                            updateDeviceStatus(message.data.devices_status);
-                        }
-                        break;
-                    case 'device_status':
-                        if (message.data.device_id && message.data.status) {
-                            updateSingleDeviceStatus(message.data.device_id, message.data.status);
-                        } else if (message.data.status) {
-                            updateSingleDeviceStatus(message.data.device_id || "unknown", message.data.status);
-                        }
-                        break;
-                    default:
-                        log(`Unknown message type: ${message.type}`, 'warning');
+                try {
+                    const message = JSON.parse(event.data);
+                    
+                    switch(message.type) {
+                        case 'device_list':
+                            updateDeviceList(message.data.devices);
+                            break;
+                        case 'command_result':
+                            handleCommandResult(message.data);
+                            // After a command, request updated status
+                            if (message.data.device_id) {
+                                socket.send(JSON.stringify({
+                                    type: 'get_device_status',
+                                    device_id: message.data.device_id
+                                }));
+                            }
+                            break;
+                        case 'url_distribution':
+                            handleUrlDistributionResult(message.data);
+                            break;
+                        case 'batch_command_result':
+                            handleBatchCommandResult(message.data);
+                            // Request updated status for all devices after batch command
+                            requestAllDeviceStatuses();
+                            break;
+                        case 'status_update':
+                            if (message.data.devices_status) {
+                                updateDeviceStatus(message.data.devices_status);
+                            }
+                            break;
+                        case 'device_status':
+                            if (message.data.device_id && message.data.status) {
+                                updateSingleDeviceStatus(message.data.device_id, message.data.status);
+                            } else if (message.data.status) {
+                                updateSingleDeviceStatus(message.data.device_id || "unknown", message.data.status);
+                            }
+                            break;
+                        default:
+                            log(`Unknown message type: ${message.type}`, 'warning');
+                    }
+                } catch (error) {
+                    log(`Error parsing WebSocket message: ${error}`, 'error');
                 }
             };
             
@@ -605,6 +740,7 @@
             
             if (devices.length === 0) {
                 deviceListElement.innerHTML = '<p>No devices connected</p>';
+                updateSelectionCount();
                 return;
             }
             
@@ -614,6 +750,7 @@
                 const deviceCard = document.createElement('div');
                 deviceCard.className = 'device-card';
                 deviceCard.id = `device-${device.id}`;
+                deviceCard.dataset.deviceId = device.id;
                 
                 // Access indicators
                 const rootIndicator = device.has_root_access ? 
@@ -626,11 +763,18 @@
                 
                 deviceCard.innerHTML = `
                     <div class="device-header">
-                        <h3>${device.model} <span class="device-id">${device.id}</span></h3>
+                        <div class="device-header-main">
+                            <h3>
+                                <label class="device-selection">
+                                    <input type="checkbox" class="device-checkbox" data-device-id="${device.id}" onchange="handleDeviceSelection(this)">
+                                    ${device.model} <span class="device-id">${device.id}</span>
+                                </label>
+                            </h3>
+                            <span class="indicator battery">${device.battery}</span>
+                        </div>
                         <div class="device-indicators">
                             ${rootIndicator}
                             ${writeIndicator}
-                            <span class="indicator battery">${device.battery}</span>
                         </div>
                     </div>
                     <div class="device-actions">
@@ -647,20 +791,20 @@
                             <div>Loading simulation data...</div>
                             <div class="simulation-stats">
                                 <div class="stat-item elapsed">
-                                    <div class="stat-label">ELAPSED TIME</div>
+                                    <div class="stat-label">ELAPSED</div>
                                     <div class="stat-value">-</div>
                                 </div>
                                 <div class="stat-item remaining">
-                                    <div class="stat-label">REMAINING TIME</div>
+                                    <div class="stat-label">REMAINING</div>
+                                    <div class="stat-value">-</div>
+                                </div>
+                                <div class="stat-item iterations">
+                                    <div class="stat-label">PROGRESS</div>
                                     <div class="stat-value">-</div>
                                 </div>
                                 <div class="stat-item url">
-                                    <div class="stat-label">TARGET URL</div>
+                                    <div class="stat-label">URL</div>
                                     <div class="stat-value">Loading...</div>
-                                </div>
-                                <div class="stat-item interval">
-                                    <div class="stat-label">REQUEST INTERVAL</div>
-                                    <div class="stat-value">-</div>
                                 </div>
                             </div>
                         </div>
@@ -678,6 +822,7 @@
                 }
             });
             
+            updateSelectionCount();
             log(`Found ${devices.length} device(s)`, 'info');
         }
         
@@ -754,42 +899,87 @@
         function handleUrlDistributionResult(data) {
             const { url, devices, results } = data;
             
-            log(`URL distribution for '${url}' to ${devices.length} device(s)`, 'info');
+            if (!devices || devices.length === 0 || !results || Object.keys(results).length === 0) {
+                log(`URL distribution request for '${url}' received, but no results returned`, 'warning');
+                return;
+            }
             
-            for (const [deviceId, result] of Object.entries(results)) {
-                if (result.success) {
-                    log(`URL distributed to device ${deviceId} successfully`, 'success');
-                } else {
-                    log(`Failed to distribute URL to device ${deviceId}: ${result.error || 'Unknown error'}`, 'error');
+            const successCount = Object.values(results).filter(r => r && r.success).length;
+            const totalCount = devices.length;
+            
+            log(`URL distribution completed: ${successCount}/${totalCount} devices successful`, 
+                successCount === totalCount ? 'success' : successCount > 0 ? 'warning' : 'error');
+            
+            // Log failures individually
+            if (successCount < totalCount) {
+                for (const [deviceId, result] of Object.entries(results)) {
+                    if (!result || !result.success) {
+                        log(`URL distribution failed on device ${deviceId}: ${result?.error || 'Unknown error'}`, 'error');
+                    }
                 }
             }
+            
+            // Request updated statuses after a short delay
+            setTimeout(requestAllDeviceStatuses, 1000);
         }
         
         // Handle batch command result
         function handleBatchCommandResult(data) {
             const { command, results } = data;
             
-            log(`Batch command '${command}' executed on ${Object.keys(results).length} device(s)`, 'info');
+            if (!results || Object.keys(results).length === 0) {
+                log(`Batch command '${command}' executed, but no results were returned`, 'warning');
+                return;
+            }
             
-            for (const [deviceId, result] of Object.entries(results)) {
-                if (result.success) {
-                    log(`Command successful on device ${deviceId}`, 'success');
-                } else {
-                    log(`Command failed on device ${deviceId}: ${result.error || 'Unknown error'}`, 'error');
+            const successCount = Object.values(results).filter(r => r && r.success).length;
+            const totalCount = Object.keys(results).length;
+            
+            log(`Batch command '${command}' completed: ${successCount}/${totalCount} successful`, 
+                successCount === totalCount ? 'success' : successCount > 0 ? 'warning' : 'error');
+            
+            // Log individual results if there were failures
+            if (successCount < totalCount) {
+                for (const [deviceId, result] of Object.entries(results)) {
+                    if (!result || !result.success) {
+                        log(`Failed on device ${deviceId}: ${result?.error || 'Unknown error'}`, 'error');
+                    }
                 }
             }
+            
+            // Request updated statuses after a short delay to allow the commands to take effect
+            setTimeout(requestAllDeviceStatuses, 500);
         }
         
-        // Distribute URL to all devices
+        // Distribute URL to devices
         async function distributeUrl(event) {
             event.preventDefault();
             
             const targetUrl = document.getElementById('targetUrl').value;
+            if (!targetUrl) {
+                log('Error: Target URL is required', 'error');
+                return;
+            }
+            
             const iterations = parseInt(document.getElementById('iterations').value);
             const minInterval = parseInt(document.getElementById('minInterval').value);
             const maxInterval = parseInt(document.getElementById('maxInterval').value);
+            const useWebview = document.getElementById('useWebview').checked;
+            const rotateIp = document.getElementById('rotateIp').checked;
+            const selectedDevicesOnly = document.getElementById('selectedDevicesOnly').checked;
             
-            log(`Distributing URL '${targetUrl}' to all devices...`, 'info');
+            // Get device IDs based on selection
+            let targetDeviceIds = null; // null means all devices
+            if (selectedDevicesOnly) {
+                targetDeviceIds = getSelectedDeviceIds();
+                if (targetDeviceIds.length === 0) {
+                    log('No devices selected. Select devices or uncheck "Selected Devices Only"', 'warning');
+                    return;
+                }
+                log(`Distributing URL '${targetUrl}' to ${targetDeviceIds.length} selected devices...`, 'info');
+            } else {
+                log(`Distributing URL '${targetUrl}' to all connected devices...`, 'info');
+            }
             
             try {
                 if (isWebSocketConnected) {
@@ -797,9 +987,12 @@
                     socket.send(JSON.stringify({
                         type: 'distribute_url',
                         url: targetUrl,
+                        device_ids: targetDeviceIds,
                         iterations: iterations,
                         min_interval: minInterval,
-                        max_interval: maxInterval
+                        max_interval: maxInterval,
+                        use_webview: useWebview,
+                        rotate_ip: rotateIp
                     }));
                 } else {
                     // Fallback to HTTP API
@@ -810,19 +1003,40 @@
                         },
                         body: JSON.stringify({
                             url: targetUrl,
+                            device_ids: targetDeviceIds,
                             iterations: iterations,
                             min_interval: minInterval,
-                            max_interval: maxInterval
+                            max_interval: maxInterval,
+                            use_webview: useWebview,
+                            rotate_ip: rotateIp
                         })
                     });
                     
                     const result = await response.json();
                     handleUrlDistributionResult({
                         url: targetUrl,
-                        devices: Object.keys(result.results),
-                        results: result.results
+                        devices: Object.keys(result.results || {}),
+                        results: result.results || {}
                     });
                 }
+                
+                // For immediate visual feedback
+                const affectedDevices = targetDeviceIds || 
+                    devices.map(d => d.id);
+                
+                affectedDevices.forEach(deviceId => {
+                    let deviceCard = document.getElementById(`device-${deviceId}`);
+                    if (deviceCard) {
+                        let statusHeader = deviceCard.querySelector('.device-status h3 span');
+                        if (statusHeader) {
+                            statusHeader.textContent = '▶️ RUNNING';
+                            statusHeader.className = 'status-running';
+                        }
+                    }
+                });
+                
+                // Request updated statuses after a short delay
+                setTimeout(requestAllDeviceStatuses, 1000);
             } catch (error) {
                 log(`Error distributing URL: ${error}`, 'error');
             }
@@ -888,6 +1102,16 @@
                 }
             };
             
+            // Format URL for display
+            const formatUrl = (url) => {
+                if (!url) return 'No URL configured';
+                // Truncate long URLs
+                if (url.length > 40) {
+                    return url.substring(0, 37) + '...';
+                }
+                return url;
+            };
+            
             // Determine status icon and class
             let statusIcon, statusClass;
             switch(status.status) {
@@ -926,6 +1150,9 @@
                 ...status
             };
             
+            // Format iterations progress
+            const iterationsProgress = `${status.current_iteration}/${status.total_iterations} - ${percentage}%`;
+            
             // Update status section
             if (status.current_iteration > 0 && status.total_iterations > 0) {
                 // Simulation is active with progress
@@ -934,29 +1161,26 @@
                     <div class="status-info">
                         <div class="progress-bar-container">
                             <div class="progress-bar ${status.status === 'paused' ? 'paused' : ''}" style="width: ${percentage}%"></div>
-                            <div class="progress-percentage">${percentage}%</div>
-                        </div>
-                        <div class="progress-details">
-                            <span>Progress: ${status.current_iteration}/${status.total_iterations}</span>
-                            <span>Remaining: ${formatTime(status.estimated_remaining)}</span>
                         </div>
                         
                         <div class="simulation-stats">
+                            <div class="stat-item iterations">
+                                <div class="stat-label">PROGRESS</div>
+                                <div class="stat-value">${iterationsProgress}</div>
+                            </div>
                             <div class="stat-item elapsed">
-                                <div class="stat-label">ELAPSED TIME</div>
+                                <div class="stat-label">ELAPSED</div>
                                 <div class="stat-value">${formatTime(status.elapsed_time)}</div>
                             </div>
                             <div class="stat-item remaining">
-                                <div class="stat-label">REMAINING TIME</div>
+                                <div class="stat-label">REMAINING</div>
                                 <div class="stat-value">${formatTime(status.estimated_remaining)}</div>
                             </div>
                             <div class="stat-item url">
-                                <div class="stat-label">TARGET URL</div>
-                                <div class="stat-value">${status.url || 'Not available'}</div>
-                            </div>
-                            <div class="stat-item interval">
-                                <div class="stat-label">REQUEST INTERVAL</div>
-                                <div class="stat-value">${status.min_interval || 0}s - ${status.max_interval || 0}s</div>
+                                <div class="stat-label">URL</div>
+                                <div class="stat-value" title="${status.url}">
+                                    <span class="url-value">${formatUrl(status.url)}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -968,27 +1192,293 @@
                     <div class="status-info">
                         <div>No active simulation</div>
                         <div class="simulation-stats">
+                            <div class="stat-item iterations">
+                                <div class="stat-label">PROGRESS</div>
+                                <div class="stat-value">0/0 - 0%</div>
+                            </div>
                             <div class="stat-item elapsed">
-                                <div class="stat-label">ELAPSED TIME</div>
+                                <div class="stat-label">ELAPSED</div>
                                 <div class="stat-value">0s</div>
                             </div>
                             <div class="stat-item remaining">
-                                <div class="stat-label">REMAINING TIME</div>
+                                <div class="stat-label">REMAINING</div>
                                 <div class="stat-value">0s</div>
                             </div>
                             <div class="stat-item url">
-                                <div class="stat-label">TARGET URL</div>
+                                <div class="stat-label">URL</div>
                                 <div class="stat-value">No URL configured</div>
-                            </div>
-                            <div class="stat-item interval">
-                                <div class="stat-label">REQUEST INTERVAL</div>
-                                <div class="stat-value">0s - 0s</div>
                             </div>
                         </div>
                         <button class="btn" onclick="executeCommand('${status.device_id}', 'start')">Start New Simulation</button>
                     </div>
                 `;
             }
+        }
+        
+        // Handle device selection checkbox change
+        function handleDeviceSelection(checkbox) {
+            const deviceId = checkbox.getAttribute('data-device-id');
+            const deviceCard = document.getElementById(`device-${deviceId}`);
+            
+            if (checkbox.checked) {
+                deviceCard.classList.add('selected');
+            } else {
+                deviceCard.classList.remove('selected');
+            }
+            
+            updateSelectionCount();
+        }
+        
+        // Update selection counter and buttons
+        function updateSelectionCount() {
+            const checkboxes = document.querySelectorAll('.device-checkbox:checked');
+            const count = checkboxes.length;
+            const countElement = document.getElementById('selectionCount');
+            
+            countElement.textContent = `${count} device${count !== 1 ? 's' : ''} selected`;
+            
+            // Update action buttons state
+            const actionButtons = [
+                document.getElementById('startSelectedBtn'),
+                document.getElementById('stopSelectedBtn'),
+                document.getElementById('pauseSelectedBtn'),
+                document.getElementById('resumeSelectedBtn')
+            ];
+            
+            actionButtons.forEach(button => {
+                button.disabled = count === 0;
+            });
+            
+            // Update select all checkbox
+            const selectAllCheckbox = document.getElementById('selectAllDevices');
+            if (devices.length > 0 && count === devices.length) {
+                selectAllCheckbox.checked = true;
+                selectAllCheckbox.indeterminate = false;
+            } else if (count === 0) {
+                selectAllCheckbox.checked = false;
+                selectAllCheckbox.indeterminate = false;
+            } else {
+                selectAllCheckbox.indeterminate = true;
+            }
+        }
+        
+        // Toggle all device checkboxes
+        function toggleAllDevices(checked) {
+            const checkboxes = document.querySelectorAll('.device-checkbox');
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = checked;
+                const deviceId = checkbox.getAttribute('data-device-id');
+                const deviceCard = document.getElementById(`device-${deviceId}`);
+                
+                if (checked) {
+                    deviceCard.classList.add('selected');
+                } else {
+                    deviceCard.classList.remove('selected');
+                }
+            });
+            
+            updateSelectionCount();
+        }
+        
+        // Get selected device IDs
+        function getSelectedDeviceIds() {
+            const checkboxes = document.querySelectorAll('.device-checkbox:checked');
+            return Array.from(checkboxes).map(checkbox => checkbox.getAttribute('data-device-id'));
+        }
+        
+        // Execute batch command on selected devices
+        async function executeBatchCommand(command) {
+            const selectedDeviceIds = getSelectedDeviceIds();
+            
+            if (selectedDeviceIds.length === 0) {
+                log('No devices selected', 'warning');
+                return;
+            }
+            
+            log(`Executing '${command}' on ${selectedDeviceIds.length} selected devices...`, 'info');
+            
+            // Get parameters if command is start
+            let params = {};
+            if (command === 'start') {
+                const targetUrl = document.getElementById('targetUrl').value;
+                if (!targetUrl) {
+                    log('Error: Target URL is required for start command', 'error');
+                    return;
+                }
+                
+                const iterations = parseInt(document.getElementById('iterations').value);
+                const minInterval = parseInt(document.getElementById('minInterval').value);
+                const maxInterval = parseInt(document.getElementById('maxInterval').value);
+                const useWebview = document.getElementById('useWebview').checked;
+                const rotateIp = document.getElementById('rotateIp').checked;
+                
+                params = {
+                    url: targetUrl,
+                    iterations: iterations,
+                    min_interval: minInterval,
+                    max_interval: maxInterval,
+                    use_webview: useWebview,
+                    rotate_ip: rotateIp
+                };
+                
+                // For start commands, use the URL distribution functionality instead
+                // as it provides better support for simulation parameters
+                distributeUrlToDevices(targetUrl, selectedDeviceIds, iterations, minInterval, maxInterval, useWebview, rotateIp);
+                return;
+            }
+            
+            try {
+                if (isWebSocketConnected) {
+                    // Use WebSocket for batch commands
+                    socket.send(JSON.stringify({
+                        type: 'batch_command',
+                        command: command,
+                        device_ids: selectedDeviceIds,
+                        parameters: params
+                    }));
+                } else {
+                    // Fallback to HTTP API
+                    const response = await fetch(`${API_URL}/devices/batch/command`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            command: command,
+                            device_ids: selectedDeviceIds,
+                            parameters: params
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    handleBatchCommandResult({
+                        command: command,
+                        results: result.results || {}
+                    });
+                }
+                
+                // For immediate visual feedback, update device statuses
+                // This will be overridden by the actual status update when it arrives
+                selectedDeviceIds.forEach(deviceId => {
+                    let deviceCard = document.getElementById(`device-${deviceId}`);
+                    if (deviceCard) {
+                        let statusHeader = deviceCard.querySelector('.device-status h3 span');
+                        if (statusHeader) {
+                            let newStatus, newClass;
+                            
+                            switch (command) {
+                                case 'stop':
+                                    newStatus = '⏹️ STOPPED';
+                                    newClass = 'status-stopped';
+                                    break;
+                                case 'pause':
+                                    newStatus = '⏸️ PAUSED';
+                                    newClass = 'status-paused';
+                                    break;
+                                case 'resume':
+                                    newStatus = '▶️ RUNNING';
+                                    newClass = 'status-running';
+                                    break;
+                            }
+                            
+                            if (newStatus && newClass) {
+                                statusHeader.textContent = newStatus;
+                                statusHeader.className = newClass;
+                            }
+                        }
+                    }
+                });
+                
+                // Request updated statuses for all devices
+                setTimeout(requestAllDeviceStatuses, 1000);
+            } catch (error) {
+                log(`Error executing batch command: ${error}`, 'error');
+            }
+        }
+        
+        // Distribute URL to specific devices
+        async function distributeUrlToDevices(url, deviceIds, iterations, minInterval, maxInterval, useWebview = true, rotateIp = true) {
+            if (!url) {
+                log('Error: URL is required', 'error');
+                return;
+            }
+            
+            if (!deviceIds || deviceIds.length === 0) {
+                log('Error: No devices specified', 'error');
+                return;
+            }
+            
+            log(`Distributing URL '${url}' to ${deviceIds.length} devices...`, 'info');
+            
+            try {
+                if (isWebSocketConnected) {
+                    // Use WebSocket
+                    socket.send(JSON.stringify({
+                        type: 'distribute_url',
+                        url: url,
+                        device_ids: deviceIds,
+                        iterations: iterations,
+                        min_interval: minInterval,
+                        max_interval: maxInterval,
+                        use_webview: useWebview,
+                        rotate_ip: rotateIp
+                    }));
+                } else {
+                    // Fallback to HTTP API
+                    const response = await fetch(`${API_URL}/distribute-url`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            url: url,
+                            device_ids: deviceIds,
+                            iterations: iterations,
+                            min_interval: minInterval,
+                            max_interval: maxInterval,
+                            use_webview: useWebview,
+                            rotate_ip: rotateIp
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    handleUrlDistributionResult({
+                        url: url,
+                        devices: deviceIds,
+                        results: result.results || {}
+                    });
+                }
+                
+                // For immediate visual feedback
+                deviceIds.forEach(deviceId => {
+                    let deviceCard = document.getElementById(`device-${deviceId}`);
+                    if (deviceCard) {
+                        let statusHeader = deviceCard.querySelector('.device-status h3 span');
+                        if (statusHeader) {
+                            statusHeader.textContent = '▶️ RUNNING';
+                            statusHeader.className = 'status-running';
+                        }
+                    }
+                });
+                
+                // Request updated statuses after a short delay
+                setTimeout(requestAllDeviceStatuses, 1000);
+            } catch (error) {
+                log(`Error distributing URL: ${error}`, 'error');
+            }
+        }
+        
+        // Request status updates for all devices
+        function requestAllDeviceStatuses() {
+            if (!isWebSocketConnected || !devices || devices.length === 0) return;
+            
+            devices.forEach(device => {
+                socket.send(JSON.stringify({
+                    type: 'get_device_status',
+                    device_id: device.id
+                }));
+            });
         }
         
         // Initialize the page
@@ -999,6 +1489,27 @@
             // Add event listeners
             document.getElementById('refreshDevicesBtn').addEventListener('click', getDevices);
             document.getElementById('urlDistributionForm').addEventListener('submit', distributeUrl);
+            
+            // Device selection event listeners
+            document.getElementById('selectAllDevices').addEventListener('change', function(e) {
+                toggleAllDevices(e.target.checked);
+            });
+            
+            document.getElementById('startSelectedBtn').addEventListener('click', function() {
+                executeBatchCommand('start');
+            });
+            
+            document.getElementById('stopSelectedBtn').addEventListener('click', function() {
+                executeBatchCommand('stop');
+            });
+            
+            document.getElementById('pauseSelectedBtn').addEventListener('click', function() {
+                executeBatchCommand('pause');
+            });
+            
+            document.getElementById('resumeSelectedBtn').addEventListener('click', function() {
+                executeBatchCommand('resume');
+            });
             
             // Initial log
             log('Dashboard initialized', 'info');
