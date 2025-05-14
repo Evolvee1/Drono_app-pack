@@ -29,6 +29,10 @@ class AdbController:
         self.prefs_file = f"/data/data/{self.package}/shared_prefs/instagram_traffic_simulator_prefs.xml"
         self.device_status_cache = {}  # Cache for device status
         self.last_status_update = {}   # Track when status was last updated
+        self.last_full_check = {}      # Track when last full check was performed
+        self.last_broadcasted_status = {}  # Cache previous broadcasts to detect changes
+        self.CACHE_TTL = 5.0           # Cache TTL increased to 5 seconds (from 1 second)
+        self.FULL_CHECK_TTL = 15.0     # Full check every 15 seconds
         logger.info("ADB Controller initialized in ROOT MODE")
         
     def _check_adb(self):
@@ -501,27 +505,37 @@ class AdbController:
                     "device_id": device_id
                 }
 
-    def get_device_status(self, device_id: str) -> Dict:
+    def get_device_status(self, device_id: str, full_check: bool = False) -> Dict:
         """
         Get detailed status information from a device
         
         Args:
             device_id: Device ID
+            full_check: Whether to perform a full check of all attributes
             
         Returns:
             Dictionary with device status information
         """
-        # Check cache to avoid too frequent updates (once per second max)
+        # Check if we should use cached data
         current_time = time.time()
-        if (device_id in self.last_status_update and 
-            current_time - self.last_status_update.get(device_id, 0) < 1.0 and
+        last_full_check_time = self.last_full_check.get(device_id, 0)
+        do_full_check = full_check or current_time - last_full_check_time >= self.FULL_CHECK_TTL
+        
+        # If we don't need a full check and we have recent cache data, return it
+        if (not do_full_check and 
+            device_id in self.last_status_update and 
+            current_time - self.last_status_update.get(device_id, 0) < self.CACHE_TTL and
             device_id in self.device_status_cache):
             return self.device_status_cache[device_id]
             
-        logger.info(f"Fetching status for device {device_id}")
+        # For quick checks, just log at debug level to reduce log spam
+        if not do_full_check:
+            logger.debug(f"Quick status check for device {device_id}")
+        else:
+            logger.info(f"Fetching full status for device {device_id}")
         
-        # Initialize with default values
-        status_info = {
+        # Use existing cache as starting point if available, or create new status info
+        status_info = self.device_status_cache.get(device_id, {
             "device_id": device_id,
             "is_running": False,
             "current_iteration": 0,
@@ -534,23 +548,34 @@ class AdbController:
             "estimated_remaining": 0,
             "status": "idle",
             "last_update": datetime.now().isoformat()
-        }
+        })
         
         try:
-            # Check if app is running
+            # Quick check - just verify if process is running (always do this)
             process_id = subprocess.run(
                 ['adb', '-s', device_id, 'shell', f"pidof {self.package}"],
                 capture_output=True,
-                text=True
+                text=True,
+                timeout=2  # Shorter timeout for quick check
             ).stdout.strip()
             
             if not process_id:
                 status_info["status"] = "stopped"
+                status_info["is_running"] = False
                 self.device_status_cache[device_id] = status_info
                 self.last_status_update[device_id] = current_time
                 return status_info
             
-            # App is running, try all available methods to get status
+            # If process is running but we don't need full check, just return cached data with updated is_running
+            if not do_full_check:
+                status_info["is_running"] = True
+                if status_info["status"] != "paused":  # Preserve paused state
+                    status_info["status"] = "running"
+                self.device_status_cache[device_id] = status_info
+                self.last_status_update[device_id] = current_time
+                return status_info
+            
+            # Full check - similar to original implementation but only when needed
             
             # Method 1: Get from shared preferences file using root
             prefs_data = self._get_prefs_from_device(device_id)
@@ -599,15 +624,15 @@ class AdbController:
                         (status_info["current_iteration"] / status_info["total_iterations"]) * 100, 1
                     )
                 
-                # Calculate elapsed time and estimated remaining time
+                # Calculate elapsed time
                 if start_time_match:
-                    start_time = int(start_time_match.group(1)) / 1000  # Convert from milliseconds
-                    current_time_ms = int(time.time())
-                    status_info["elapsed_time"] = current_time_ms - start_time
+                    start_time_ms = int(start_time_match.group(1))
+                    elapsed_seconds = (int(time.time() * 1000) - start_time_ms) / 1000
+                    status_info["elapsed_time"] = round(elapsed_seconds)
                     
-                    # Estimate remaining time based on elapsed time and progress
+                    # Calculate estimated remaining time
                     if status_info["current_iteration"] > 0 and status_info["is_running"]:
-                        time_per_iteration = status_info["elapsed_time"] / status_info["current_iteration"]
+                        time_per_iteration = elapsed_seconds / status_info["current_iteration"]
                         remaining_iterations = status_info["total_iterations"] - status_info["current_iteration"]
                         status_info["estimated_remaining"] = round(time_per_iteration * remaining_iterations)
             
@@ -639,80 +664,41 @@ class AdbController:
                                 time_per_iteration = status_info["elapsed_time"] / status_info["current_iteration"]
                                 remaining_iterations = status_info["total_iterations"] - status_info["current_iteration"]
                                 status_info["estimated_remaining"] = round(time_per_iteration * remaining_iterations)
-                    except json.JSONDecodeError:
-                        logger.debug(f"Error parsing status file as JSON")
-                
-            # Method 3: Try to get progress from UI
-            if status_info["current_iteration"] == 0:
-                try:
-                    # Check if there's a progress TextView visible
-                    ui_dump = subprocess.run(
-                        ['adb', '-s', device_id, 'shell', "dumpsys activity top | grep -E 'tvProgress|tvIteration'"],
-                        capture_output=True,
-                        text=True,
-                        shell=True
-                    ).stdout
-                    
-                    progress_match = re.search(r'Progress: (\d+)/(\d+)', ui_dump)
-                    iterations_match = re.search(r'Iteration: (\d+)/(\d+)', ui_dump)
-                    
-                    if progress_match:
-                        status_info["current_iteration"] = int(progress_match.group(1))
-                        status_info["total_iterations"] = int(progress_match.group(2))
-                        status_info["status"] = "running"
-                        status_info["is_running"] = True
-                    elif iterations_match:
-                        status_info["current_iteration"] = int(iterations_match.group(1))
-                        status_info["total_iterations"] = int(iterations_match.group(2))
-                        status_info["status"] = "running"
-                        status_info["is_running"] = True
-                        
-                    if status_info["total_iterations"] > 0 and status_info["current_iteration"] > 0:
-                        status_info["percentage"] = round(
-                            (status_info["current_iteration"] / status_info["total_iterations"]) * 100, 1
-                        )
-                except Exception as e:
-                    logger.debug(f"Error getting progress from UI: {e}")
+                    except Exception as e:
+                        logger.debug(f"Error parsing status file: {e}")
             
-            # Method 4: Try to get progress from logcat
-            if status_info["current_iteration"] == 0:
+            # Check logcat for progress information (only if we still don't have progress info)
+            if not status_info["current_iteration"] > 0 and status_info["is_running"]:
                 try:
-                    # Use shell=False to avoid command injection issues
+                    # Use logcat to find progress information
                     logcat_output = subprocess.run(
                         ['adb', '-s', device_id, 'logcat', '-d', '-t', '20', '-v', 'brief'],
                         capture_output=True,
-                        text=True
+                        text=True,
+                        timeout=3
                     ).stdout
                     
-                    # Filter the output in Python instead of using grep
+                    # Look for progress information in logcat
                     for line in logcat_output.splitlines():
-                        if f"{self.package}" in line and ("Progress:" in line or "Iteration:" in line):
-                            progress_match = re.search(r'Progress: (\d+)/(\d+)', line)
-                            iterations_match = re.search(r'Iteration: (\d+)/(\d+)', line)
-                            
-                            if progress_match:
-                                status_info["current_iteration"] = int(progress_match.group(1))
-                                status_info["total_iterations"] = int(progress_match.group(2))
-                                status_info["status"] = "running"
-                                status_info["is_running"] = True
-                                break
-                            elif iterations_match:
-                                status_info["current_iteration"] = int(iterations_match.group(1))
-                                status_info["total_iterations"] = int(iterations_match.group(2))
-                                status_info["status"] = "running"
-                                status_info["is_running"] = True
-                                break
-                    
-                    if status_info["total_iterations"] > 0 and status_info["current_iteration"] > 0:
-                        status_info["percentage"] = round(
-                            (status_info["current_iteration"] / status_info["total_iterations"]) * 100, 1
-                        )
+                        if self.package in line:
+                            # Try to find iteration info
+                            iter_match = re.search(r'Iteration:\s*(\d+)/(\d+)', line)
+                            if iter_match:
+                                current_iter = int(iter_match.group(1))
+                                total_iter = int(iter_match.group(2))
+                                
+                                if current_iter > 0 and total_iter > 0:
+                                    status_info["current_iteration"] = current_iter
+                                    status_info["total_iterations"] = total_iter
+                                    status_info["percentage"] = round((current_iter / total_iter) * 100, 1)
+                                    break
                 except Exception as e:
                     logger.debug(f"Error getting progress from logcat: {e}")
             
-            # Update cache and return status
+            # Update cache and tracking timestamps
             self.device_status_cache[device_id] = status_info
             self.last_status_update[device_id] = current_time
+            self.last_full_check[device_id] = current_time
             return status_info
             
         except Exception as e:
@@ -751,7 +737,7 @@ class AdbController:
             
     async def get_all_devices_status(self) -> Dict[str, Dict]:
         """
-        Get status for all connected devices
+        Get status for all connected devices more efficiently using concurrent processing
         
         Returns:
             Dictionary mapping device IDs to status information
@@ -759,10 +745,27 @@ class AdbController:
         devices = self.get_devices()
         results = {}
         
+        if not devices:
+            return results
+            
+        # Use semaphore to limit concurrent ADB operations
+        semaphore = asyncio.Semaphore(3)  # Max 3 concurrent operations
+        
+        async def get_status_with_semaphore(device_id):
+            """Helper function to get status with semaphore limit"""
+            async with semaphore:
+                return device_id, self.get_device_status(device_id)
+        
+        # Create tasks for all devices
+        tasks = []
         for device in devices:
             device_id = device["id"]
-            status = self.get_device_status(device_id)
-            results[device_id] = status
+            tasks.append(get_status_with_semaphore(device_id))
+        
+        # Run all tasks concurrently and gather results
+        if tasks:
+            device_statuses = await asyncio.gather(*tasks)
+            results = {device_id: status for device_id, status in device_statuses}
             
         return results
 

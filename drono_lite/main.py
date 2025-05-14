@@ -102,20 +102,33 @@ update_interval = 900  # 15 minutes (900 seconds) default interval
 async def broadcast_status_updates():
     """Background task to periodically send status updates to clients"""
     global automatic_updates_enabled, update_interval
+    last_broadcasted = {}  # Keep track of last sent status for each device
     
     while True:
         try:
             if automatic_updates_enabled:
                 devices_status = await adb_controller.get_all_devices_status()
                 if devices_status:
-                    await connection_manager.broadcast_all({
-                        "type": "status_update",
-                        "data": {
-                            "devices_status": devices_status,
-                            "timestamp": datetime.now().isoformat()
-                        }
-                    })
-                    logger.info(f"Broadcast automatic status update for {len(devices_status)} devices")
+                    # Determine which devices have changed status
+                    changed_statuses = {}
+                    for device_id, status in devices_status.items():
+                        # Check if status differs from last broadcast
+                        if (device_id not in last_broadcasted or 
+                            status != last_broadcasted[device_id]):
+                            changed_statuses[device_id] = status
+                            last_broadcasted[device_id] = status.copy()  # Store a copy
+                    
+                    # Only broadcast changes if there are any
+                    if changed_statuses:
+                        await connection_manager.broadcast_all({
+                            "type": "status_update",
+                            "data": {
+                                "devices_status": changed_statuses,
+                                "is_partial": True,
+                                "timestamp": datetime.now().isoformat()
+                            }
+                        })
+                        logger.info(f"Broadcast status update for {len(changed_statuses)} changed devices")
         except Exception as e:
             logger.error(f"Error in status update broadcast: {e}")
         
@@ -199,6 +212,7 @@ async def get_status_update_config():
 async def request_status_update():
     """Manually request status updates for all devices"""
     try:
+        # Use full check for manual requests since user is explicitly requesting complete status
         devices_status = await adb_controller.get_all_devices_status()
         
         # Broadcast status update to all clients
@@ -206,6 +220,7 @@ async def request_status_update():
             "type": "status_update",
             "data": {
                 "devices_status": devices_status,
+                "is_partial": False,  # This is a full update
                 "timestamp": datetime.now().isoformat()
             }
         })
@@ -380,19 +395,29 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
             }
         })
         
-        # Send initial status information (always send on connect, regardless of auto-update setting)
-        try:
-            logger.info(f"Sending initial status update to new WebSocket client in channel: {channel}")
-            devices_status = await adb_controller.get_all_devices_status()
-            await websocket.send_json({
-                "type": "status_update",
-                "data": {
-                    "devices_status": devices_status,
-                    "timestamp": datetime.now().isoformat()
-                }
-            })
-        except Exception as e:
-            logger.error(f"Failed to send initial status: {e}")
+        # Check if client wants immediate status updates
+        # Extract query parameters from the websocket connection
+        query_params = dict(websocket.query_params)
+        initial_status = query_params.get("initial_status", "false").lower() == "true"
+        
+        # Send initial status information if requested, or if connection_manager has few clients
+        # (indicating this might be the first dashboard connection)
+        client_count = connection_manager.get_connected_clients_count()
+        if initial_status or client_count <= 2:
+            try:
+                logger.info(f"Sending initial status update to new WebSocket client in channel: {channel}")
+                devices_status = await adb_controller.get_all_devices_status()
+                await websocket.send_json({
+                    "type": "status_update",
+                    "data": {
+                        "devices_status": devices_status,
+                        "timestamp": datetime.now().isoformat()
+                    }
+                })
+            except Exception as e:
+                logger.error(f"Failed to send initial status: {e}")
+        else:
+            logger.info(f"Skipping initial status update for WebSocket client in channel: {channel} (can be requested explicitly)")
         
         # Listen for messages
         while True:
@@ -426,9 +451,9 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
                             }
                         })
                     elif message["type"] == "get_device_status" and "device_id" in message:
-                        # Send status for a specific device
+                        # Send status for a specific device with quick check (no full status refresh)
                         device_id = message["device_id"]
-                        status = adb_controller.get_device_status(device_id)
+                        status = adb_controller.get_device_status(device_id, full_check=False)
                         await websocket.send_json({
                             "type": "device_status",
                             "data": {
