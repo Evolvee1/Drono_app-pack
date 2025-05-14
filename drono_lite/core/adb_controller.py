@@ -185,31 +185,19 @@ class AdbController:
             subprocess.run(['adb', '-s', device_id, 'shell', 
                            f"su -c 'cp /sdcard/{prefs_base} {self.prefs_file}'"], check=True)
             
-            # Set appropriate permissions - handle failures gracefully
+            # Set appropriate permissions
             subprocess.run(['adb', '-s', device_id, 'shell', 
                            f"su -c 'chmod 660 {self.prefs_file}'"], check=True)
-            
-            # Try to set ownership, but don't fail if it doesn't work
-            try:
-                subprocess.run(['adb', '-s', device_id, 'shell', 
-                               f"su -c 'chown {self.package}:{self.package} {self.prefs_file}'"], check=True)
-            except Exception as e:
-                logger.warning(f"Could not set ownership on preferences file: {e}")
-                # Continue anyway, as the app might still be able to read the file
+            subprocess.run(['adb', '-s', device_id, 'shell', 
+                           f"su -c 'chown {self.package}:{self.package} {self.prefs_file}'"], check=True)
             
             # Same for URL config
             subprocess.run(['adb', '-s', device_id, 'shell', 
                            f"su -c 'cp /sdcard/{url_base} /data/data/{self.package}/shared_prefs/url_config.xml'"], check=True)
             subprocess.run(['adb', '-s', device_id, 'shell', 
                            f"su -c 'chmod 660 /data/data/{self.package}/shared_prefs/url_config.xml'"], check=True)
-            
-            # Try to set ownership, but don't fail if it doesn't work
-            try:
-                subprocess.run(['adb', '-s', device_id, 'shell', 
-                               f"su -c 'chown {self.package}:{self.package} /data/data/{self.package}/shared_prefs/url_config.xml'"], check=True)
-            except Exception as e:
-                logger.warning(f"Could not set ownership on URL config file: {e}")
-                # Continue anyway, as the app might still be able to read the file
+            subprocess.run(['adb', '-s', device_id, 'shell', 
+                           f"su -c 'chown {self.package}:{self.package} /data/data/{self.package}/shared_prefs/url_config.xml'"], check=True)
             
             # Clean up
             os.unlink(prefs_filename)

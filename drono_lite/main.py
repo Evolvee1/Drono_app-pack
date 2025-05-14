@@ -3,8 +3,6 @@ import json
 import asyncio
 import os
 import subprocess
-import argparse
-import sys
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException, Depends, Query, BackgroundTasks
@@ -16,35 +14,9 @@ from pydantic import BaseModel
 from core.adb_controller import adb_controller
 from core.websocket_manager import connection_manager
 
-# Only parse arguments when running directly (not via uvicorn)
-if __name__ == "__main__":
-    # Parse command line arguments
-    parser = argparse.ArgumentParser(description='Drono Lite Control Server')
-    parser.add_argument('--log-level', type=str, default='INFO',
-                       choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'],
-                       help='Set the logging level (default: INFO)')
-    parser.add_argument('--quiet', action='store_true',
-                       help='Suppress ADB controller status messages (equivalent to --log-level=WARNING)')
-    args, _ = parser.parse_known_args()
-    
-    # Set logging level based on arguments
-    log_level = logging.WARNING if args.quiet else getattr(logging, args.log_level)
-else:
-    # Default logging level when run via uvicorn
-    log_level = logging.INFO
-    # Check if any log level args were passed
-    if '--quiet' in sys.argv:
-        log_level = logging.WARNING
-    for i, arg in enumerate(sys.argv):
-        if arg == '--log-level' and i+1 < len(sys.argv):
-            try:
-                log_level = getattr(logging, sys.argv[i+1])
-            except (AttributeError, IndexError):
-                pass
-
 # Configure logging
 logging.basicConfig(
-    level=log_level,
+    level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
         logging.StreamHandler(),
@@ -52,10 +24,6 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-
-# Set specific logger levels
-if log_level == logging.WARNING:  # Quiet mode
-    logging.getLogger('core.adb_controller').setLevel(logging.WARNING)
 
 # Create FastAPI app
 app = FastAPI(title="Drono Lite Control Server")
@@ -89,38 +57,25 @@ class URLDistributionRequest(BaseModel):
     min_interval: int = 1
     max_interval: int = 2
 
-# Add new model for logging control
-class LoggingConfigRequest(BaseModel):
-    level: str = "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
-    target: str = "all"  # 'all', 'adb_controller', or other logger names
-
-# Create a flag to control automatic updates
-automatic_updates_enabled = False  # Disabled by default
-update_interval = 900  # 15 minutes (900 seconds) default interval
-
 # Background tasks
 async def broadcast_status_updates():
     """Background task to periodically send status updates to clients"""
-    global automatic_updates_enabled, update_interval
-    
     while True:
         try:
-            if automatic_updates_enabled:
-                devices_status = await adb_controller.get_all_devices_status()
-                if devices_status:
-                    await connection_manager.broadcast_all({
-                        "type": "status_update",
-                        "data": {
-                            "devices_status": devices_status,
-                            "timestamp": datetime.now().isoformat()
-                        }
-                    })
-                    logger.info(f"Broadcast automatic status update for {len(devices_status)} devices")
+            devices_status = await adb_controller.get_all_devices_status()
+            if devices_status:
+                await connection_manager.broadcast_all({
+                    "type": "status_update",
+                    "data": {
+                        "devices_status": devices_status,
+                        "timestamp": datetime.now().isoformat()
+                    }
+                })
         except Exception as e:
             logger.error(f"Error in status update broadcast: {e}")
         
-        # Wait for the specified interval before next update
-        await asyncio.sleep(update_interval)
+        # Wait 2 seconds before next update
+        await asyncio.sleep(2)
 
 # Start background task on app startup
 @app.on_event("startup")
@@ -133,90 +88,6 @@ async def startup_event():
     asyncio.create_task(broadcast_status_updates())
     
     logger.info("Started background tasks for status updates and broadcast worker")
-
-# Add new model for status update configuration
-class StatusUpdateConfig(BaseModel):
-    automatic: bool = False  # Whether to enable automatic status updates
-    interval: int = 900  # Interval in seconds for automatic updates (default: 15 minutes)
-
-# Add endpoint to control status updates
-@app.post("/settings/status-updates")
-async def configure_status_updates(config: StatusUpdateConfig):
-    """Configure automatic status updates"""
-    global automatic_updates_enabled, update_interval
-    
-    # Update global settings
-    automatic_updates_enabled = config.automatic
-    # Allow intervals from 5 seconds to 1 hour (3600 seconds)
-    update_interval = max(5, min(3600, config.interval))
-    
-    # Broadcast configuration change to all clients
-    await connection_manager.broadcast_all({
-        "type": "status_update_config",
-        "data": {
-            "automatic": automatic_updates_enabled,
-            "interval": update_interval,
-            "timestamp": datetime.now().isoformat()
-        }
-    })
-    
-    # Format interval for better readability
-    interval_display = ""
-    if update_interval >= 3600:
-        interval_display = f"{update_interval // 3600} hour(s)"
-    elif update_interval >= 60:
-        interval_display = f"{update_interval // 60} minute(s)"
-    else:
-        interval_display = f"{update_interval} seconds"
-    
-    message = (f"Automatic status updates {'enabled' if automatic_updates_enabled else 'disabled'}, "
-               f"interval set to {interval_display}")
-    logger.info(message)
-    
-    return {
-        "status": "success",
-        "message": message,
-        "config": {
-            "automatic": automatic_updates_enabled,
-            "interval": update_interval
-        }
-    }
-
-# Add endpoint to get current status update configuration
-@app.get("/settings/status-updates")
-async def get_status_update_config():
-    """Get current status update configuration"""
-    return {
-        "status": "success",
-        "config": {
-            "automatic": automatic_updates_enabled,
-            "interval": update_interval
-        }
-    }
-
-# Add endpoint to manually request status updates
-@app.post("/devices/request-status")
-async def request_status_update():
-    """Manually request status updates for all devices"""
-    try:
-        devices_status = await adb_controller.get_all_devices_status()
-        
-        # Broadcast status update to all clients
-        await connection_manager.broadcast_all({
-            "type": "status_update",
-            "data": {
-                "devices_status": devices_status,
-                "timestamp": datetime.now().isoformat()
-            }
-        })
-        
-        return {
-            "status": "success",
-            "message": f"Status updated for {len(devices_status)} devices"
-        }
-    except Exception as e:
-        logger.error(f"Failed to update status: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
 
 # API endpoints for device management and control
 @app.get("/devices")
@@ -380,9 +251,8 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
             }
         })
         
-        # Send initial status information (always send on connect, regardless of auto-update setting)
+        # Send initial status information
         try:
-            logger.info(f"Sending initial status update to new WebSocket client in channel: {channel}")
             devices_status = await adb_controller.get_all_devices_status()
             await websocket.send_json({
                 "type": "status_update",
@@ -475,46 +345,6 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
                                 "url": url,
                                 "devices": device_ids or [],
                                 "results": results
-                            }
-                        })
-                    elif message["type"] == "configure_logging" and "level" in message:
-                        # Configure logging levels
-                        level_name = message["level"].upper()
-                        target = message.get("target", "all").lower()
-                        
-                        # Validate level
-                        if level_name not in ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]:
-                            await websocket.send_json({
-                                "type": "error",
-                                "data": {
-                                    "message": f"Invalid logging level: {level_name}"
-                                }
-                            })
-                            continue
-                        
-                        # Get log level
-                        log_level = getattr(logging, level_name)
-                        
-                        # Apply logging level
-                        if target == "all":
-                            logging.getLogger().setLevel(log_level)
-                            result_message = f"Set logging level to {level_name} for all loggers"
-                        elif target == "adb_controller":
-                            logging.getLogger("core.adb_controller").setLevel(log_level)
-                            result_message = f"Set logging level to {level_name} for ADB controller"
-                        else:
-                            logging.getLogger(target).setLevel(log_level)
-                            result_message = f"Set logging level to {level_name} for logger: {target}"
-                        
-                        logger.info(result_message)
-                        
-                        # Broadcast change to all clients
-                        await connection_manager.broadcast_all({
-                            "type": "logging_configured",
-                            "data": {
-                                "level": level_name,
-                                "target": target,
-                                "message": result_message
                             }
                         })
             except json.JSONDecodeError:
@@ -638,80 +468,6 @@ async def test_progress_tracking(device_id: str):
         raise
     except Exception as e:
         logger.error(f"Failed to test progress tracking for {device_id}: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-# Add new API endpoint for controlling logging
-@app.post("/logging/configure")
-async def configure_logging(config: LoggingConfigRequest):
-    """Dynamically configure logging levels"""
-    try:
-        # Validate the logging level
-        level_name = config.level.upper()
-        if level_name not in ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]:
-            raise HTTPException(status_code=400, detail=f"Invalid logging level: {level_name}")
-        
-        # Convert string level to logging level
-        log_level = getattr(logging, level_name)
-        
-        # Apply the logging level
-        if config.target.lower() == "all":
-            # Set level for root logger
-            logging.getLogger().setLevel(log_level)
-            message = f"Set logging level to {level_name} for all loggers"
-        elif config.target.lower() == "adb_controller":
-            # Set level specifically for ADB controller
-            logging.getLogger("core.adb_controller").setLevel(log_level)
-            message = f"Set logging level to {level_name} for ADB controller"
-        else:
-            # Set level for specific logger
-            logging.getLogger(config.target).setLevel(log_level)
-            message = f"Set logging level to {level_name} for logger: {config.target}"
-        
-        logger.info(message)
-        
-        # Broadcast logging change to WebSocket clients
-        await connection_manager.broadcast_all({
-            "type": "logging_configured",
-            "data": {
-                "level": level_name,
-                "target": config.target,
-                "message": message
-            }
-        })
-        
-        return {"status": "success", "message": message}
-    except Exception as e:
-        logger.error(f"Failed to configure logging: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-# Add endpoint to get current logging configuration
-@app.get("/logging/status")
-async def get_logging_status():
-    """Get current logging configuration"""
-    try:
-        # Get logging levels of important loggers
-        root_level = logging.getLogger().level
-        adb_level = logging.getLogger("core.adb_controller").level
-        app_level = logging.getLogger(__name__).level
-        
-        # Convert logging levels to names
-        level_names = {
-            logging.DEBUG: "DEBUG",
-            logging.INFO: "INFO",
-            logging.WARNING: "WARNING",
-            logging.ERROR: "ERROR",
-            logging.CRITICAL: "CRITICAL"
-        }
-        
-        status = {
-            "root": level_names.get(root_level, str(root_level)),
-            "adb_controller": level_names.get(adb_level, str(adb_level)),
-            "app": level_names.get(app_level, str(app_level))
-        }
-        
-        return {"status": "success", "config": status}
-    except Exception as e:
-        logger.error(f"Failed to get logging status: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":

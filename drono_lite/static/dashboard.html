@@ -541,73 +541,6 @@
         .select-all-checkbox {
             margin-right: 5px;
         }
-
-        .log-controls {
-            margin-bottom: 10px;
-        }
-
-        .logging-toggle {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logging-select {
-            padding: 5px;
-            border: 1px solid #dadce0;
-            border-radius: 4px;
-        }
-
-        .setLoggingBtn {
-            padding: 5px 10px;
-            background-color: #1a73e8;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .setLoggingBtn:hover {
-            background-color: #1557b0;
-        }
-
-        /* Add styles for update controls */
-        .status-update-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding: 8px 12px;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            border: 1px solid #e0e0e0;
-        }
-        
-        .update-toggle {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .update-interval-select {
-            padding: 4px 6px;
-            border: 1px solid #dadce0;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        
-        .last-update-time {
-            font-size: 12px;
-            color: #666;
-        }
-        
-        #manualUpdateBtn {
-            background-color: #4caf50;
-        }
-        
-        #manualUpdateBtn:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
@@ -688,28 +621,6 @@
                     <button id="resumeSelectedBtn" class="btn" disabled>Resume Selected</button>
                 </div>
             </div>
-            
-            <!-- Add status update controls -->
-            <div class="status-update-controls">
-                <div class="update-toggle">
-                    <label>
-                        <input type="checkbox" id="autoUpdateToggle">
-                        Auto Update
-                    </label>
-                    <select id="updateIntervalSelect" class="update-interval-select">
-                        <option value="5">5 seconds</option>
-                        <option value="30">30 seconds</option>
-                        <option value="60">1 minute</option>
-                        <option value="300">5 minutes</option>
-                        <option value="900" selected>15 minutes</option>
-                        <option value="1800">30 minutes</option>
-                        <option value="3600">1 hour</option>
-                    </select>
-                    <button id="manualUpdateBtn" class="btn">Refresh Status</button>
-                </div>
-                <span id="lastUpdateTime" class="last-update-time"></span>
-            </div>
-            
             <div id="deviceList">
                 <p>Loading devices...</p>
             </div>
@@ -717,23 +628,6 @@
         
         <div class="card">
             <h2>Activity Log</h2>
-            <div class="log-controls">
-                <div class="logging-toggle">
-                    <label>Server Log Level:</label>
-                    <select id="loggingLevel" class="logging-select">
-                        <option value="INFO">INFO</option>
-                        <option value="DEBUG">DEBUG</option>
-                        <option value="WARNING">WARNING</option>
-                        <option value="ERROR">ERROR</option>
-                        <option value="CRITICAL">CRITICAL</option>
-                    </select>
-                    <button id="setLoggingBtn" class="btn">Apply</button>
-                    <label>
-                        <input type="checkbox" id="quietAdbMode"> 
-                        Quiet ADB Mode
-                    </label>
-                </div>
-            </div>
             <div id="log"></div>
         </div>
         
@@ -789,15 +683,6 @@
                         case 'status_update':
                             if (message.data.devices_status) {
                                 updateDeviceStatus(message.data.devices_status);
-                                updateLastUpdateTime();
-                            }
-                            break;
-                        case 'status_update_config':
-                            // Update UI to match new settings from server
-                            if (message.data) {
-                                document.getElementById('autoUpdateToggle').checked = message.data.automatic;
-                                document.getElementById('updateIntervalSelect').value = message.data.interval.toString();
-                                log(`Status update settings changed: automatic=${message.data.automatic}, interval=${formatInterval(message.data.interval)}`, 'info');
                             }
                             break;
                         case 'device_status':
@@ -805,14 +690,6 @@
                                 updateSingleDeviceStatus(message.data.device_id, message.data.status);
                             } else if (message.data.status) {
                                 updateSingleDeviceStatus(message.data.device_id || "unknown", message.data.status);
-                            }
-                            break;
-                        case 'logging_configured':
-                            // Handle logging configuration broadcast
-                            if (message.data) {
-                                log(`Logging level changed: ${message.data.message}`, 'info');
-                                // Update UI to match new settings
-                                getLoggingStatus();
                             }
                             break;
                         default:
@@ -1210,8 +1087,7 @@
             
             // Format elapsed and remaining time
             const formatTime = (seconds) => {
-                if (!seconds || isNaN(seconds)) return '0s';
-                seconds = Math.max(0, parseInt(seconds));
+                if (!seconds) return '0s';
                 
                 const hours = Math.floor(seconds / 3600);
                 const minutes = Math.floor((seconds % 3600) / 60);
@@ -1256,54 +1132,35 @@
                     statusClass = 'status-idle';
             }
             
-            // Use defaults for missing values
-            const currentIteration = Number(status.current_iteration) || 0;
-            const totalIterations = Number(status.total_iterations) || 0;
-            // Force percentage to be a number between 0-100
-            let percentage = 0;
-            if (totalIterations > 0 && currentIteration > 0) {
-                percentage = Math.min(100, Math.max(0, (currentIteration / totalIterations) * 100));
-            } else if (status.percentage) {
-                percentage = Math.min(100, Math.max(0, Number(status.percentage) || 0));
-            }
+            // Clamp percentage to 0-100 range
+            const percentage = Math.min(100, Math.max(0, status.percentage || 0));
             
             // Make sure status has all required fields with defaults if missing
-            const processedStatus = {
+            status = {
                 device_id: deviceId,
-                current_iteration: currentIteration,
-                total_iterations: totalIterations,
-                percentage: Math.round(percentage * 10) / 10, // Round to 1 decimal
-                url: status.url || '',
-                min_interval: Number(status.min_interval) || 0,
-                max_interval: Number(status.max_interval) || 0,
-                elapsed_time: Number(status.elapsed_time) || 0,
-                estimated_remaining: Number(status.estimated_remaining) || 0,
+                current_iteration: status.current_iteration || 0,
+                total_iterations: status.total_iterations || 0,
+                percentage: percentage,
+                url: status.url || 'Not available',
+                min_interval: status.min_interval || 0,
+                max_interval: status.max_interval || 0,
+                elapsed_time: status.elapsed_time || 0,
+                estimated_remaining: status.estimated_remaining || 0,
                 status: status.status || 'idle',
-                is_running: status.is_running || false
+                ...status
             };
             
-            // Log status data for debugging (only for significant changes)
-            if (processedStatus.current_iteration > 0 && 
-                (!window.lastLoggedStatus || 
-                 window.lastLoggedStatus[deviceId]?.current_iteration !== processedStatus.current_iteration)) {
-                
-                console.log(`Device ${deviceId} status:`, processedStatus);
-                
-                if (!window.lastLoggedStatus) window.lastLoggedStatus = {};
-                window.lastLoggedStatus[deviceId] = {...processedStatus};
-            }
-            
             // Format iterations progress
-            const iterationsProgress = `${processedStatus.current_iteration}/${processedStatus.total_iterations} - ${processedStatus.percentage}%`;
+            const iterationsProgress = `${status.current_iteration}/${status.total_iterations} - ${percentage}%`;
             
             // Update status section
-            if (processedStatus.current_iteration > 0 && processedStatus.total_iterations > 0) {
+            if (status.current_iteration > 0 && status.total_iterations > 0) {
                 // Simulation is active with progress
                 statusSection.innerHTML = `
-                    <h3>Simulation Status <span class="${statusClass}">${statusIcon} ${processedStatus.status.toUpperCase()}</span></h3>
+                    <h3>Simulation Status <span class="${statusClass}">${statusIcon} ${status.status.toUpperCase()}</span></h3>
                     <div class="status-info">
                         <div class="progress-bar-container">
-                            <div class="progress-bar ${processedStatus.status === 'paused' ? 'paused' : ''}" style="width: ${processedStatus.percentage}%"></div>
+                            <div class="progress-bar ${status.status === 'paused' ? 'paused' : ''}" style="width: ${percentage}%"></div>
                         </div>
                         
                         <div class="simulation-stats">
@@ -1313,16 +1170,16 @@
                             </div>
                             <div class="stat-item elapsed">
                                 <div class="stat-label">ELAPSED</div>
-                                <div class="stat-value">${formatTime(processedStatus.elapsed_time)}</div>
+                                <div class="stat-value">${formatTime(status.elapsed_time)}</div>
                             </div>
                             <div class="stat-item remaining">
                                 <div class="stat-label">REMAINING</div>
-                                <div class="stat-value">${formatTime(processedStatus.estimated_remaining)}</div>
+                                <div class="stat-value">${formatTime(status.estimated_remaining)}</div>
                             </div>
                             <div class="stat-item url">
                                 <div class="stat-label">URL</div>
-                                <div class="stat-value" title="${processedStatus.url}">
-                                    <span class="url-value">${formatUrl(processedStatus.url)}</span>
+                                <div class="stat-value" title="${status.url}">
+                                    <span class="url-value">${formatUrl(status.url)}</span>
                                 </div>
                             </div>
                         </div>
@@ -1331,7 +1188,7 @@
             } else {
                 // No active simulation
                 statusSection.innerHTML = `
-                    <h3>Simulation Status <span class="${statusClass}">${statusIcon} ${processedStatus.status.toUpperCase()}</span></h3>
+                    <h3>Simulation Status <span class="${statusClass}">${statusIcon} ${status.status.toUpperCase()}</span></h3>
                     <div class="status-info">
                         <div>No active simulation</div>
                         <div class="simulation-stats">
@@ -1352,7 +1209,7 @@
                                 <div class="stat-value">No URL configured</div>
                             </div>
                         </div>
-                        <button class="btn" onclick="executeCommand('${processedStatus.device_id}', 'start')">Start New Simulation</button>
+                        <button class="btn" onclick="executeCommand('${status.device_id}', 'start')">Start New Simulation</button>
                     </div>
                 `;
             }
@@ -1624,196 +1481,14 @@
             });
         }
         
-        // Configure server logging
-        async function configureLogging() {
-            const level = document.getElementById('loggingLevel').value;
-            const quietAdb = document.getElementById('quietAdbMode').checked;
-            
-            // Target is 'all' for general logging or 'adb_controller' to just quiet ADB messages
-            const target = quietAdb ? 'adb_controller' : 'all';
-            const effectiveLevel = quietAdb ? 'WARNING' : level;
-            
-            log(`Setting log level to ${effectiveLevel} for ${target}...`, 'info');
-            
-            try {
-                if (isWebSocketConnected) {
-                    // Use WebSocket
-                    socket.send(JSON.stringify({
-                        type: 'configure_logging',
-                        level: effectiveLevel,
-                        target: target
-                    }));
-                } else {
-                    // Fallback to HTTP API
-                    const response = await fetch(`${API_URL}/logging/configure`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            level: effectiveLevel,
-                            target: target
-                        })
-                    });
-                    
-                    const result = await response.json();
-                    
-                    if (result.status === 'success') {
-                        log(result.message, 'success');
-                    } else {
-                        log(`Failed to set logging level: ${result.detail || 'Unknown error'}`, 'error');
-                    }
-                }
-            } catch (error) {
-                log(`Error configuring logging: ${error}`, 'error');
-            }
-        }
-        
-        // Get current logging status
-        async function getLoggingStatus() {
-            try {
-                const response = await fetch(`${API_URL}/logging/status`);
-                const result = await response.json();
-                
-                if (result.status === 'success') {
-                    const config = result.config;
-                    
-                    // Update UI to match current settings
-                    const loggingLevelSelect = document.getElementById('loggingLevel');
-                    const quietAdbMode = document.getElementById('quietAdbMode');
-                    
-                    // Set the logging level dropdown
-                    if (config.root && loggingLevelSelect) {
-                        loggingLevelSelect.value = config.root;
-                    }
-                    
-                    // Set the quiet ADB mode checkbox
-                    if (config.adb_controller && quietAdbMode) {
-                        // If ADB controller's level is WARNING or higher, and different from root, it's in quiet mode
-                        const adbLevel = config.adb_controller;
-                        const isQuiet = (adbLevel === 'WARNING' || adbLevel === 'ERROR' || adbLevel === 'CRITICAL') &&
-                                       adbLevel !== config.root;
-                        quietAdbMode.checked = isQuiet;
-                    }
-                    
-                    log(`Current log levels - Server: ${config.root}, ADB: ${config.adb_controller}`, 'info');
-                }
-            } catch (error) {
-                console.error('Error getting logging status:', error);
-            }
-        }
-        
-        // Add handlers for status update controls
-        function handleStatusUpdateConfig() {
-            const automatic = document.getElementById('autoUpdateToggle').checked;
-            const interval = parseInt(document.getElementById('updateIntervalSelect').value);
-            
-            log(`${automatic ? 'Enabling' : 'Disabling'} automatic updates with interval ${interval}s`, 'info');
-            
-            fetch(`${API_URL}/settings/status-updates`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    automatic: automatic,
-                    interval: interval
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    log(data.message, 'success');
-                } else {
-                    log(`Failed to update settings: ${data.detail || 'Unknown error'}`, 'error');
-                }
-            })
-            .catch(error => {
-                log(`Error updating status settings: ${error}`, 'error');
-            });
-        }
-        
-        // Function to manually request status updates
-        function requestManualStatusUpdate() {
-            log('Manually requesting status update...', 'info');
-            document.getElementById('manualUpdateBtn').disabled = true;
-            document.getElementById('manualUpdateBtn').textContent = 'Updating...';
-            
-            fetch(`${API_URL}/devices/request-status`, {
-                method: 'POST'
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    log(data.message, 'success');
-                    updateLastUpdateTime();
-                } else {
-                    log(`Failed to update status: ${data.detail || 'Unknown error'}`, 'error');
-                }
-                document.getElementById('manualUpdateBtn').disabled = false;
-                document.getElementById('manualUpdateBtn').textContent = 'Refresh Status';
-            })
-            .catch(error => {
-                log(`Error requesting status update: ${error}`, 'error');
-                document.getElementById('manualUpdateBtn').disabled = false;
-                document.getElementById('manualUpdateBtn').textContent = 'Refresh Status';
-            });
-        }
-        
-        // Update the last update time display
-        function updateLastUpdateTime() {
-            const now = new Date();
-            const timeString = now.toLocaleTimeString();
-            document.getElementById('lastUpdateTime').textContent = `Last updated: ${timeString}`;
-        }
-        
-        // Get current status update configuration
-        function getStatusUpdateConfig() {
-            fetch(`${API_URL}/settings/status-updates`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    const config = data.config;
-                    document.getElementById('autoUpdateToggle').checked = config.automatic;
-                    document.getElementById('updateIntervalSelect').value = config.interval.toString();
-                    
-                    log(`Status update config: automatic=${config.automatic}, interval=${formatInterval(config.interval)}`, 'info');
-                }
-            })
-            .catch(error => {
-                console.error('Error getting status update config:', error);
-            });
-        }
-        
-        // Format the interval for display
-        function formatInterval(seconds) {
-            if (seconds >= 3600) {
-                return `${Math.floor(seconds / 3600)} hour(s)`;
-            } else if (seconds >= 60) {
-                return `${Math.floor(seconds / 60)} minute(s)`;
-            } else {
-                return `${seconds} seconds`;
-            }
-        }
-        
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             // Connect WebSocket
             connectWebSocket();
             
-            // Request initial status update when page loads
-            setTimeout(function() {
-                requestManualStatusUpdate();
-            }, 1000); // Delay slightly to allow websocket to connect
-            
             // Add event listeners
             document.getElementById('refreshDevicesBtn').addEventListener('click', getDevices);
             document.getElementById('urlDistributionForm').addEventListener('submit', distributeUrl);
-            
-            // Status update controls event listeners
-            document.getElementById('autoUpdateToggle').addEventListener('change', handleStatusUpdateConfig);
-            document.getElementById('updateIntervalSelect').addEventListener('change', handleStatusUpdateConfig);
-            document.getElementById('manualUpdateBtn').addEventListener('click', requestManualStatusUpdate);
             
             // Device selection event listeners
             document.getElementById('selectAllDevices').addEventListener('change', function(e) {
@@ -1835,15 +1510,6 @@
             document.getElementById('resumeSelectedBtn').addEventListener('click', function() {
                 executeBatchCommand('resume');
             });
-            
-            // Logging control event listeners
-            document.getElementById('setLoggingBtn').addEventListener('click', configureLogging);
-            
-            // Get initial logging status
-            getLoggingStatus();
-            
-            // Get initial status update configuration
-            getStatusUpdateConfig();
             
             // Initial log
             log('Dashboard initialized', 'info');
