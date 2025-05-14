@@ -88,6 +88,8 @@ class URLDistributionRequest(BaseModel):
     iterations: int = 100
     min_interval: int = 1
     max_interval: int = 2
+    delay_min: int = 0
+    delay_max: int = 0
 
 # Add new model for logging control
 class LoggingConfigRequest(BaseModel):
@@ -360,7 +362,9 @@ async def distribute_url(request: URLDistributionRequest):
             request.url,
             request.iterations,
             request.min_interval,
-            request.max_interval
+            request.max_interval,
+            delay_min=request.delay_min,
+            delay_max=request.delay_max
         )
         
         # Broadcast URL distribution results
@@ -485,13 +489,17 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
                         iterations = message.get("iterations", 100)
                         min_interval = message.get("min_interval", 1)
                         max_interval = message.get("max_interval", 2)
+                        delay_min = message.get("delay_min", 0)
+                        delay_max = message.get("delay_max", 0)
                         
                         results = adb_controller.distribute_url(
                             device_ids,
                             url,
                             iterations,
                             min_interval,
-                            max_interval
+                            max_interval,
+                            delay_min=delay_min,
+                            delay_max=delay_max
                         )
                         
                         await websocket.send_json({
