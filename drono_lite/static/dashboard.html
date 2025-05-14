@@ -621,32 +621,6 @@
                     <button id="resumeSelectedBtn" class="btn" disabled>Resume Selected</button>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
-            
-            <!-- Add status update controls -->
-            <div class="status-update-controls">
-                <div class="update-toggle">
-                    <label>
-                        <input type="checkbox" id="autoUpdateToggle">
-                        Auto Update
-                    </label>
-                    <select id="updateIntervalSelect" class="update-interval-select">
-                        <option value="5">5 seconds</option>
-                        <option value="30">30 seconds</option>
-                        <option value="60">1 minute</option>
-                        <option value="300">5 minutes</option>
-                        <option value="900" selected>15 minutes</option>
-                        <option value="1800">30 minutes</option>
-                        <option value="3600">1 hour</option>
-                    </select>
-                </div>
-                <button id="refreshStatusBtn" class="btn refresh-btn">
-                    <i class="fas fa-sync-alt"></i> Refresh
-                </button>
-            </div>
-            
->>>>>>> parent of fc2004c (Revert "optimization checkpoint")
             <div id="deviceList">
                 <p>Loading devices...</p>
             </div>
@@ -684,7 +658,6 @@
                 try {
                     const message = JSON.parse(event.data);
                     
-                    // Handle different message types
                     switch(message.type) {
                         case 'device_list':
                             updateDeviceList(message.data.devices);
@@ -709,29 +682,7 @@
                             break;
                         case 'status_update':
                             if (message.data.devices_status) {
-<<<<<<< HEAD
                                 updateDeviceStatus(message.data.devices_status);
-=======
-                                // Check if this is a partial update
-                                const isPartial = message.data.is_partial || false;
-                                
-                                if (isPartial) {
-                                    // For partial updates, only update the specified devices
-                                    updateDeviceStatus(message.data.devices_status);
-                                } else {
-                                    // For full updates, update all devices and clear any not included
-                                    updateDeviceStatus(message.data.devices_status, false);
-                                }
-                                updateLastUpdateTime();
-                            }
-                            break;
-                        case 'status_update_config':
-                            // Update UI to match new settings from server
-                            if (message.data) {
-                                document.getElementById('autoUpdateToggle').checked = message.data.automatic;
-                                document.getElementById('updateIntervalSelect').value = message.data.interval.toString();
-                                log(`Status update settings changed: automatic=${message.data.automatic}, interval=${formatInterval(message.data.interval)}`, 'info');
->>>>>>> parent of fc2004c (Revert "optimization checkpoint")
                             }
                             break;
                         case 'device_status':
@@ -1111,18 +1062,12 @@
         }
         
         // Update status information for all devices
-        function updateDeviceStatus(devicesStatus, updateAll = true) {
+        function updateDeviceStatus(devicesStatus) {
             if (!devicesStatus) return;
             
-            if (updateAll) {
-                devices.forEach(device => {
-                    updateSingleDeviceStatus(device.id, device.status);
-                });
-            } else {
-                Object.entries(devicesStatus).forEach(([deviceId, status]) => {
-                    updateSingleDeviceStatus(deviceId, status);
-                });
-            }
+            Object.entries(devicesStatus).forEach(([deviceId, status]) => {
+                updateSingleDeviceStatus(deviceId, status);
+            });
         }
         
         // Update status for a single device
@@ -1524,34 +1469,16 @@
             }
         }
         
-        // Request status updates for selected devices or all if none selected
-        function requestSelectedDeviceStatuses() {
-            const selectedDevices = getSelectedDevices();
-            
-            if (selectedDevices.length === 0) {
-                // No devices selected, request all
-                requestAllDeviceStatuses();
-                log('Requesting status update for all devices', 'info');
-            } else {
-                // Request status for selected devices only
-                log(`Requesting status update for ${selectedDevices.length} selected devices`, 'info');
-                
-                // Make individual requests for each device to avoid full overhead
-                selectedDevices.forEach(deviceId => {
-                    socket.send(JSON.stringify({
-                        type: 'get_device_status',
-                        device_id: deviceId
-                    }));
-                });
-            }
-        }
-        
         // Request status updates for all devices
         function requestAllDeviceStatuses() {
-            socket.send(JSON.stringify({
-                type: 'get_status'
-            }));
-            log('Requesting status update for all devices', 'info');
+            if (!isWebSocketConnected || !devices || devices.length === 0) return;
+            
+            devices.forEach(device => {
+                socket.send(JSON.stringify({
+                    type: 'get_device_status',
+                    device_id: device.id
+                }));
+            });
         }
         
         // Initialize the page
@@ -1586,16 +1513,6 @@
             
             // Initial log
             log('Dashboard initialized', 'info');
-        });
-
-        // Add refresh button event listener
-        document.getElementById('refreshStatusBtn').addEventListener('click', function() {
-            requestSelectedDeviceStatuses();
-        });
-
-        // Set up manual refresh button handler
-        $('#manualUpdateBtn').click(function() {
-            requestSelectedDeviceStatuses();
         });
     </script>
 </body>
