@@ -63,6 +63,8 @@ import android.content.Intent;
 import com.example.imtbf.remote.CommandExecutor;
 import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
+import org.json.JSONObject;
+import java.io.FileWriter;
 
 /**
  * Main activity for the Instagram Traffic Simulator app.
@@ -139,6 +141,17 @@ public class MainActivity extends AppCompatActivity implements TrafficDistributi
             }
         }
     };
+    
+    // BroadcastReceiver to handle detailed status requests
+    private final BroadcastReceiver detailedStatusReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if ("com.example.imtbf.GET_DETAILED_STATUS".equals(intent.getAction())) {
+                Logger.d(TAG, "Received detailed status request");
+                logDetailedStatus();
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,9 +194,9 @@ public class MainActivity extends AppCompatActivity implements TrafficDistributi
     protected void onResume() {
         super.onResume();
         
-        // Register UI refresh receiver
-        IntentFilter filter = new IntentFilter("com.example.imtbf.REFRESH_UI");
-        registerReceiver(uiRefreshReceiver, filter);
+        // Register receivers
+        registerReceiver(uiRefreshReceiver, new IntentFilter("com.example.imtbf.REFRESH_UI"));
+        registerReceiver(detailedStatusReceiver, new IntentFilter("com.example.imtbf.GET_DETAILED_STATUS"));
         
         // Start network monitoring
         if (networkStatsTracker != null) {
@@ -206,9 +219,10 @@ public class MainActivity extends AppCompatActivity implements TrafficDistributi
 
     @Override
     protected void onPause() {
-        // Unregister UI refresh receiver
+        // Unregister receivers
         try {
             unregisterReceiver(uiRefreshReceiver);
+            unregisterReceiver(detailedStatusReceiver);
         } catch (IllegalArgumentException e) {
             // Receiver not registered, ignore
         }
@@ -2206,5 +2220,76 @@ public class MainActivity extends AppCompatActivity implements TrafficDistributi
         // Log the reload
         Logger.i(TAG, "Settings reloaded from preferences");
         addLog("Settings refreshed from preferences");
+    }
+
+    /**
+     * Log detailed status information for ADB retrieval
+     */
+    private void logDetailedStatus() {
+        try {
+            // Get current timing information
+            long currentTimeMs = System.currentTimeMillis();
+            long elapsedRawMs = currentTimeMs - startTimeMs;
+            
+            // Subtract paused time for accurate elapsed time
+            long actualElapsedMs = elapsedRawMs - totalPausedTimeMs;
+            
+            // If currently paused, don't include time since pause
+            if (sessionManager != null && sessionManager.isPaused() && pauseTimeMs > 0) {
+                actualElapsedMs -= (currentTimeMs - pauseTimeMs);
+            }
+            
+            // Get current progress
+            String progressText = binding.tvProgress.getText().toString();
+            String timeElapsedText = formatTime(actualElapsedMs);
+            String remainingTimeText = binding.tvTimeRemaining.getText().toString();
+            
+            // Log the information for retrieval via logcat
+            Logger.d(TAG, "Time elapsed: " + timeElapsedText);
+            Logger.d(TAG, remainingTimeText);
+            Logger.d(TAG, progressText);
+            Logger.d(TAG, "Status: " + binding.tvStatusLabel.getText().toString());
+            
+            // Create a status object for potential file storage
+            JSONObject statusObj = new JSONObject();
+            statusObj.put("startTimeMs", startTimeMs);
+            statusObj.put("totalPausedTimeMs", totalPausedTimeMs);
+            statusObj.put("pauseTimeMs", pauseTimeMs);
+            statusObj.put("currentTimeMs", currentTimeMs);
+            statusObj.put("actualElapsedMs", actualElapsedMs);
+            
+            // Parse progress text to get current/total iterations
+            if (progressText.contains("/")) {
+                String[] parts = progressText.replace("Progress: ", "").split("/");
+                if (parts.length == 2) {
+                    int currentIteration = Integer.parseInt(parts[0]);
+                    int totalIterations = Integer.parseInt(parts[1]);
+                    statusObj.put("currentIteration", currentIteration);
+                    statusObj.put("totalIterations", totalIterations);
+                    
+                    // Calculate remaining time if we have progress
+                    if (currentIteration > 0) {
+                        long avgTimePerIteration = actualElapsedMs / currentIteration;
+                        long remainingIterations = totalIterations - currentIteration;
+                        long remainingMs = avgTimePerIteration * remainingIterations;
+                        statusObj.put("remainingTimeMs", remainingMs);
+                    }
+                }
+            }
+            
+            // Save status to file for ADB retrieval
+            try {
+                File statusFile = new File(getFilesDir(), "status.json");
+                FileWriter writer = new FileWriter(statusFile);
+                writer.write(statusObj.toString());
+                writer.close();
+                Logger.d(TAG, "Status saved to file: " + statusFile.getAbsolutePath());
+            } catch (Exception e) {
+                Logger.e(TAG, "Error saving status to file", e);
+            }
+            
+        } catch (Exception e) {
+            Logger.e(TAG, "Error logging detailed status", e);
+        }
     }
 }

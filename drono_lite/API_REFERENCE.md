@@ -82,14 +82,16 @@ GET /devices/status
       "is_running": true,
       "current_iteration": 45,
       "total_iterations": 100,
-      "percentage": 45.0,
+      "percentage": 45,
       "url": "https://example.com",
       "min_interval": 1,
       "max_interval": 2,
-      "elapsed_time": 134,
-      "estimated_remaining": 159,
+      "delay_min": 1,
+      "delay_max": 2,
+      "elapsed_time": 120,
+      "estimated_remaining": 180,
       "status": "running",
-      "last_update": "2023-07-01T12:34:56.789"
+      "last_update": "2023-05-01T12:34:56.789Z"
     },
     "R38M20492LK": {
       "device_id": "R38M20492LK",
@@ -100,13 +102,15 @@ GET /devices/status
       "url": "",
       "min_interval": 0,
       "max_interval": 0,
+      "delay_min": 0,
+      "delay_max": 0,
       "elapsed_time": 0,
       "estimated_remaining": 0,
       "status": "stopped",
-      "last_update": "2023-07-01T12:34:56.789"
+      "last_update": "2023-05-01T12:34:56.789Z"
     }
   },
-  "timestamp": "2023-07-01T12:34:56.789"
+  "timestamp": "2023-05-01T12:34:56.789Z"
 }
 ```
 
@@ -123,14 +127,39 @@ GET /devices/{device_id}/status
   "is_running": true,
   "current_iteration": 45,
   "total_iterations": 100,
-  "percentage": 45.0,
+  "percentage": 45,
   "url": "https://example.com",
   "min_interval": 1,
   "max_interval": 2,
-  "elapsed_time": 134,
-  "estimated_remaining": 159,
+  "delay_min": 1,
+  "delay_max": 2,
+  "elapsed_time": 120,
+  "estimated_remaining": 180,
   "status": "running",
-  "last_update": "2023-07-01T12:34:56.789"
+  "last_update": "2023-05-01T12:34:56.789Z",
+  "timestamp": "2023-05-01T12:34:56.789Z"
+}
+```
+
+#### Get Timing for Specific Device
+
+```
+GET /devices/{device_id}/timing
+```
+
+**Response:**
+```json
+{
+  "device_id": "R9WR310F4GJ",
+  "timing_info": {
+    "device_id": "R9WR310F4GJ",
+    "actual_elapsed_ms": 120000,
+    "remaining_time_ms": 180000,
+    "current_iteration": 45,
+    "total_iterations": 100,
+    "success": true
+  },
+  "timestamp": "2023-05-01T12:34:56.789Z"
 }
 ```
 
@@ -307,6 +336,91 @@ Where `{channel}` can be:
 - `commands`: For command execution updates
 - `logs`: For server log updates
 
+## Status Updates Configuration
+
+Drono Lite provides control over how often status updates are fetched from devices, which can impact device performance.
+
+### Get Status Update Configuration
+
+```
+GET /settings/status-updates
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "config": {
+    "automatic": false,
+    "interval": 3600
+  }
+}
+```
+
+### Configure Status Updates
+
+```
+POST /settings/status-updates
+```
+
+**Request Body:**
+```json
+{
+  "automatic": false,
+  "interval": 3600
+}
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "message": "Automatic status updates disabled, interval set to 1 hour(s)",
+  "config": {
+    "automatic": false,
+    "interval": 3600
+  }
+}
+```
+
+### Set Extended Update Interval
+
+Use this endpoint to set a very long interval to reduce device lag.
+
+```
+POST /settings/extended-interval/{minutes}
+```
+
+Where `{minutes}` is the desired interval in minutes (between 1 and 1440).
+
+**Response:**
+```json
+{
+  "status": "success",
+  "message": "Extended update interval set to 4 hour(s), automatic updates disabled",
+  "config": {
+    "automatic": false,
+    "interval": 14400
+  }
+}
+```
+
+### Manual Status Update
+
+To get updated status information without waiting for the automatic interval:
+
+```
+POST /devices/request-status
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "message": "Status updated for 5 devices"
+}
+```
+
 ### Message Format
 
 Messages are JSON objects with the following structure:
@@ -345,13 +459,15 @@ Status updates provide real-time information about device simulation progress:
         "url": "https://example.com",
         "min_interval": 1,
         "max_interval": 2,
-        "elapsed_time": 134,
-        "estimated_remaining": 159,
+        "delay_min": 1,
+        "delay_max": 2,
+        "elapsed_time": 120,
+        "estimated_remaining": 180,
         "status": "running",
-        "last_update": "2023-07-01T12:34:56.789"
+        "last_update": "2023-05-01T12:34:56.789Z"
       }
     },
-    "timestamp": "2023-07-01T12:34:56.789"
+    "timestamp": "2023-05-01T12:34:56.789Z"
   }
 }
 ```
@@ -379,12 +495,15 @@ You can also request status information for a specific device:
       "url": "https://example.com",
       "min_interval": 1,
       "max_interval": 2,
-      "elapsed_time": 134,
-      "estimated_remaining": 159,
+      "delay_min": 1,
+      "delay_max": 2,
+      "elapsed_time": 120,
+      "estimated_remaining": 180,
       "status": "running",
-      "last_update": "2023-07-01T12:34:56.789"
+      "last_update": "2023-05-01T12:34:56.789Z",
+      "timestamp": "2023-05-01T12:34:56.789Z"
     },
-    "timestamp": "2023-07-01T12:34:56.789"
+    "timestamp": "2023-05-01T12:34:56.789Z"
   }
 }
 ```

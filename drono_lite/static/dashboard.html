@@ -661,12 +661,12 @@
                 <div class="form-row">
                     <div class="form-group half">
                         <label for="delayMin">Delay Min (sec):</label>
-                        <input type="number" id="delayMin" name="delayMin" min="0" value="0">
+                        <input type="number" id="delayMin" name="delayMin" min="0" value="1">
                     </div>
                     
                     <div class="form-group half">
                         <label for="delayMax">Delay Max (sec):</label>
-                        <input type="number" id="delayMax" name="delayMax" min="0" value="0">
+                        <input type="number" id="delayMax" name="delayMax" min="0" value="2">
                     </div>
                 </div>
                 
@@ -730,9 +730,9 @@
                         <option value="30">30 seconds</option>
                         <option value="60">1 minute</option>
                         <option value="300">5 minutes</option>
-                        <option value="900" selected>15 minutes</option>
+                        <option value="900">15 minutes</option>
                         <option value="1800">30 minutes</option>
-                        <option value="3600">1 hour</option>
+                        <option value="3600" selected>1 hour</option>
                     </select>
                 </div>
                 <button id="refreshStatusBtn" class="btn refresh-btn">
@@ -967,11 +967,11 @@
                                 </div>
                                 <div class="stat-item interval">
                                     <div class="stat-label">INTERVAL</div>
-                                    <div class="stat-value">-</div>
+                                    <div class="stat-value">0-0s</div>
                                 </div>
                                 <div class="stat-item delay">
                                     <div class="stat-label">DELAY</div>
-                                    <div class="stat-value">-</div>
+                                    <div class="stat-value">1-2s</div>
                                 </div>
                                 <div class="stat-item url">
                                     <div class="stat-label">URL</div>
@@ -1008,8 +1008,8 @@
                 const iterations = parseInt(document.getElementById('iterations').value);
                 const minInterval = parseInt(document.getElementById('minInterval').value);
                 const maxInterval = parseInt(document.getElementById('maxInterval').value);
-                const delayMin = parseInt(document.getElementById('delayMin').value || "0");
-                const delayMax = parseInt(document.getElementById('delayMax').value || "0");
+                const delayMin = parseInt(document.getElementById('delayMin').value || "1");
+                const delayMax = parseInt(document.getElementById('delayMax').value || "2");
                 const useWebview = document.getElementById('useWebview').checked;
                 const rotateIp = document.getElementById('rotateIp').checked;
                 
@@ -1139,8 +1139,8 @@
             const iterations = parseInt(document.getElementById('iterations').value);
             const minInterval = parseInt(document.getElementById('minInterval').value);
             const maxInterval = parseInt(document.getElementById('maxInterval').value);
-            const delayMin = parseInt(document.getElementById('delayMin').value || "0");
-            const delayMax = parseInt(document.getElementById('delayMax').value || "0");
+            const delayMin = parseInt(document.getElementById('delayMin').value || "1");
+            const delayMax = parseInt(document.getElementById('delayMax').value || "2");
             const useWebview = document.getElementById('useWebview').checked;
             const rotateIp = document.getElementById('rotateIp').checked;
             const selectedDevicesOnly = document.getElementById('selectedDevicesOnly').checked;
@@ -1427,7 +1427,7 @@
                             </div>
                             <div class="stat-item delay">
                                 <div class="stat-label">DELAY</div>
-                                <div class="stat-value">0-0s</div>
+                                <div class="stat-value">1-2s</div>
                             </div>
                             <div class="stat-item url">
                                 <div class="stat-label">URL</div>
@@ -1901,10 +1901,8 @@
             // Connect WebSocket
             connectWebSocket();
             
-            // Request initial status update when page loads
-            setTimeout(function() {
-                requestManualStatusUpdate();
-            }, 1000); // Delay slightly to allow websocket to connect
+            // Don't request initial status update automatically
+            // Removed automatic status update on page load to prevent device lag
             
             // Add event listeners
             document.getElementById('refreshDevicesBtn').addEventListener('click', getDevices);

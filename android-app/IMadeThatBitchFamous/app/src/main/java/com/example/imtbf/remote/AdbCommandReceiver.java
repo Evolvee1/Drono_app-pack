@@ -84,6 +84,7 @@ public class AdbCommandReceiver extends BroadcastReceiver {
     public static final String COMMAND_EXPORT_CONFIG = "export_config";
     public static final String COMMAND_IMPORT_CONFIG = "import_config";
     public static final String COMMAND_GET_STATUS = "get_status";
+    public static final String COMMAND_GET_DETAILED_STATUS = "get_detailed_status";
     public static final String COMMAND_LIST_CONFIGS = "list_configs";
     
     // Feature keys for toggle_feature command
@@ -320,8 +321,22 @@ public class AdbCommandReceiver extends BroadcastReceiver {
                 status.append("Iterations: ").append(iterations).append("\n");
                 status.append("Min Interval: ").append(preferencesManager.getMinInterval()).append("\n");
                 status.append("Max Interval: ").append(preferencesManager.getMaxInterval()).append("\n");
+                status.append("Delay Min: ").append(preferencesManager.getInt("delay_min", 1)).append("\n");
+                status.append("Delay Max: ").append(preferencesManager.getInt("delay_max", 2)).append("\n");
                 
                 sendResponse(context, true, status.toString());
+                break;
+                
+            case COMMAND_GET_DETAILED_STATUS:
+                // Get timing information from MainActivity
+                Intent detailedStatusIntent = new Intent("com.example.imtbf.GET_DETAILED_STATUS");
+                detailedStatusIntent.setPackage(context.getPackageName());
+                context.sendBroadcast(detailedStatusIntent);
+                
+                // Log detailed status for retrieval via logcat
+                Logger.i(TAG, "Detailed status requested via ADB");
+                
+                sendResponse(context, true, "Detailed status logged");
                 break;
                 
             case COMMAND_LIST_CONFIGS:
