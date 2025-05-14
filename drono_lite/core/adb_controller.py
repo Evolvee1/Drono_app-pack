@@ -122,8 +122,7 @@ class AdbController:
             return []
 
     def _create_prefs_xml(self, url: str, iterations: int, min_interval: int, max_interval: int, 
-                         use_webview: bool = True, rotate_ip: bool = True,
-                         delay_min: int = 0, delay_max: int = 0) -> Tuple[str, str]:
+                         use_webview: bool = True, rotate_ip: bool = True) -> Tuple[str, str]:
         """Create the XML content for preferences files"""
         timestamp = int(datetime.now().timestamp() * 1000)
         xml_escaped_url = self._escape_xml_string(url)
@@ -137,8 +136,6 @@ class AdbController:
     <int name="iterations" value="{iterations}" />
     <int name="min_interval" value="{min_interval}" />
     <int name="max_interval" value="{max_interval}" />
-    <int name="delay_min" value="{delay_min}" />
-    <int name="delay_max" value="{delay_max}" />
     <boolean name="rotate_ip" value="{str(rotate_ip).lower()}" />
     <boolean name="use_random_device_profile" value="true" />
     <boolean name="new_webview_per_request" value="true" />
@@ -157,17 +154,13 @@ class AdbController:
     
     def _apply_settings_root_method(self, device_id: str, url: str, iterations: int, 
                                    min_interval: int, max_interval: int, 
-                                   use_webview: bool = True, rotate_ip: bool = True,
-                                   delay_min: int = 0, delay_max: int = 0) -> bool:
+                                   use_webview: bool = True, rotate_ip: bool = True) -> bool:
         """Apply settings using root access method"""
         logger.info(f"Applying settings to device {device_id} using ROOT MODE")
         
         try:
             # Generate XML content
-            prefs_xml, url_config_xml = self._create_prefs_xml(
-                url, iterations, min_interval, max_interval, 
-                use_webview, rotate_ip, delay_min, delay_max
-            )
+            prefs_xml, url_config_xml = self._create_prefs_xml(url, iterations, min_interval, max_interval, use_webview, rotate_ip)
             
             # Create temporary files
             with tempfile.NamedTemporaryFile(suffix="_prefs.xml", delete=False) as prefs_file, \
@@ -246,8 +239,7 @@ class AdbController:
 
     def distribute_url(self, device_ids: List[str], url: str, iterations: int = 100,
                       min_interval: int = 1, max_interval: int = 2,
-                      use_webview: bool = True, rotate_ip: bool = True,
-                      delay_min: int = 0, delay_max: int = 0) -> Dict[str, Dict]:
+                      use_webview: bool = True, rotate_ip: bool = True) -> Dict[str, Dict]:
         """
         Distribute a URL to multiple devices
         
@@ -259,8 +251,6 @@ class AdbController:
             max_interval: Maximum interval (seconds)
             use_webview: Whether to use WebView mode
             rotate_ip: Whether to rotate IP
-            delay_min: Minimum delay before starting (seconds)
-            delay_max: Maximum delay before starting (seconds)
             
         Returns:
             Dictionary with results for each device
@@ -290,7 +280,7 @@ class AdbController:
             
             # Step 2: Apply settings using ROOT MODE
             settings_applied = self._apply_settings_root_method(
-                device_id, url, iterations, min_interval, max_interval, use_webview, rotate_ip, delay_min, delay_max
+                device_id, url, iterations, min_interval, max_interval, use_webview, rotate_ip
             )
             
             # Step 3: Start app and apply settings via intents (as backup)
@@ -302,7 +292,7 @@ class AdbController:
                 logger.info(f"Starting app on device {device_id} with custom_url intent")
                 start_cmd = [
                     'adb', '-s', device_id, 'shell', 
-                    f"am start -n {self.package}/{self.activity} --es custom_url {escaped_url} --ei iterations {iterations} --ei min_interval {min_interval} --ei max_interval {max_interval} --ei delay_min {delay_min} --ei delay_max {delay_max} --ez load_from_intent true"
+                    f"am start -n {self.package}/{self.activity} --es custom_url {escaped_url} --ei iterations {iterations} --ei min_interval {min_interval} --ei max_interval {max_interval} --ez load_from_intent true"
                 ]
                 
                 subprocess.run(start_cmd, capture_output=True, text=True)
@@ -322,7 +312,7 @@ class AdbController:
                 # SET_URL action broadcast
                 subprocess.run([
                     'adb', '-s', device_id, 'shell',
-                    f"am broadcast -a {self.package}.SET_URL --es url {escaped_url} --ei iterations {iterations} --ei min_interval {min_interval} --ei max_interval {max_interval} --ei delay_min {delay_min} --ei delay_max {delay_max} -p {self.package}"
+                    f"am broadcast -a {self.package}.SET_URL --es url {escaped_url} -p {self.package}"
                 ], capture_output=True)
                 
                 # Method 3: Try deep linking (useful for some devices)
@@ -331,7 +321,7 @@ class AdbController:
                 
                 subprocess.run([
                     'adb', '-s', device_id, 'shell',
-                    f"am start -n {self.package}/{self.activity} -a android.intent.action.VIEW -d 'traffic-sim://load_url?url={encoded_url_for_deep_link}&iterations={iterations}&min_interval={min_interval}&max_interval={max_interval}&delay_min={delay_min}&delay_max={delay_max}&force=true'"
+                    f"am start -n {self.package}/{self.activity} -a android.intent.action.VIEW -d 'traffic-sim://load_url?url={encoded_url_for_deep_link}&force=true'"
                 ], capture_output=True)
                 
                 # Wait a moment for intents to process
@@ -371,7 +361,7 @@ class AdbController:
                 time.sleep(2)
                 subprocess.run([
                     'adb', '-s', device_id, 'shell',
-                    f"am broadcast -a {self.package}.COMMAND --es command reload_url --es value {escaped_url} --ei iterations {iterations} --ei min_interval {min_interval} --ei max_interval {max_interval} --ei delay_min {delay_min} --ei delay_max {delay_max} -p {self.package}"
+                    f"am broadcast -a {self.package}.COMMAND --es command reload_url --es value {escaped_url} -p {self.package}"
                 ], capture_output=True)
                 
                 results[device_id] = {
@@ -380,11 +370,7 @@ class AdbController:
                     "message": f"App is running with PID: {process_id}" if process_id else "Failed to start app",
                     "url": url,
                     "current_url": current_url,
-                    "iterations": iterations,
-                    "min_interval": min_interval,
-                    "max_interval": max_interval,
-                    "delay_min": delay_min,
-                    "delay_max": delay_max
+                    "iterations": iterations
                 }
                 
             except Exception as e:
@@ -416,15 +402,12 @@ class AdbController:
             iterations = params.get("iterations", 100)
             min_interval = params.get("min_interval", 1)
             max_interval = params.get("max_interval", 2)
-            delay_min = params.get("delay_min", 0)
-            delay_max = params.get("delay_max", 0)
             use_webview = params.get("use_webview", True)
             rotate_ip = params.get("rotate_ip", True)
             
             # Use the distribute_url method to ensure best compatibility
             result = self.distribute_url(
-                [device_id], url, iterations, min_interval, max_interval, 
-                use_webview, rotate_ip, delay_min, delay_max
+                [device_id], url, iterations, min_interval, max_interval, use_webview, rotate_ip
             )
             
             # Convert to expected format
@@ -561,8 +544,6 @@ class AdbController:
             "url": "",
             "min_interval": 0,
             "max_interval": 0,
-            "delay_min": 0,
-            "delay_max": 0,
             "elapsed_time": 0,
             "estimated_remaining": 0,
             "status": "idle",
@@ -606,8 +587,6 @@ class AdbController:
                 url_match = re.search(r'<string name="target_url">([^<]+)</string>', prefs_data)
                 min_interval_match = re.search(r'<int name="min_interval" value="([^"]+)"', prefs_data)
                 max_interval_match = re.search(r'<int name="max_interval" value="([^"]+)"', prefs_data)
-                delay_min_match = re.search(r'<int name="delay_min" value="([^"]+)"', prefs_data)
-                delay_max_match = re.search(r'<int name="delay_max" value="([^"]+)"', prefs_data)
                 start_time_match = re.search(r'<long name="simulation_start_time" value="([^"]+)"', prefs_data)
                 simulation_paused_match = re.search(r'<boolean name="simulation_paused" value="([^"]+)"', prefs_data)
                 
@@ -638,12 +617,6 @@ class AdbController:
                 
                 if max_interval_match:
                     status_info["max_interval"] = int(max_interval_match.group(1))
-                
-                if delay_min_match:
-                    status_info["delay_min"] = int(delay_min_match.group(1))
-                
-                if delay_max_match:
-                    status_info["delay_max"] = int(delay_max_match.group(1))
                 
                 # Calculate progress percentage
                 if status_info["total_iterations"] > 0 and status_info["current_iteration"] > 0:

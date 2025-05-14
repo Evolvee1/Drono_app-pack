@@ -44,19 +44,19 @@
             margin-bottom: 0;
             overflow: hidden;
             transition: box-shadow 0.3s;
-            flex: 0 0 calc(25% - 12px);
+            flex: 0 0 calc(20% - 12px);
             min-width: 240px;
         }
         
         @media (max-width: 1400px) {
             .device-card {
-                flex: 0 0 calc(33.33% - 12px);
+                flex: 0 0 calc(25% - 12px);
             }
         }
         
         @media (max-width: 1100px) {
             .device-card {
-                flex: 0 0 calc(50% - 12px);
+                flex: 0 0 calc(33.33% - 12px);
             }
         }
         
@@ -308,10 +308,6 @@
             border-left-color: #9c27b0;
         }
         
-        .stat-item.delay {
-            border-left-color: #9c27b0;
-        }
-        
         .stat-label {
             font-weight: bold;
             color: #555;
@@ -340,17 +336,6 @@
         
         .form-group {
             margin-bottom: 15px;
-        }
-        
-        .form-row {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .form-group.half {
-            flex: 1;
-            margin-bottom: 0;
         }
         
         label {
@@ -646,28 +631,14 @@
                     <input type="number" id="iterations" name="iterations" min="1" value="100">
                 </div>
                 
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="minInterval">Min Interval (sec):</label>
-                        <input type="number" id="minInterval" name="minInterval" min="1" value="1">
-                    </div>
-                    
-                    <div class="form-group half">
-                        <label for="maxInterval">Max Interval (sec):</label>
-                        <input type="number" id="maxInterval" name="maxInterval" min="1" value="2">
-                    </div>
+                <div class="form-group">
+                    <label for="minInterval">Minimum Interval (seconds):</label>
+                    <input type="number" id="minInterval" name="minInterval" min="1" value="1">
                 </div>
                 
-                <div class="form-row">
-                    <div class="form-group half">
-                        <label for="delayMin">Delay Min (sec):</label>
-                        <input type="number" id="delayMin" name="delayMin" min="0" value="0">
-                    </div>
-                    
-                    <div class="form-group half">
-                        <label for="delayMax">Delay Max (sec):</label>
-                        <input type="number" id="delayMax" name="delayMax" min="0" value="0">
-                    </div>
+                <div class="form-group">
+                    <label for="maxInterval">Maximum Interval (seconds):</label>
+                    <input type="number" id="maxInterval" name="maxInterval" min="1" value="2">
                 </div>
                 
                 <div class="toggle-group">
@@ -965,14 +936,6 @@
                                     <div class="stat-label">PROGRESS</div>
                                     <div class="stat-value">-</div>
                                 </div>
-                                <div class="stat-item interval">
-                                    <div class="stat-label">INTERVAL</div>
-                                    <div class="stat-value">-</div>
-                                </div>
-                                <div class="stat-item delay">
-                                    <div class="stat-label">DELAY</div>
-                                    <div class="stat-value">-</div>
-                                </div>
                                 <div class="stat-item url">
                                     <div class="stat-label">URL</div>
                                     <div class="stat-value">Loading...</div>
@@ -1008,8 +971,6 @@
                 const iterations = parseInt(document.getElementById('iterations').value);
                 const minInterval = parseInt(document.getElementById('minInterval').value);
                 const maxInterval = parseInt(document.getElementById('maxInterval').value);
-                const delayMin = parseInt(document.getElementById('delayMin').value || "0");
-                const delayMax = parseInt(document.getElementById('delayMax').value || "0");
                 const useWebview = document.getElementById('useWebview').checked;
                 const rotateIp = document.getElementById('rotateIp').checked;
                 
@@ -1018,8 +979,6 @@
                     iterations: iterations,
                     min_interval: minInterval,
                     max_interval: maxInterval,
-                    delay_min: delayMin,
-                    delay_max: delayMax,
                     use_webview: useWebview,
                     rotate_ip: rotateIp
                 };
@@ -1139,8 +1098,6 @@
             const iterations = parseInt(document.getElementById('iterations').value);
             const minInterval = parseInt(document.getElementById('minInterval').value);
             const maxInterval = parseInt(document.getElementById('maxInterval').value);
-            const delayMin = parseInt(document.getElementById('delayMin').value || "0");
-            const delayMax = parseInt(document.getElementById('delayMax').value || "0");
             const useWebview = document.getElementById('useWebview').checked;
             const rotateIp = document.getElementById('rotateIp').checked;
             const selectedDevicesOnly = document.getElementById('selectedDevicesOnly').checked;
@@ -1168,8 +1125,6 @@
                         iterations: iterations,
                         min_interval: minInterval,
                         max_interval: maxInterval,
-                        delay_min: delayMin,
-                        delay_max: delayMax,
                         use_webview: useWebview,
                         rotate_ip: rotateIp
                     }));
@@ -1186,8 +1141,6 @@
                             iterations: iterations,
                             min_interval: minInterval,
                             max_interval: maxInterval,
-                            delay_min: delayMin,
-                            delay_max: delayMax,
                             use_webview: useWebview,
                             rotate_ip: rotateIp
                         })
@@ -1343,9 +1296,7 @@
                 elapsed_time: Number(status.elapsed_time) || 0,
                 estimated_remaining: Number(status.estimated_remaining) || 0,
                 status: status.status || 'idle',
-                is_running: status.is_running || false,
-                delay_min: Number(status.delay_min) || 0,
-                delay_max: Number(status.delay_max) || 0
+                is_running: status.is_running || false
             };
             
             // Log status data for debugging (only for significant changes)
@@ -1373,6 +1324,10 @@
                         </div>
                         
                         <div class="simulation-stats">
+                            <div class="stat-item iterations">
+                                <div class="stat-label">PROGRESS</div>
+                                <div class="stat-value">${iterationsProgress}</div>
+                            </div>
                             <div class="stat-item elapsed">
                                 <div class="stat-label">ELAPSED</div>
                                 <div class="stat-value">${formatTime(processedStatus.elapsed_time)}</div>
@@ -1380,18 +1335,6 @@
                             <div class="stat-item remaining">
                                 <div class="stat-label">REMAINING</div>
                                 <div class="stat-value">${formatTime(processedStatus.estimated_remaining)}</div>
-                            </div>
-                            <div class="stat-item iterations">
-                                <div class="stat-label">PROGRESS</div>
-                                <div class="stat-value">${iterationsProgress}</div>
-                            </div>
-                            <div class="stat-item interval">
-                                <div class="stat-label">INTERVAL</div>
-                                <div class="stat-value">${processedStatus.min_interval}-${processedStatus.max_interval}s</div>
-                            </div>
-                            <div class="stat-item delay">
-                                <div class="stat-label">DELAY</div>
-                                <div class="stat-value">${processedStatus.delay_min || 0}-${processedStatus.delay_max || 0}s</div>
                             </div>
                             <div class="stat-item url">
                                 <div class="stat-label">URL</div>
@@ -1409,6 +1352,10 @@
                     <div class="status-info">
                         <div>No active simulation</div>
                         <div class="simulation-stats">
+                            <div class="stat-item iterations">
+                                <div class="stat-label">PROGRESS</div>
+                                <div class="stat-value">0/0 - 0%</div>
+                            </div>
                             <div class="stat-item elapsed">
                                 <div class="stat-label">ELAPSED</div>
                                 <div class="stat-value">0s</div>
@@ -1416,18 +1363,6 @@
                             <div class="stat-item remaining">
                                 <div class="stat-label">REMAINING</div>
                                 <div class="stat-value">0s</div>
-                            </div>
-                            <div class="stat-item iterations">
-                                <div class="stat-label">PROGRESS</div>
-                                <div class="stat-value">0/0 - 0%</div>
-                            </div>
-                            <div class="stat-item interval">
-                                <div class="stat-label">INTERVAL</div>
-                                <div class="stat-value">0-0s</div>
-                            </div>
-                            <div class="stat-item delay">
-                                <div class="stat-label">DELAY</div>
-                                <div class="stat-value">0-0s</div>
                             </div>
                             <div class="stat-item url">
                                 <div class="stat-label">URL</div>
