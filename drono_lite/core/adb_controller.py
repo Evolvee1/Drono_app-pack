@@ -561,8 +561,8 @@ class AdbController:
             "url": "",
             "min_interval": 0,
             "max_interval": 0,
-            "delay_min": 1,
-            "delay_max": 2,
+            "delay_min": 0,
+            "delay_max": 0,
             "elapsed_time": 0,
             "estimated_remaining": 0,
             "status": "idle",
@@ -795,127 +795,6 @@ class AdbController:
             results = {device_id: status for device_id, status in device_statuses}
             
         return results
-
-    def get_device_timing_info(self, device_id: str) -> Dict:
-        """
-        Get detailed timing information from a device including actualElapsedMs and remainingTime
-        
-        Args:
-            device_id: Device ID
-            
-        Returns:
-            Dictionary with detailed timing information
-        """
-        timing_info = {
-            "device_id": device_id,
-            "actual_elapsed_ms": 0,
-            "remaining_time_ms": 0,
-            "current_iteration": 0,
-            "total_iterations": 0,
-            "success": False
-        }
-        
-        try:
-            # First try to get timing information using a custom command
-            # This command will dump the internal timing state to logcat
-            dump_cmd = [
-                'shell', 
-                f'am broadcast -a {self.broadcast_action} --es command get_detailed_status -p {self.package}'
-            ]
-            
-            # Execute the command
-            subprocess.run(['adb', '-s', device_id] + dump_cmd, capture_output=True, timeout=5)
-            
-            # Wait a moment for the command to be processed
-            time.sleep(0.5)
-            
-            # Get the logcat output with timing information
-            logcat_cmd = [
-                'shell',
-                'logcat -d -v brief -t 100 MainActivity:D AdbCommandReceiver:I | grep -E "Time elapsed|remaining|Progress"'
-            ]
-            
-            result = subprocess.run(['adb', '-s', device_id] + logcat_cmd, capture_output=True, text=True, timeout=5)
-            logcat_output = result.stdout
-            
-            # Extract timing information from logcat
-            elapsed_match = re.search(r'Time elapsed: (\d+:\d+:\d+)', logcat_output)
-            remaining_match = re.search(r'Estimated time remaining: (\d+:\d+:\d+)', logcat_output)
-            progress_match = re.search(r'Progress: (\d+)/(\d+)', logcat_output)
-            
-            if elapsed_match:
-                # Convert HH:MM:SS to milliseconds
-                time_parts = elapsed_match.group(1).split(':')
-                hours = int(time_parts[0])
-                minutes = int(time_parts[1])
-                seconds = int(time_parts[2])
-                timing_info["actual_elapsed_ms"] = ((hours * 60 + minutes) * 60 + seconds) * 1000
-                timing_info["success"] = True
-                
-            if remaining_match:
-                # Convert HH:MM:SS to milliseconds
-                time_parts = remaining_match.group(1).split(':')
-                hours = int(time_parts[0])
-                minutes = int(time_parts[1])
-                seconds = int(time_parts[2])
-                timing_info["remaining_time_ms"] = ((hours * 60 + minutes) * 60 + seconds) * 1000
-                
-            if progress_match:
-                timing_info["current_iteration"] = int(progress_match.group(1))
-                timing_info["total_iterations"] = int(progress_match.group(2))
-                
-            # If we couldn't get the information from logcat, try to get it from the status file
-            if not timing_info["success"]:
-                status_file_data = self._get_status_file_from_device(device_id)
-                if status_file_data:
-                    try:
-                        status_data = json.loads(status_file_data)
-                        
-                        # Get current iteration and total iterations
-                        timing_info["current_iteration"] = status_data.get("currentIteration", 0)
-                        timing_info["total_iterations"] = status_data.get("totalIterations", 0)
-                        
-                        # Calculate elapsed time
-                        if "startTimeMs" in status_data:
-                            start_time_ms = int(status_data["startTimeMs"])
-                            current_time_ms = int(time.time() * 1000)
-                            raw_elapsed_ms = current_time_ms - start_time_ms
-                            
-                            # Account for paused time if available
-                            total_paused_ms = status_data.get("totalPausedTimeMs", 0)
-                            pause_time_ms = status_data.get("pauseTimeMs", 0)
-                            
-                            actual_elapsed_ms = raw_elapsed_ms - total_paused_ms
-                            if pause_time_ms > 0:
-                                actual_elapsed_ms -= (current_time_ms - pause_time_ms)
-                                
-                            timing_info["actual_elapsed_ms"] = actual_elapsed_ms
-                            
-                            # Calculate remaining time if we have progress
-                            if timing_info["current_iteration"] > 0:
-                                avg_time_per_iteration = actual_elapsed_ms / timing_info["current_iteration"]
-                                remaining_iterations = timing_info["total_iterations"] - timing_info["current_iteration"]
-                                timing_info["remaining_time_ms"] = int(avg_time_per_iteration * remaining_iterations)
-                            
-                            timing_info["success"] = True
-                    except Exception as e:
-                        logger.error(f"Error parsing status file: {e}")
-                    
-            # As a fallback, try to get information from the device status
-            if not timing_info["success"]:
-                status_info = self.get_device_status(device_id, full_check=True)
-                if status_info:
-                    timing_info["current_iteration"] = status_info.get("current_iteration", 0)
-                    timing_info["total_iterations"] = status_info.get("total_iterations", 0)
-                    timing_info["actual_elapsed_ms"] = status_info.get("elapsed_time", 0) * 1000
-                    timing_info["remaining_time_ms"] = status_info.get("estimated_remaining", 0) * 1000
-                    timing_info["success"] = True
-                    
-            return timing_info
-            
-        except Exception as e:
-            logger.error(f"Failed to get detailed timing information: {e}")
-            return timing_info
 
 # Create global instance
 adb_controller = AdbController() 

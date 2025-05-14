@@ -88,8 +88,8 @@ class URLDistributionRequest(BaseModel):
     iterations: int = 100
     min_interval: int = 1
     max_interval: int = 2
-    delay_min: int = 1
-    delay_max: int = 2
+    delay_min: int = 0
+    delay_max: int = 0
 
 # Add new model for logging control
 class LoggingConfigRequest(BaseModel):
@@ -98,7 +98,7 @@ class LoggingConfigRequest(BaseModel):
 
 # Create a flag to control automatic updates
 automatic_updates_enabled = False  # Disabled by default
-update_interval = 3600  # 1 hour (3600 seconds) default interval
+update_interval = 900  # 15 minutes (900 seconds) default interval
 
 # Background tasks
 async def broadcast_status_updates():
@@ -209,52 +209,6 @@ async def get_status_update_config():
         }
     }
 
-# Add endpoint to set extended update interval to reduce device lag
-@app.post("/settings/extended-interval/{minutes}")
-async def set_extended_update_interval(minutes: int):
-    """Set an extended update interval in minutes to reduce device lag"""
-    global automatic_updates_enabled, update_interval
-    
-    # Convert minutes to seconds, minimum 1 minute, maximum 24 hours
-    new_interval = max(60, min(24*60*60, minutes * 60))
-    update_interval = new_interval
-    
-    # Disable automatic updates by default
-    automatic_updates_enabled = False
-    
-    # Format for display
-    interval_display = ""
-    if new_interval >= 3600:
-        hours = new_interval // 3600
-        minutes = (new_interval % 3600) // 60
-        interval_display = f"{hours} hour(s)"
-        if minutes > 0:
-            interval_display += f" and {minutes} minute(s)"
-    else:
-        interval_display = f"{new_interval // 60} minute(s)"
-    
-    message = f"Extended update interval set to {interval_display}, automatic updates disabled"
-    logger.info(message)
-    
-    # Broadcast configuration change to all clients
-    await connection_manager.broadcast_all({
-        "type": "status_update_config",
-        "data": {
-            "automatic": automatic_updates_enabled,
-            "interval": update_interval,
-            "timestamp": datetime.now().isoformat()
-        }
-    })
-    
-    return {
-        "status": "success",
-        "message": message,
-        "config": {
-            "automatic": automatic_updates_enabled,
-            "interval": update_interval
-        }
-    }
-
 # Add endpoint to manually request status updates
 @app.post("/devices/request-status")
 async def request_status_update():
@@ -294,41 +248,35 @@ async def get_devices():
 
 @app.get("/devices/status")
 async def get_all_devices_status():
-    """Get status of all connected devices"""
+    """Get status information for all devices"""
     try:
         devices_status = await adb_controller.get_all_devices_status()
-        return {"devices_status": devices_status}
+        logger.info(f"Retrieved status for {len(devices_status)} devices")
+        return {"devices_status": devices_status, "timestamp": datetime.now().isoformat()}
     except Exception as e:
-        logger.error(f"Error getting device status: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/devices/{device_id}/timing")
-async def get_device_timing(device_id: str):
-    """Get detailed timing information from a device"""
-    try:
-        timing_info = adb_controller.get_device_timing_info(device_id)
-        return {
-            "device_id": device_id,
-            "timing_info": timing_info,
-            "timestamp": datetime.now().isoformat()
-        }
-    except Exception as e:
-        logger.error(f"Error getting device timing information: {e}")
+        logger.error(f"Failed to get devices status: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/devices/{device_id}/status")
 async def get_device_status(device_id: str):
-    """Get status of a specific device"""
+    """Get status information for a specific device"""
     try:
-        # Get status with full check
-        status = adb_controller.get_device_status(device_id, full_check=True)
+        # Check if device exists
+        devices = adb_controller.get_devices()
+        device_ids = [d['id'] for d in devices]
         
-        # Add timestamp
-        status["timestamp"] = datetime.now().isoformat()
+        if device_id not in device_ids:
+            logger.warning(f"Requested status for unknown device: {device_id}")
+            raise HTTPException(status_code=404, detail=f"Device {device_id} not found")
         
+        logger.info(f"Retrieving status for device {device_id}")
+        status = adb_controller.get_device_status(device_id)
+        logger.info(f"Status for device {device_id}: {status['status']}, progress: {status['current_iteration']}/{status['total_iterations']}")
         return status
+    except HTTPException:
+        raise
     except Exception as e:
-        logger.error(f"Error getting device status: {e}")
+        logger.error(f"Failed to get device status for {device_id}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/devices/scan")
@@ -456,8 +404,10 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
         query_params = dict(websocket.query_params)
         initial_status = query_params.get("initial_status", "false").lower() == "true"
         
-        # Only send initial status if explicitly requested
-        if initial_status:
+        # Send initial status information if requested, or if connection_manager has few clients
+        # (indicating this might be the first dashboard connection)
+        client_count = connection_manager.get_connected_clients_count()
+        if initial_status or client_count <= 2:
             try:
                 logger.info(f"Sending initial status update to new WebSocket client in channel: {channel}")
                 devices_status = await adb_controller.get_all_devices_status()
@@ -539,8 +489,8 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
                         iterations = message.get("iterations", 100)
                         min_interval = message.get("min_interval", 1)
                         max_interval = message.get("max_interval", 2)
-                        delay_min = message.get("delay_min", 1)
-                        delay_max = message.get("delay_max", 2)
+                        delay_min = message.get("delay_min", 0)
+                        delay_max = message.get("delay_max", 0)
                         
                         results = adb_controller.distribute_url(
                             device_ids,
