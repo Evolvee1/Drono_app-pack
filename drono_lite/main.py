@@ -60,6 +60,7 @@ class URLDistributionRequest(BaseModel):
 # Background tasks
 async def broadcast_status_updates():
     """Background task to periodically send status updates to clients"""
+<<<<<<< HEAD
     while True:
         try:
             devices_status = await adb_controller.get_all_devices_status()
@@ -71,6 +72,36 @@ async def broadcast_status_updates():
                         "timestamp": datetime.now().isoformat()
                     }
                 })
+=======
+    global automatic_updates_enabled, update_interval
+    last_broadcasted = {}  # Keep track of last sent status for each device
+    
+    while True:
+        try:
+            if automatic_updates_enabled:
+                devices_status = await adb_controller.get_all_devices_status()
+                if devices_status:
+                    # Determine which devices have changed status
+                    changed_statuses = {}
+                    for device_id, status in devices_status.items():
+                        # Check if status differs from last broadcast
+                        if (device_id not in last_broadcasted or 
+                            status != last_broadcasted[device_id]):
+                            changed_statuses[device_id] = status
+                            last_broadcasted[device_id] = status.copy()  # Store a copy
+                    
+                    # Only broadcast changes if there are any
+                    if changed_statuses:
+                        await connection_manager.broadcast_all({
+                            "type": "status_update",
+                            "data": {
+                                "devices_status": changed_statuses,
+                                "is_partial": True,
+                                "timestamp": datetime.now().isoformat()
+                            }
+                        })
+                        logger.info(f"Broadcast status update for {len(changed_statuses)} changed devices")
+>>>>>>> parent of fc2004c (Revert "optimization checkpoint")
         except Exception as e:
             logger.error(f"Error in status update broadcast: {e}")
         
@@ -89,6 +120,95 @@ async def startup_event():
     
     logger.info("Started background tasks for status updates and broadcast worker")
 
+<<<<<<< HEAD
+=======
+# Add new model for status update configuration
+class StatusUpdateConfig(BaseModel):
+    automatic: bool = False  # Whether to enable automatic status updates
+    interval: int = 900  # Interval in seconds for automatic updates (default: 15 minutes)
+
+# Add endpoint to control status updates
+@app.post("/settings/status-updates")
+async def configure_status_updates(config: StatusUpdateConfig):
+    """Configure automatic status updates"""
+    global automatic_updates_enabled, update_interval
+    
+    # Update global settings
+    automatic_updates_enabled = config.automatic
+    # Allow intervals from 5 seconds to 1 hour (3600 seconds)
+    update_interval = max(5, min(3600, config.interval))
+    
+    # Broadcast configuration change to all clients
+    await connection_manager.broadcast_all({
+        "type": "status_update_config",
+        "data": {
+            "automatic": automatic_updates_enabled,
+            "interval": update_interval,
+            "timestamp": datetime.now().isoformat()
+        }
+    })
+    
+    # Format interval for better readability
+    interval_display = ""
+    if update_interval >= 3600:
+        interval_display = f"{update_interval // 3600} hour(s)"
+    elif update_interval >= 60:
+        interval_display = f"{update_interval // 60} minute(s)"
+    else:
+        interval_display = f"{update_interval} seconds"
+    
+    message = (f"Automatic status updates {'enabled' if automatic_updates_enabled else 'disabled'}, "
+               f"interval set to {interval_display}")
+    logger.info(message)
+    
+    return {
+        "status": "success",
+        "message": message,
+        "config": {
+            "automatic": automatic_updates_enabled,
+            "interval": update_interval
+        }
+    }
+
+# Add endpoint to get current status update configuration
+@app.get("/settings/status-updates")
+async def get_status_update_config():
+    """Get current status update configuration"""
+    return {
+        "status": "success",
+        "config": {
+            "automatic": automatic_updates_enabled,
+            "interval": update_interval
+        }
+    }
+
+# Add endpoint to manually request status updates
+@app.post("/devices/request-status")
+async def request_status_update():
+    """Manually request status updates for all devices"""
+    try:
+        # Use full check for manual requests since user is explicitly requesting complete status
+        devices_status = await adb_controller.get_all_devices_status()
+        
+        # Broadcast status update to all clients
+        await connection_manager.broadcast_all({
+            "type": "status_update",
+            "data": {
+                "devices_status": devices_status,
+                "is_partial": False,  # This is a full update
+                "timestamp": datetime.now().isoformat()
+            }
+        })
+        
+        return {
+            "status": "success",
+            "message": f"Status updated for {len(devices_status)} devices"
+        }
+    except Exception as e:
+        logger.error(f"Failed to update status: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+>>>>>>> parent of fc2004c (Revert "optimization checkpoint")
 # API endpoints for device management and control
 @app.get("/devices")
 async def get_devices():
@@ -251,6 +371,7 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
             }
         })
         
+<<<<<<< HEAD
         # Send initial status information
         try:
             devices_status = await adb_controller.get_all_devices_status()
@@ -263,6 +384,31 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
             })
         except Exception as e:
             logger.error(f"Failed to send initial status: {e}")
+=======
+        # Check if client wants immediate status updates
+        # Extract query parameters from the websocket connection
+        query_params = dict(websocket.query_params)
+        initial_status = query_params.get("initial_status", "false").lower() == "true"
+        
+        # Send initial status information if requested, or if connection_manager has few clients
+        # (indicating this might be the first dashboard connection)
+        client_count = connection_manager.get_connected_clients_count()
+        if initial_status or client_count <= 2:
+            try:
+                logger.info(f"Sending initial status update to new WebSocket client in channel: {channel}")
+                devices_status = await adb_controller.get_all_devices_status()
+                await websocket.send_json({
+                    "type": "status_update",
+                    "data": {
+                        "devices_status": devices_status,
+                        "timestamp": datetime.now().isoformat()
+                    }
+                })
+            except Exception as e:
+                logger.error(f"Failed to send initial status: {e}")
+        else:
+            logger.info(f"Skipping initial status update for WebSocket client in channel: {channel} (can be requested explicitly)")
+>>>>>>> parent of fc2004c (Revert "optimization checkpoint")
         
         # Listen for messages
         while True:
@@ -296,9 +442,9 @@ async def websocket_endpoint(websocket: WebSocket, channel: str):
                             }
                         })
                     elif message["type"] == "get_device_status" and "device_id" in message:
-                        # Send status for a specific device
+                        # Send status for a specific device with quick check (no full status refresh)
                         device_id = message["device_id"]
-                        status = adb_controller.get_device_status(device_id)
+                        status = adb_controller.get_device_status(device_id, full_check=False)
                         await websocket.send_json({
                             "type": "device_status",
                             "data": {
